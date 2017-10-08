@@ -1,0 +1,13 @@
+﻿<div ng-controller="MusicCtrl">
+    <div class="audio-div">
+    	<div class="audio-item" ng-repeat="audio in audioSources">
+    		
+		<p class="audio-item-title">{{audio.title}}</p>
+	      
+		<audio controls="controls">
+		     <source ng-src="{{audio.url}}" type="audio/mp3">
+		</audio>
+
+    	</div> 
+	</div>
+</div>

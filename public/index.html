@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+
+
+<head>
+   <!-- ******************* START css links ************************* -->
+   <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/home.css">
+   <!-- ******************* END css links ************************* -->
+</head>
+
+<body>
+	<div ng-include src="'views/common/header.html'"></div>
+    <div data-ui-view="" class="main-body-div">
+
+    </div>
+    <div class="top-content-div">
+    	<div class="top-div-subtitle">
+    		Aktualno
+    	</div>
+    	<div class="top-div-items">
+    		<ul class="top-div-list">
+			  <li><a>Nov komad "Izlet"</a>
+			  	<p>Prejšnji teden je izšel nov singl ....<a class="read-more">preberi več</a></p>
+			  </li>
+
+			  <li><a>Koncert Beer Pub 13.10.</a>
+			  	<p>Vabljeni na koncert, kjer bo predstavitev novih komadov ... <a class="read-more">preberi več</a></p>
+
+			  </li>
+			  <li><a>Koncert Vopa 29.9.</a>
+			  	<p>Fotke iz koncerta v Vopi so že na voljo v galeriji na spletni strani...<a class="read-more">preberi več</a></p>
+			  </li>
+			</ul>
+    	</div>
+
+    </div>
+    <div ng-include src="'views/common/footer.html'"></div>
+</div>
+<!-- *************************** END about div ********************************-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-ui-router.js"></script>
+
+<!--- ** scripts for controllers **  -->
+<script src="App.js"></script>
+<script src="js/controllers/HomeCtrl.js"></script>
+<script src="js/controllers/ConcertsCtrl.js"></script>
+<script src="js/controllers/GalleryCtrl.js"></script>
+<script src="js/controllers/MusicCtrl.js"></script>
+<script src="js/controllers/VideoCtrl.js"></script>
+<script src="js/controllers/AboutMeCtrl.js"></script>
+<script src="js/controllers/SejkspirCtrl.js"></script>
+
+
+
+</body>
+</html>

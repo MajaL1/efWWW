@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Poiret+One|Quicksand|Raleway');
+
+body{
+	/*font-family: 'Raleway', Verdana; */
+	font-family: 'Didact Gothic';
+	margin: 0px auto;
+	color: #7c7c7c;
+	background: red; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(darkred, darkred, white) fixed; /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(darkred, darkred, white) fixed; /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(darkred, darkred, white) fixed; /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to darkred, darkred , white) fixed; /* Standard syntax */
+	padding-bottom: 30px;
+	min-width: 300px;
+}
+
+@font-face {
+    font-family: 'Mayhem'; 
+    /*src: url("/fonts/Mayhem-Regular.otf") format("opentype"); */
+    src: url("/fonts/Blok.ttf") format("opentype");
+    font-style: normal;
+}
+
+a.home-link-panel {
+    font-size: 35px;
+    font-family: 'Mayhem', Verdana;
+}
+
+/*ToDo: tukaj bo prislo drugacno ozadje, background in link */;
+.row.title-toolbar {
+	background-color: black;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-align: center;
+	height:300px;
+}
+.footer-text {
+    text-align: center;
+    color: white;
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+footer.ng-scope {
+    width: 100%;
+    position: fixed;
+    bottom:0px;
+    background-color: black;
+}
+
+.front-text {
+    font-family: 'Didact Gothic';
+}
+
+.banner-text {
+	height: 250px;
+	background-color: white;
+}
+
+.sejkspir-img {
+	width: 350px;
+	height: 180px;
+	margin-bottom: 30px;
+}
+
+.navbar-nav {
+	width: 100%;
+	margin-left: 100px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: -20px;
+	color: white;
+}
+
+.home-link {
+	font-size: 50px;
+	color: black;
+}
+
+.about-me {
+	display: block;
+	
+	width: 60%;
+	height: 600px;
+	background-color: transparent;
+	opacity: 0.5;
+	height: 550px;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.logo-elvis > img {
+	width: 300px;
+	height:250px;
+	padding-left: 30px;
+	background-color: white;
+}
+
+.top-content-div{
+	position: absolute;
+    width: 200px;
+    height: auto;
+    min-height: 400px;
+    top: 210px;
+    right: 150px;
+    border: 0.2px grey solid;
+    border-radius: 4%;
+    background-color: black;
+    top: 350px;
+    font-family: 'Didact Gothic';
+}
+
+.main-body-div {
+	font-family: Raleway;
+	font-color: white;
+}
+
+.top-div-subtitle {
+	font-weight: bold;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: white;
+}
+
+.top-div-list {
+	margin-left: -7px;
+
+}
+
+.picture-elvis {
+
+}
+
+.top-div-list > li {
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.top-div-list > li > p{
+    font-weight: normal;
+    font-size: 12px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.read-more{
+	font-weight: normal;
+}
+
+.svg-icons {
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 20px;
+}
+
+.text-items {
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.svg-icons > a > img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    z-index: 999;
+    margin-right: 10px;
+}
+
+.about-me {
+	color: white;
+	text-align: justify;
+	margin-top: 40px;
+}
+
+.about-me > .about-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.about-me > p {
+	font-color: white;
+	margin-bottom: 35px;
+}
+
+video {
+    width: 400px;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+audio{
+	margin-bottom: 50px;
+	width: 400px;
+}
+
+.video-div, .audio-div {
+	color: white;
+    margin-left: 150px;
+    margin-top: 80px;
+}
+
+.video-item > p, .audio-item > p{
+	font-family: 'Didact Gothic';
+    font-size: 20px;
+}
+
+.top-div-items {
+    padding-right: 10px;
+}
+
+a:visited { 
+    color: white;
+}
+
+a {
+	color: white;
+}
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+﻿<div ng-controller="WorkCtrl">
+    <!-- *************************** START about div ********************************-->
+    <div class='links-div row'>
+        <div class='about-intro'>
+
+            <div class="work-description">
+                <p> I am a frontend/backend programmer with 7+ years of experience in different fields of computer science.</p>
+                <br>
+                <p> I am curious about new technologies and always looking for new challenges.
+                </div>
+            </div>
+            
+            <div class="skills-vertical-items">
+                <div class="skills-inner-div">
+                    <h2 class="work-subtitle"><span> MY SKILLS </span></h2>
+
+
+                    <ul class="skill-li">
+                        <li ng-repeat="icon in iconPictureList">
+                            <img class="image-logo logo-{{$index}}" ng-src="{{icon}}"
+                            ng-mouseenter="makeLargeIcon(icon)" ng-mouseleave="makeSmallIcon(icon)"/>
+                        </li>
+                    </ul>  
+                    <ul class="skills-description-li">
+                        <li>
+                            <span class="strong">HTML5</span>, <span class="strong">CSS</span> and 
+                            <span class="strong">Javascript</span>
+
+                            <ul>
+                                <br>
+                                <li>
+                                   <p>I wrote an article about  <span class="strong">JavaScript</span> for Slovenian computer science magazine  <span class="strong">Monitor</span> called
+                                    <a href="http://www.monitor.si/clanek/v-desetihdneh/176562/" target="blank">"V desetih dneh", Monitor, Oktober
+                                     2016</a></p>
+                                 </li>
+                             </ul>          
+                         </li>
+
+                         <li>
+                             <p>Angular</p>
+                         </li>
+                         <li>
+                             <p>Node.js</p>
+                         </li>
+
+                         <li>
+                             <p>Bootstrap</p>
+                         </li>
+                         <li>
+                            <p>JQuery</p>
+                        </li>
+                        <li>
+                         <p>Npm, Gulp and Grunt</p>
+                     </li>
+                     <li>
+                         <p>Magnolia CMS</p>
+                     </li>
+                     <li>
+                        <p><span class="strong">Java based technologies:</span></p>
+                        <ul>
+                            <li>
+                                <p>Java SE</p>
+                            </li>
+
+                            <li>
+                                <p>Java EE</p>
+                            </li>
+                        </ul>     
+                    </li>
+                        <p> <span class="strong">Development tools and IDE-s <span></p>
+                        <ul>
+                            <li>
+                                <p>Webstorm</p>
+                            </li>
+
+                            <li>
+                                <p>IntelliJ</p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    IBM Rational application developer
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    Eclipse
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Visual Studio
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    .... and many othes ...
+                                </p>
+                            </li>
+
+                        </ul>    
+                    </li>  
+                </ul>
+                <div class="cert-education-div">
+                    <h3> <span class="">CERTIFICATIONS<span></h3>
+                    <ul>
+                        <li>
+                            <p>
+                                Oracle Certified Associate, Java SE 7 Programmer (1Z0-803)
+                            </p>    
+                        </li>    
+                        <li>
+                            <p>
+                                Oracle Certified Professional, Java SE 7 Programmer (1Z0-804)
+                            </p>
+                        </li>
+                        <li>
+                            <p> Magnolia CMS associate developer
+                                <a href="https://www.magnolia-cms.com/certificate-holder/Maja-Lokar.html" target="blank">
+                                    - link
+                                </a>    
+                            </p>
+                        </li>
+                    </ul>    
+                    <br>
+                    <h3> <span class="">EDUCATION<span></h3>
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Diplomirani inzenir racunalnistva in informatike</strong>, Fakulteta za racunalnistvo in informatiko, Ljubljana 2009
+                            </p>    
+                        </li>    
+                    </ul>    
+
+                </div>
+            </div>
+        </div>
+    </div> 

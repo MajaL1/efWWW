@@ -6,6 +6,7 @@
 
     $scope.videoSources = [];
 
+
     $scope.loadVideos = function() {
 
     	/*var videoDataList = [ {"title": "Novi videospot Izlet", "url": "https://www.youtube.com/embed/ciXcjzHimjs"},
@@ -30,7 +31,7 @@
 	            order: 'date',
 	            type: 'video'
 
-        });
+        	});
 
         request.execute(function(response) {
                 console.log('response: ', response);
@@ -46,13 +47,12 @@
                 	console.log('videoItem, ', videoItem);
                 	$scope.videoSources.push(videoItem);
                 }
-
-                /** here we call the response.items */
-
         });
     });
 
-	}();
-}
+	}
+	$scope.loadVideos();
+
+	}
 );
 

@@ -98,7 +98,6 @@ footer.ng-scope {
 	opacity: 0.5;
 	height: 550px;
 	margin-top: 50px;
-	margin-left: 100px;
 }
 
 .logo-elvis > img {
@@ -127,6 +126,7 @@ footer.ng-scope {
 	color: white;
 	margin-left: 150px;
     margin-top: 80px;
+    margin-bottom: 120px;
 }
 
 .top-div-subtitle {
@@ -203,9 +203,12 @@ footer.ng-scope {
 }
 
 video {
-    width: 400px;
-    height: 250px;
     margin-bottom: 50px;
+}
+
+iframe#video {
+    width: 480px;
+    height: 350px;
 }
 
 .video-item {
@@ -214,7 +217,11 @@ video {
 
 audio{
 	margin-bottom: 50px;
-	width: 70%;
+	width: 500px;
+}
+
+a.home-link-panel.sejkspir-link {
+    font-family: cursive;
 }
 
 .video-div, .audio-div {
@@ -238,9 +245,11 @@ a {
 	color: white;
 }
 
-.picture-elvis > img{
-		display: none;
-}
+/*.picture-elvis > img{
+		height: 500px;
+		width:100%;
+
+}*/
 
 @media screen and (min-width: 280px) and (max-width: 650px){
    .main-body-div {
@@ -294,8 +303,15 @@ a {
 		background-position: fixed;
 	}
 	iframe#video {
-	    width: auto;
+	    width: 260px;
 	    height: auto;
+	}
+
+	.top-content-div{
+		display: none;
+	}
+	.main-body-div {
+		margin-bottom: 60px
 	}
 }
 

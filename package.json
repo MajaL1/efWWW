@@ -1,6 +1,6 @@
 {
-  "name": "test_application",
-  "description": "Test application",
+  "name": "efWWW",
+  "description": "ef www",
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.12.4",
@@ -8,7 +8,7 @@
     "gulp-webserver": "^0.9.1",
     "node": "0.0.0"
   },
-  "main": "App.js",
+  "main": "app.js",
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-util": "3.0.8",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node App.js"
+    "start": "node app.js"
   },
   "author": "MajaL",
   "license": "ISC"

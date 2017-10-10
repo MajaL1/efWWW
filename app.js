@@ -145,7 +145,7 @@ function getImages(imageDir, callback){
 /*********************** starting server **************************/
 
 // menda se binda na vse ip-je, ce dodamo 0.0.0.0., se firewall je treba odpret ????
-var server = app.listen(3000, () => {
+var server = app.listen(process.env.PORT || 3000) => {
 	
 	var port = server.address().port;
 	console.log('...App listening at port %s...', port);	

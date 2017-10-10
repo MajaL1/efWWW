@@ -8,7 +8,7 @@
     "gulp-webserver": "^0.9.1",
     "node": "0.0.0"
   },
-  "main": "app.js",
+  "main": "App.js",
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-util": "3.0.8",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node App.js"
   },
   "author": "MajaL",
   "license": "ISC"

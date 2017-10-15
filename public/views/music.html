@@ -1,13 +1,36 @@
 ﻿<div ng-controller="MusicCtrl">
     <div class="audio-div">
-    	<div class="audio-item" ng-repeat="audio in audioSources">
-    		
-		<p class="audio-item-title">{{audio.title}}</p>
-	      
-		<audio controls="controls">
-		     <source ng-src="{{audio.url}}" type="audio/mp3">
-		</audio>
 
-    	</div> 
+    	<h3> <strong>Skarabeji - drugo dejanje </strong></h3>
+    	<br>
+    	<div class='container audio-section'>
+    		
+	    	<div class="audio-item" ng-repeat="audio in audioSources">
+	    		
+				<p class="audio-item-title">{{audio.title}}</p>
+			      
+				<audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar">
+				     <source ng-src="{{audio.url}}" type="audio/mp3">
+				</audio>
+				<a class="audio-download-button" href="https://www.w3schools.com/html/mov_bbb.mp4" target="_blank" download><img class="download" src='img/download1.png'/></a>.
+	    	</div>
+	    </div>
+
+	    <br>
+	    <h3> <strong>Elvis Fajko - singli </strong></h3>
+	    <br>	
+
+	    <div class='container audio-section'>
+	    	
+	    	<div class="audio-item" ng-repeat="audio in audioSingleList">
+	    		
+				<p class="audio-item-title">{{audio.title}}</p>
+			      
+				<audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar">
+				     <source ng-src="{{audio.url}}" type="audio/mp3">
+				</audio>
+				<a class="audio-download-button" href="https://www.w3schools.com/html/mov_bbb.mp4" target="_blank" download><img class="download" src='img/download1.png'/></a>
+			</div>
+		</div>
 	</div>
 </div>

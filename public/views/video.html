@@ -2,35 +2,12 @@
     
     <div class="video-div">
 
-    	<div class="video-item" ng-repeat="video in videoSources">
-    		<!-- <p class="video-item-title">{{video.title}}</p>
-	        <video src='{{ video.url }}'
-	                controls='true'>
-	        </video>
--->
-			<p class="video-item-title">{{video.title}}</p>
-	       <!--  <video width="400" controls="controls">
-    			<source ng-src="{{video.url}}" type="video/mp4">
-  			</video>  -->
+    	<div class="video-item" ng-repeat="video in videoSources" ng-model="videoSources">
+ 
+		<p class="video-item-title">{{video.title}}</p>
 
-
-<!-- <video width="640" height="360" id="videoPlayer" preload="none">
-<source type="video/youtube" src="https://www.youtube.com/watch?v=f-_1xUXfYGc" />
-</video> -->
-<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
+		<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
 
     	</div> 
-  		<br> <a href="#" ng-click='loadVideos()'>Load videos</a>
-
-    	<!-- <video src="https://www.youtube.com/watch?v=me2vugXNlMQ" controls>
-		</video> -->
-
-		<!-- <video id="currVideo" autoplay="none" preload="none"controls="" tabindex="0">
-			<source type="video/m4v" src="https://www.youtube.com/watch?v=spIczRuboEc"></source>
-			<source type="video/webm" src="https://www.youtube.com/watch?v=spIczRuboEc"></source>
-		</video>
-
-		<iframe width="560" height="300" ng-src="https://www.youtube.com/watch?v=VBLI2MhBKNY" frameborder="0" allowfullscreen controls></iframe> -->
-
 	</div>
 </div>

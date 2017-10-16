@@ -32,3 +32,13 @@ __________________________
 GOOGLE ANALITICS
 
 ___________________________
+
+How to count number of free dyno hours:
+
+heroku ps -a <app name>
+  
+  ali
+
+billing info: free dyno info
+
+__________________________

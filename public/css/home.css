@@ -131,7 +131,7 @@ footer.ng-scope {
 	width: 60%;
 	height: 600px;
 	background-color: transparent;
-	opacity: 0.55;
+	opacity: 0.65;
 	height: 550px;
 	margin-top: 50px;
 }
@@ -141,7 +141,7 @@ footer.ng-scope {
 	width: 60%;
 	height: 600px;
 	background-color: transparent;
-	opacity: 0.5;
+	opacity: 0.65;
 	height: 550px;
 	margin-top: 50px;
 }
@@ -334,7 +334,7 @@ ul {
 	color: black;
 	font-family: Raleway;
 	background-color: transparent;
-	opacity: 0.55;
+	opacity: 0.65;
 }
 
 .video-item > p, .audio-item > p{

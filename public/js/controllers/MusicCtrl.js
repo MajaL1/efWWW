@@ -34,5 +34,28 @@
 
 	    console.log('------ audiosingleSources: ', $scope.audioSingleList);
 	}();
+	 
+$scope.download = function(document) {
+    DownloadFileFactory.download(document).$promise.then(function(data) {
+      var url = URL.createObjectURL(new Blob([data]));
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'document_name';
+      a.target = '_blank';
+      a.click();
+    })
+    .catch(function(error) {
+      // catching error here
+    })
+  }
+
+app.factory('DownloadFileFactory', function($scope, $resource) {  
+  $resource('document/:id", { id: "@id" }, {
+    download: {
+      method: 'GET',
+      responseType: 'arraybuffer'
+    }
+  })
+})
 
 });

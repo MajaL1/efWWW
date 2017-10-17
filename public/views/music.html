@@ -29,7 +29,7 @@
 				<audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar">
 				     <source ng-src="{{audio.url}}" type="audio/mp3">
 				</audio>
-				<a class="audio-download-button" href="https://www.w3schools.com/html/mov_bbb.mp4" target="_blank" download><img class="download" src='img/download1.png'/></a>
+				<a class="audio-download-button" ng-click="download(audio.title)" target="_blank" download><img class="download" src='img/download1.png'/></a>
 			</div>
 		</div>
 	</div>

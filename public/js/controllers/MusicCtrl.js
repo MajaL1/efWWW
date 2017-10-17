@@ -36,26 +36,59 @@
 	}();
 	 
 $scope.download = function(document) {
-    DownloadFileFactory.download(document).$promise.then(function(data) {
-      var url = URL.createObjectURL(new Blob([data]));
+   DownloadFileFactory.download(document).$promise.then(function(result) {
+      var url = URL.createObjectURL(new Blob([result.data]));
       var a = document.createElement('a');
       a.href = url;
-      a.download = 'document_name';
+      a.download = result.filename;
       a.target = '_blank';
       a.click();
     })
+    .catch(resourceError)
     .catch(function(error) {
-      // catching error here
-    })
+      console.log(error.data); // in JSON
+    });
+  }
   }
 
 app.factory('DownloadFileFactory', function($scope, $resource) {  
-  $resource('document/:id", { id: "@id" }, {
+ $resource('document/:Id", { Id: "@Id" }, {
     download: {
       method: 'GET',
-      responseType: 'arraybuffer'
+      responseType: 'arraybuffer',
+      transformResponse: function(data, headers) {
+        return {
+          data: data,
+          filename: parseHeaderFilename(headers)
+        }
+      }
     }
-  })
-})
+  });
+});
+
+app.service('getHeaderFilename', function() {  
+  return function(headers) {
+    var header = headers('content-disposition');
+    var result = header.split(';')[1].trim().split('=')[1];
+    return result.replace(/"/g, '');
+  }
+});
+
+app.service('resourceError', function($q) {  
+  var arrayBufferToString = function(buff) {
+    var charCodeArray = Array.apply(null, new Uint8Array(buff));
+    var result = '';
+    for (i = 0, len = charCodeArray.length; i < len; i++) {
+        code = charCodeArray[i];
+       result += String.fromCharCode(code);
+    }
+    return result;
+  }
+
+  return function(error) {
+    error.data = angular.fromJson(arrayBufferToString(error.data.data));
+    return $q.reject(error);
+  }
+});
 
 });

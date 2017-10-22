@@ -286,7 +286,7 @@ footer.ng-scope {
 .about-me {
 	color: black;
 	text-align: justify;
-	margin-top: 40px;
+	margin-top: 140px;
 }
 
 .about-me > .about-subtitle , .sejkspir-subtitle{
@@ -461,7 +461,6 @@ a {
 
 	.page-counter > p{
 		font-size: 17px;
-		color: goldenrod;
 	}
 
 	.page-counter{

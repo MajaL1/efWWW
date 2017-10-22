@@ -1,8 +1,56 @@
-﻿myApp.controller('MusicCtrl', function ($scope, $state, $stateParams) {
+﻿myApp.factory('DownloadFileFactory', function($http) { 
+
+    var factory = {};
+    factory.download = function(url, name) {
+
+        $http({
+            method: 'GET',
+            url: url,
+            params: { ure: url, name: name },
+            responseType: 'arraybuffer'
+        })
+        .success(function (data, status, headers) {
+
+            headers = headers();
+            var filename = headers['x-filename'];
+            var contentType = headers['content-type'];
+            var linkElement = document.createElement('a');
+            try {
+
+                var blob = new Blob([data], { type: contentType });
+                var url = window.URL.createObjectURL(blob);
+
+                linkElement.setAttribute('href', url);
+                linkElement.setAttribute("download", name);
+
+                var clickEvent = new MouseEvent("click", {
+
+                    "view": window,
+                    "bubbles": true,
+                    "cancelable": false
+                });
+                linkElement.dispatchEvent(clickEvent);
+
+            } catch (ex) {
+                console.log(ex);
+
+            }
+        })
+        .error(function (data) {
+            console.log(data);
+        });
+    }
+   return factory;
+});
+
+
+
+myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $stateParams, $http) {
     console.log('Music controller');
 
     $scope.audioSources = [];
     $scope.audioSingleList = [];
+
 
     $scope.loadAudios = function() {
 
@@ -33,62 +81,17 @@
 	  
 
 	    console.log('------ audiosingleSources: ', $scope.audioSingleList);
-	}();
-	 
-$scope.download = function(document) {
-   DownloadFileFactory.download(document).$promise.then(function(result) {
-      var url = URL.createObjectURL(new Blob([result.data]));
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = result.filename;
-      a.target = '_blank';
-      a.click();
-    })
-    .catch(resourceError)
-    .catch(function(error) {
-      console.log(error.data); // in JSON
-    });
-  }
-  }
+	}
 
-app.factory('DownloadFileFactory', function($scope, $resource) {  
- $resource('document/:Id", { Id: "@Id" }, {
-    download: {
-      method: 'GET',
-      responseType: 'arraybuffer',
-      transformResponse: function(data, headers) {
-        return {
-          data: data,
-          filename: parseHeaderFilename(headers)
-        }
-      }
+    $scope.loadAudios();
+
+
+    $scope.downloadAudioFile = function(url, name){
+        DownloadFileFactory.download(url, name);
     }
-  });
+
+
+    
 });
 
-app.service('getHeaderFilename', function() {  
-  return function(headers) {
-    var header = headers('content-disposition');
-    var result = header.split(';')[1].trim().split('=')[1];
-    return result.replace(/"/g, '');
-  }
-});
 
-app.service('resourceError', function($q) {  
-  var arrayBufferToString = function(buff) {
-    var charCodeArray = Array.apply(null, new Uint8Array(buff));
-    var result = '';
-    for (i = 0, len = charCodeArray.length; i < len; i++) {
-        code = charCodeArray[i];
-       result += String.fromCharCode(code);
-    }
-    return result;
-  }
-
-  return function(error) {
-    error.data = angular.fromJson(arrayBufferToString(error.data.data));
-    return $q.reject(error);
-  }
-});
-
-});

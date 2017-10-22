@@ -1,12 +1,13 @@
 ﻿myApp.factory('DownloadFileFactory', function($http) { 
 
     var factory = {};
+    console.log('blablabalaaaa:   ');
     factory.download = function(url, name) {
 
         $http({
             method: 'GET',
             url: url,
-            params: { ure: url, name: name },
+            params: { url: url, name: name },
             responseType: 'arraybuffer'
         })
         .success(function (data, status, headers) {

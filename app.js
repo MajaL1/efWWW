@@ -39,7 +39,7 @@ app.post('/api/update-counter', function (req, res) {
 
 
 
-var server = app.listen(3333, () => {
+var server = app.listen(server.address().port, () => {
 
 		var host = server.address().address;
 		var port = server.address().port;

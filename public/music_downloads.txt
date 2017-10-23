@@ -1,86 +1,12 @@
 
-[{
-  id:1,
-  downloadCount: 1
-  },
-  { 
-  id:2,
-  downloadCount: 1
-  },
-  {
-  id:3,
-  downloadCount: 1
-  },
-  {
-  id:4,
-  downloadCount: 1
-  },
-  {
-  id:5,
-  downloadCount: 1
-  },
-  {
-  id:6,
-  downloadCount: 1
-  },
-  {
-  id:7,
-  downloadCount: 1
-  },
-  {
-  id:8,
-  downloadCount: 1
-  },
-  {
-  id:9,
-  downloadCount: 1
-  },
-  {
-  id:10,
-  downloadCount: 1
-  },
-  {
-  id:11,
-  downloadCount: 1
-  },
-  {
-  id:12,
-  downloadCount: 1
-  },
-  {
-  id:13,
-  downloadCount: 1
-  },
-  {
-  id:14,
-  downloadCount: 1
-  },
-  {
-  id:15,
-  downloadCount: 1
-  },
-  {
-  id:16,
-  downloadCount: 1
-  },
-  {
-  id:17,
-  downloadCount: 1
-  },
-  {
-  id:18,
-  downloadCount: 1
-  },
-  {
-  id:19,
-  downloadCount: 1
-  },
-  {
-  id:20,
-  downloadCount: 1
-  },
-  {
-  id:21,
-  downloadCount: 1
-  }
+[
+ {"title": "Upanje", "url": "assets/music/Skarabeji - Upanje.mp3", id: "1", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Vrtimo se", "url": "assets/music/Skarabeji - Vrtimo se.mp3", id: "2", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Odšla sta v noč", "url": "assets/music/Skarabeji - Odsla sta v noc.mp3", id: "3", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "To ni navaden dan", "url": "assets/music/Skarabeji - To ni navaden dan.mp3", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Zapornik", "url": "assets/music/Skarabeji - Zapornik.mp3", id: "3", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Rock", "url": "assets/music/Skarabeji - Rock.mp3", id: "4", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Drugo dejanje", "url": "assets/music/Skarabeji - Drugo dejanje.mp3", id: "5" , "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Sam", "url": "assets/music/Skarabeji - Sam.mp3", id: "6", "categoryId" : "1", "downloadCount" : "1"},
+ {"title": "Gibaj sm pa ke", "url": "assets/music/Skarabeji - Gibaj sm pa ke.mp3", id: "7", "categoryId" : "1", "downloadCount" : "1"}
 ]

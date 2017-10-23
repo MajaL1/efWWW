@@ -5,14 +5,15 @@
     	<br>
     	<div class='container audio-section'>
     		
-	    	<div class="audio-item" ng-repeat="audio in audioSources">
+	    	<div class="audio-item" ng-repeat="audio in audioSources track by $index">
 	    		
 				<p class="audio-item-title">{{audio.title}}</p>
 			      
 				<audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar">
 				     <source ng-src="{{audio.url}}" type="audio/mp3">
 				</audio>
-				<a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title)" target="_blank" download><img class="download" src='img/download1.png'/></a>.
+				<a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title, audio.id, audio.downloadCount)" target="_blank" download><img class="download" src='img/download1.png'/></a>
+				<span class="">{{audio.downloadCount}}</span>
 	    	</div>
 	    </div>
 
@@ -29,7 +30,8 @@
 				<audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar">
 				     <source ng-src="{{audio.url}}" type="audio/mp3">
 				</audio>
-				<a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title)" target="_blank" download><img class="download" src='img/download1.png'/></a>
+				<a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title, audio.id, audio.downloadCount)" target="_blank" download><img class="download" src='img/download1.png'/></a>
+				<span class="">{{audio.downloadCount}}</span>
 			</div>
 		</div>
 	</div>

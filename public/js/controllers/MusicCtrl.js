@@ -2,7 +2,8 @@
 
     var factory = {};
     console.log('blablabalaaaa:   ');
-    factory.download = function(url, name) {
+
+    factory.download = function(url, name, id) {
 
         $http({
             method: 'GET',
@@ -41,9 +42,30 @@
             console.log(data);
         });
     }
+
+    factory.getAudioData = function(url, fileName) {
+
+        return $http({
+            method: 'GET',
+            url: url+""+fileName 
+    });
+    }    
+
+    factory.setAudioData = function(fileToWrite, dataToWrite) {
+
+
+        $http({
+                    method: 'POST',
+                    url: '/api/update-download-counter',
+                    data: {'fileToWrite': fileToWrite, 'dataToWrite': dataToWrite}
+        })
+        .error(function (data) {
+            console.log(data);
+        });
+    }
+
    return factory;
 });
-
 
 
 myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $stateParams, $http) {
@@ -55,39 +77,62 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
     $scope.loadAudios = function() {
 
-    	var audioDataList = [ {"title": "Upanje", "url": "assets/music/Skarabeji - Upanje.mp3", id: "1"},
-    						  {"title": "Vrtimo se", "url": "assets/music/Skarabeji - Vrtimo se.mp3", id: "2"},
-    						  {"title": "Odšla sta v noč", "url": "assets/music/Skarabeji - Odsla sta v noc.mp3", id: "3"},                            {"title": "To ni navaden dan", "url": "assets/music/Skarabeji - To ni navaden dan.mp3"},
-                              {"title": "Zapornik", "url": "assets/music/Skarabeji - Zapornik.mp3", id: "3"},
-                              {"title": "Rock", "url": "assets/music/Skarabeji - Rock.mp3", id: "4"},
-                              {"title": "Drugo dejanje", "url": "assets/music/Skarabeji - Drugo dejanje.mp3", id: "5"},
-                              {"title": "Sam", "url": "assets/music/Skarabeji - Sam.mp3", id: "6"},
-                              {"title": "Gibaj sm pa ke", "url": "assets/music/Skarabeji - Gibaj sm pa ke.mp3", id: "7"}
-    	 ];
+        var audioDataList;
 
-		for (i=0; i<audioDataList.length; i++){
-	    	$scope.audioSources.push(audioDataList[i]);
-		}
+        DownloadFileFactory.getAudioData("/api/get-audio-data/","music0.txt")
+            .success(function (data, status, headers) {
+                //console.log('GET AUDIO DATA::: ', data);
 
-        var audioSingleSourcesList = [ {"title": "Želja", "url": "assets/music/Zelja.mp3", id: "8"},
-                              {"title": "Kaplja", "url": "assets/music/Kaplja.mp3", id: "9"},
-				       {"title": "Mi smo tabol", "url": "assets/music/Mi smo tabol.mp3", id: "10"},
-				       {"title": "Valentinovo", "url": "assets/music/Valentinovo.mp3", id: "11"}
-         ];
+                audioDataList = data;
+                for (i=0; i<audioDataList.length; i++){
+                    $scope.audioSources.push(audioDataList[i]);
+                }
+           
+            })
+            .error(function (data) {
+                console.log(data);
+            })
 
-        for (i=0; i<audioSingleSourcesList.length; i++){
-            $scope.audioSingleList.push(audioSingleSourcesList[i]);
-        }
-	  
+		
 
-	    console.log('------ audiosingleSources: ', $scope.audioSingleList);
-	}
+        DownloadFileFactory.getAudioData("/api/get-audio-data/","music1.txt")
+            .success(function (data, status, headers) {
+
+                audioSingleSourcesList = data;
+                for (i=0; i<audioSingleSourcesList.length; i++){
+                    $scope.audioSingleList.push(audioSingleSourcesList[i]);
+                }
+            })
+            .error(function (data) {
+                console.log(data);
+            })
+    }
 
     $scope.loadAudios();
 
-
-    $scope.downloadAudioFile = function(url, name){
+    $scope.downloadAudioFile = function(url, name, id, downloadCount){
         DownloadFileFactory.download(url, name);
+
+        for (var i = 0; i < $scope.audioSources.length; i++){
+            console.log("iii: ", $scope.audioSources[i]);
+
+            if(id===$scope.audioSources[i].id){
+                var newDownloadCount = parseInt(downloadCount) + 1;
+                $scope.downloadCount = newDownloadCount;
+                console.log('je enak...');
+                $scope.audioSources[i].downloadCount= newDownloadCount;
+                break;
+            }
+        }
+
+        for (var i = 0; i < $scope.audioSources.length; i++){
+            
+                console.log('...all...', $scope.audioSources[i]);
+        }
+
+        var fileToWrite = "music000.txt";
+        
+       //DownloadFileFactory.setAudioData(fileToWrite, $scope.audioSources);
     }
 
 

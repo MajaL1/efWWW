@@ -1,5 +1,5 @@
 ﻿myApp.controller('VisitCounterCtrl', function ($scope, $state, $stateParams, $http) {
-    console.log('2222 VisitCounter controller');
+    console.log('VisitCounter controller');
 
     var incrementPageCount = function(){
 
@@ -15,15 +15,13 @@
     		    }
                 $scope.counter = numVisits;
 
-                console.log("llllllllllllllllllll", $scope.counter);
-
                 $http({
                     method: 'POST',
                     url: '/api/update-counter',
                     data: {'count': $scope.counter}
                 })
                 .then(function(response) {
-                    console.log("ABC", response);
+                    
                 }); 
     		    console.log('new number of visits... ', numVisits);
     		     
@@ -33,5 +31,4 @@
             });	
     }
     incrementPageCount();
-
 });

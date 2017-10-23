@@ -57,14 +57,12 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
     	var audioDataList = [ {"title": "Upanje", "url": "assets/music/Skarabeji - Upanje.mp3"},
     						  {"title": "Vrtimo se", "url": "assets/music/Skarabeji - Vrtimo se.mp3"},
-    						  {"title": "Lep sončen dan (LSD)", "url": "assets/music/Skarabeji - Lep sončen dan.mp3"},
     						  {"title": "Odšla sta v noč", "url": "assets/music/Skarabeji - Odsla sta v noc.mp3"},
                               {"title": "To ni navaden dan", "url": "assets/music/Skarabeji - To ni navaden dan.mp3"},
                               {"title": "Zapornik", "url": "assets/music/Skarabeji - Zapornik.mp3"},
                               {"title": "Rock", "url": "assets/music/Skarabeji - Rock.mp3"},
                               {"title": "Drugo dejanje", "url": "assets/music/Skarabeji - Drugo dejanje.mp3"},
                               {"title": "Sam", "url": "assets/music/Skarabeji - Sam.mp3"},
-                              {"title": "Solza", "url": "assets/music/Skarabeji - Solza.mp3"},
                               {"title": "Gibaj sm pa ke", "url": "assets/music/Skarabeji - Gibaj sm pa ke.mp3"}
     	 ];
 
@@ -73,7 +71,9 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 		}
 
         var audioSingleSourcesList = [ {"title": "Želja", "url": "assets/music/Zelja.mp3"},
-                              {"title": "Kaplja", "url": "assets/music/Kaplja.mp3"}
+                              {"title": "Kaplja", "url": "assets/music/Kaplja.mp3"},
+				       {"title": "Mi smo tabol", "url": "assets/music/Mi smo tabol.mp3"},
+				       {"title": "Valentinovo", "url": "assets/music/Valentinovo.mp3"}
          ];
 
         for (i=0; i<audioSingleSourcesList.length; i++){

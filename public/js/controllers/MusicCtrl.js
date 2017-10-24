@@ -132,7 +132,7 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
         var fileToWrite = "music000.txt";
         
-       //DownloadFileFactory.setAudioData(fileToWrite, $scope.audioSources);
+       DownloadFileFactory.setAudioData(fileToWrite, $scope.audioSources);
     }
 
 

@@ -154,6 +154,8 @@ footer.ng-scope {
 
 .logo-elvis {
 	float: left;
+	z-index: 99999;
+    	position: relative;
 }
 
 .navbar.navbar-inverse {

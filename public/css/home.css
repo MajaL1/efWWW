@@ -218,7 +218,7 @@ footer.ng-scope {
 .main-body-div {
 	font-family: Raleway;
 	color: white;
-	margin-left: 150px;
+	padding-left: 150px;
     margin-top: 80px;
     margin-bottom: 120px;
 }

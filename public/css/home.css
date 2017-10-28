@@ -48,7 +48,10 @@ a:active {
 
 .sejkspir-div{
 	color: black;
-	background-color: transparent;
+	opacity: 1;
+	padding-top: 120px;
+	margin-top: 120px;
+
 }
 
 .container.sejkspir-images-div {
@@ -155,7 +158,7 @@ footer.ng-scope {
 .logo-elvis {
 	float: left;
 	z-index: 99999;
-    	position: relative;
+    position: relative;
 }
 
 .navbar.navbar-inverse {
@@ -163,8 +166,8 @@ footer.ng-scope {
 }
 
 .logo-elvis > img {
-	width: 360px;
-	height: 320px;
+	width: 300px;
+	height: 260px;
 	background-color: white;
 }
 
@@ -174,7 +177,7 @@ footer.ng-scope {
 	margin-right: 30px;
 	z-index: 999999;
 	min-height: 70px;
-	margin-top: 200px;
+	margin-top: 100px;
 }
 
 .page-counter > p{
@@ -201,6 +204,11 @@ footer.ng-scope {
     background-color: black;
 }
 
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 .top-content-div{
 	position: absolute;
     width: 200px;
@@ -218,9 +226,9 @@ footer.ng-scope {
 .main-body-div {
 	font-family: Raleway;
 	color: white;
-	padding-left: 150px;
     margin-top: 80px;
     margin-bottom: 120px;
+    padding-left: 150px;
 }
 
 .top-div-subtitle {
@@ -411,6 +419,7 @@ a {
 		font-family: Raleway;
 		margin-left: 20px;
 	    margin-top: 5px;
+	    padding-left: 0px;
 	}
 
 	.svg-icons.pull-right {
@@ -510,7 +519,7 @@ a {
 		display: none;
 	}
 	.main-body-div {
-		margin-bottom: 60px
+		margin-bottom: 60px;
 	}
 	.download{
 		display: none;
@@ -530,7 +539,23 @@ a {
 	    float: initial;
 	    z-index: 99999;
 	    position: relative;
-}	
+	}
+	.logo-elvis > img {
+
+        height: 120px;
+        width: 160px;
+        background-color: white;
+        float: left;
+        z-index: 99999;
+        position: relative;
+        /* top: 176px; */
+
+	}
+
+	.picture-elvis > img  {
+		height: 320px;
+		padding-top: 40px; 
+	}	
 
 }
   

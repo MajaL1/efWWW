@@ -1,15 +1,18 @@
 
 
 var key = "AIzaSyD7M2bnCmImthSaTjJEwOqo8PqsSkTK4GQ";
-var playlistId = "UULk_WVpcnHJMVAR2Fzg9FkA";
+var playlistId = "gftNFEGZAR4";
+//var playlistId = "UULk_WVpcnHJMVAR2Fzg9FkA";
 
 const YOUTUBE_URL = 'https://www.youtube.com/embed/';
+
+// GET GET https://www.googleapis.com/youtube/v3/videos
 
 
 myApp.factory('youtubeService', function ($http) {
     return {
         getPlaylistVideos: function(playListId) {
-        return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet', maxResults: 10, playlistId: playlistId, key: key }});       
+        return  $http.get('https://www.googleapis.com/youtube/v3/videos', {params :{ part: 'snippet,contentDetails,statistics', maxResults: 10, id: playlistId, key: key }});       
     }
 }                
 });
@@ -36,12 +39,13 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
                 for(index in itemsList){
                     let title = itemsList[index].snippet.title;
-                    let url = YOUTUBE_URL+itemsList[index].snippet.resourceId.videoId;
+                    console.log('//////////////////////', itemsList[index]);
+                    /*let url = YOUTUBE_URL+itemsList[index].snippet.resourceId.videoId;
                     let videoItem = {
                         "title" : title,
                         "url" : url
                     };
-                    $scope.videoSources.push(videoItem);
+                    $scope.videoSources.push(videoItem); */
             }
         }
 

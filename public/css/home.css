@@ -51,6 +51,7 @@ a:active {
 	opacity: 1;
 	padding-top: 120px;
 	margin-top: 120px;
+	height: 1200px !important;
 
 }
 
@@ -227,7 +228,7 @@ footer.ng-scope {
 	font-family: Raleway;
 	color: white;
     margin-top: 80px;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
     padding-left: 150px;
 }
 

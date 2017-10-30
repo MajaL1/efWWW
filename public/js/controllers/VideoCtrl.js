@@ -13,7 +13,7 @@ const YOUTUBE_URL = 'https://www.youtube.com/embed/';
 myApp.factory('youtubeService', function ($http) {
     return {
         getPlaylistVideos: function(playListId) {
-        return  $http.get('https://www.googleapis.com/youtube/v3/videos', {params :{ part: 'snippet,contentDetails,statistics', maxResults: 10, id: playlistId, key: key }});       
+        return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet,contentDetails,statistics', maxResults: 20, playlistId: playlistId}});       
     }
 }                
 });

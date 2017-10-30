@@ -13,7 +13,7 @@ const YOUTUBE_URL = 'https://www.youtube.com/embed/';
 myApp.factory('youtubeService', function ($http) {
     return {
         getPlaylistVideos: function(playListId) {
-        return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet,contentDetails,statistics', maxResults: 20, playlistId: playlistId}});       
+        return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet', maxResults: 20, id: playlistId}});       
     }
 }                
 });
@@ -38,6 +38,8 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
             let itemsList = event.data.items;
 
+            console.log('ITEMS LIST:::: ', itemsList);
+
                 for(index in itemsList){
                     let title = itemsList[index].snippet.title;
                     console.log('//////////////////////', itemsList[index]);
@@ -52,7 +54,7 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
         function onError(error){
 
-                  $log.error('failure loading playlist', error);
+                  console.log('failure loading playlist', error);
         }
         
 }]);

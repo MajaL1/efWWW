@@ -16,7 +16,7 @@ body{
 }
 
 @font-face {
-    font-family: 'Mayhem'; 
+    font-family: 'Blok'; 
     /*src: url("/fonts/Mayhem-Regular.otf") format("opentype"); */
     src: url("/fonts/Blok.ttf") format("opentype");
     font-style: normal;
@@ -30,7 +30,7 @@ body{
 
 a.home-link-panel {
     font-size: 35px;
-    font-family: 'Mayhem';
+    font-family: 'Blok';
 }
 
 /*ToDo: tukaj bo prislo drugacno ozadje, background in link */;
@@ -494,7 +494,7 @@ a {
 
 	a.home-link-panel {
 	    font-size: 30px;
-	    font-family: 'Mayhem', Verdana;
+	    font-family: 'Blok', Verdana;
 	}
 	a > small.pull-right {
 		display: none;

@@ -9,8 +9,14 @@
                
     		    var numVisits;
     		    if(data!=null){
-    		    	numVisits = parseInt(data) + 1;
-    		    } else {
+                   
+                    if (!isNaN(parseFloat(data)) && isFinite(data)){
+                        numVisits = parseInt(data) + 1;
+                    }
+                }else {
+                    
+                    // todo: skrij cel div za stevec
+                     $(".page-counter").css( "visibility", "hidden");
     		    	numVisits = 1015;
     		    }
                 $scope.counter = numVisits;

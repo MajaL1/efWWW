@@ -469,6 +469,7 @@ a {
     	margin-left: auto;
     	display: inline-block;
     	padding-left: 15px;
+	background-color: black;
 	}
 
 	.banner-text {

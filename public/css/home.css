@@ -48,6 +48,11 @@ a:active {
 	background-color: darkred;
 }
 
+img.download:hover {
+    background-color: #fff7b2;
+    border-radius: 70%;
+}
+
 .sejkspir-div{
 	color: black;
 	opacity: 1;

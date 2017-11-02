@@ -186,7 +186,14 @@ footer.ng-scope {
 	z-index: 999999;
 	min-height: 70px;
 	margin-top: 100px;
-	position: relative;
+	position: inherit;
+}
+
+
+
+
+
+
 }
 
 .page-counter > p{

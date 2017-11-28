@@ -189,13 +189,6 @@ footer.ng-scope {
 	/*position: inherit;*/
 }
 
-
-
-
-
-
-}
-
 .page-counter > p{
 	margin-bottom: 0px;
 	font-family: 'TickingTimebombBB';
@@ -203,7 +196,6 @@ footer.ng-scope {
 	border: 0.09px solid darkcyan;
     display: block;
     text-align: center;
-    box-sizing: border-box;
     color: darkcyan;
 }
 
@@ -433,9 +425,16 @@ a {
 @media screen and (min-width: 280px) and (max-width: 650px){
    .main-body-div {
 		font-family: Raleway;
-		margin-left: 20px;
+		/*margin-left: 20px;*/
 	    margin-top: 5px;
 	    padding-left: 0px;
+	    margin-left: 0px;
+	}
+
+	.sejkspir-div {
+		width: 80%;
+		padding-left: 15px;
+
 	}
 
 	.svg-icons.pull-right {

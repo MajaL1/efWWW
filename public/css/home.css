@@ -100,7 +100,13 @@ footer.ng-scope {
 
 .sejkspir-img {
 	width: 350px;
-	height: 220px;
+	height: 250px;
+	margin-bottom: 30px;
+}
+
+.sejkspir-img.elvis-3 {
+	width: 350px;
+	height: 350px;
 	margin-bottom: 30px;
 }
 

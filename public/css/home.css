@@ -343,10 +343,6 @@ iframe#video {
 	margin-bottom:60px;
 }
 
-audio{
-	
-	/*width: 500px; */
-}
 
 p > a {
 		color: black;
@@ -387,7 +383,8 @@ ul {
 
 .about-description.member-name{
 	font-weight: bold;
-    color: darkblue;
+    color: saddlebrown;
+    font-size: 18px;
 }
 
 .p-link {
@@ -421,9 +418,9 @@ ul {
     color: black;
 }
 
-a:visited { 
+/*a:visited { 
     color: grey;
-}
+}*/
 
 a {
 	color: white;
@@ -440,8 +437,13 @@ a {
 		font-family: Raleway;
 		/*margin-left: 20px;*/
 	    margin-top: 5px;
-	    padding-left: 0px;
 	    margin-left: 0px;
+	    padding-left: 5px;
+    	padding-right: 5px;
+	}
+
+	a.home-link-panel.music {
+    	margin-bottom: 10px;
 	}
 
 	.sejkspir-div {
@@ -465,7 +467,7 @@ a {
     	background-color: black;
 	}
 	audio {
-		width: 95%;
+		width: 85%;
 	}
 
 	h3 {
@@ -517,6 +519,11 @@ a {
 	.sejkspir-link > img {
     	width: 105px;
     	height: 55px;
+    	margin-top: 0px;
+	}
+
+	.sejkspir-link > img:active {
+    	background-color: green;
 	}
 
 	a.home-link-panel.sejkspir-link {

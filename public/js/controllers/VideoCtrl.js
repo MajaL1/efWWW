@@ -20,7 +20,7 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
         
         /***************************************  videos za Skarabeji  ***************************************/
         $scope.playlistVideos = [];
-        $scope.videoSources = [];
+        $scope.videoSourcesSkarabeji = [];
 
         console.log('Start VideoCtrl');
 
@@ -38,13 +38,18 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
                         "title" : title,
                         "url" : url
                     };
-                    $scope.videoSources.push(videoItem);
+                    $scope.videoSourcesSkarabeji.push(videoItem);
             }
         }
 
         function onError(error){
                   console.log('failure loading playlist', error);
         }
+
+
+
+        /*****  for test purposes only, take into account that this is VERY BAD CODE  *****/
+
         
 }]);
 

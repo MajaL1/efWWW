@@ -2,12 +2,17 @@
     
     <div class="video-div">
 
-    	<div class="video-item" ng-repeat="video in videoSources" ng-model="videoSources">
- 
-		<p class="video-item-title">{{video.title}}</p>
-
-		<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
-
+    	<div class="video-item" ng-repeat="video in videoSourcesSkarabeji">
+			<p class="video-item-title">{{video.title}}</p>
+			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
     	</div> 
+
+    	<div class="video-item" ng-repeat="video in videoSourcesSejkspir">
+			<p class="video-item-title">{{video.title}}</p>
+			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
+    	</div> 
+
+
+
 	</div>
 </div>

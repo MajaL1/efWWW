@@ -13,7 +13,7 @@ body{
 @font-face {
     font-family: 'Blok'; 
     /*src: url("/fonts/Mayhem-Regular.otf") format("opentype"); */
-    src: url("/fonts/Blok.eot"),
+    src: url("/fonts/Verdana.eot"),
     url("/fonts/Blok.woff2") format("woff2"),
     url("/fonts/BlokHeavy.woff") format("woff"),
     url("/fonts/Blok.ttf") format("truetype")

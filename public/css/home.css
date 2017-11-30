@@ -98,16 +98,18 @@ footer.ng-scope {
 }
 
 .sejkspir-img {
-	width: 350px;
-	height: 250px;
+	width: 700px;
+	height: 500px;
 	margin-bottom: 30px;
 	opacity: 1;
+	border: 4px grey solid;
 }
 
 .sejkspir-img.elvis-3 {
-	width: 350px;
-	height: 350px;
+	width: 500px;
+	height: 500px;
 	margin-bottom: 30px;
+	border: 4px grey solid;
 }
 
 .navbar-nav > li {
@@ -443,6 +445,21 @@ a {
 
 	a.home-link-panel.music {
     	margin-bottom: 10px;
+	}
+
+	.sejkspir-img {
+		width: 350px;
+		height: 250px;
+		margin-bottom: 30px;
+		opacity: 1;
+		border: 8px grey solid;
+	}
+
+	.sejkspir-img.elvis-3 {
+		width: 200px;
+		height: 200px;
+		margin-bottom: 30px;
+		border: 8px grey solid;
 	}
 
 	.sejkspir-div {

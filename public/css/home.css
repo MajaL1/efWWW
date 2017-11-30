@@ -16,9 +16,7 @@ body{
     src: url("/fonts/Verdana.eot"),
     url("/fonts/Blok.woff2") format("woff2"),
     url("/fonts/BlokHeavy.woff") format("woff"),
-    url("/fonts/Blok.ttf") format("truetype")
-
-    ;
+    url("/fonts/Blok.ttf") format("truetype");
     font-style: normal;
 }
 @font-face {
@@ -33,6 +31,7 @@ body{
 a.home-link-panel {
     font-size: 35px;
     font-family: 'Blok';
+    padding-left: 0px !important;
 }
 
 /*ToDo: tukaj bo prislo drugacno ozadje, background in link */;
@@ -239,7 +238,7 @@ footer.ng-scope {
 }
 
 .main-body-div {
-	font-family: Raleway;
+	font-family: Verdana;
 	color: white;
     margin-top: 80px;
     padding-bottom: 120px;

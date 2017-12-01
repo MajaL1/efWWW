@@ -14,8 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing       applica
 
 /****************** read number of views ************************/
 app.get('/api/visit-counter', (req, res) => {
-	//var path = process.cwd();
-	//console.log('1111111 ', path);
 	let counter  =  0;
 	fs.readFile('public/counters.txt', 'utf8', function (err,data) {
 	  	if (err) {
@@ -47,7 +45,6 @@ app.get('/api/get-audio-data/:fileName', (req, res) => {
 	  	if (err) {
 	    	return console.log('Error reading data from file: ', err);
 	  	}
-  		//console.log('data from', data);
   		res.send(data);
 	});
 });
@@ -58,14 +55,10 @@ app.post('/api/update-download-counter', function (req, res) {
 	var fileToWrite=req.body.fileToWrite;
 	var dataToWrite = JSON.stringify(req.body.dataToWrite);
 
-
-	console.log('DATA TO WRITE: ', dataToWrite);
-
   	fs.writeFile("public/"+fileToWrite, dataToWrite, function(err) {
 	    if(err) {
 	       	return console.log("Error writing to file", err);
 	    }
-	    console.log('Count write: ', req.body.fileToWrite, req.body.dataToWrite);
 	    res.status(200).send(req.body.count);
 	  }); 
 });

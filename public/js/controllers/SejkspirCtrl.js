@@ -5,5 +5,4 @@
 	var sejkspirDiv = angular.element( document.querySelector( '.sejkspir-div' ) );
 	sejkspirDiv.css('margin-top', '0px');
 
-    console.log('seXpir band controller');
 });

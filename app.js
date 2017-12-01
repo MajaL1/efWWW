@@ -27,22 +27,8 @@ app.get('/api/visit-counter', (req, res) => {
 	});
 });
 
-/************** read number of downloads  ***********************/
-app.get('/api/get-audio-data/:fileName', (req, res) => {
-	//var path = process.cwd();
-	console.log('1111111 ', req.params.fileName);
-	console.log('2222222 ', req.params);
-	let counter  =  0;
-	fs.readFile('public/'+req.params.fileName, 'utf8', function (err,data) {
-	  	if (err) {
-	    	return console.log('Error reading data from file: ', err);
-	  	}
 
-  		console.log('data from', data);
-  		res.send(data);
-	});
-});
-
+/****************** write number of views ********************/
 app.post('/api/update-counter', function (req, res) {
   fs.writeFile("public/counters.txt", req.body.count, function(err) {
     if(err) {
@@ -53,9 +39,27 @@ app.post('/api/update-counter', function (req, res) {
   }); 
 });
 
+/************** read number of downloads  ***********************/
+app.get('/api/get-audio-data/:fileName', (req, res) => {
+	//var path = process.cwd();
+	let counter  =  0;
+	fs.readFile('public/'+req.params.fileName, 'utf8', function (err,data) {
+	  	if (err) {
+	    	return console.log('Error reading data from file: ', err);
+	  	}
+  		//console.log('data from', data);
+  		res.send(data);
+	});
+});
+
+
+/************* write number of downloads  **************/
 app.post('/api/update-download-counter', function (req, res) {
 	var fileToWrite=req.body.fileToWrite;
-	var dataToWrite = req.body.dataToWrite;
+	var dataToWrite = JSON.stringify(req.body.dataToWrite);
+
+
+	console.log('DATA TO WRITE: ', dataToWrite);
 
   	fs.writeFile("public/"+fileToWrite, dataToWrite, function(err) {
 	    if(err) {

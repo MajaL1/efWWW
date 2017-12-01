@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
-@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Poiret+One|Quicksand|Raleway');
 
 body{
 	/*font-family: 'Raleway', Verdana; */
@@ -12,7 +10,6 @@ body{
 
 @font-face {
     font-family: 'Blok'; 
-    /*src: url("/fonts/Mayhem-Regular.otf") format("opentype"); */
     src: url("/fonts/Verdana.eot"),
     url("/fonts/Blok.woff2") format("woff2"),
     url("/fonts/BlokHeavy.woff") format("woff"),
@@ -31,7 +28,6 @@ body{
 a.home-link-panel {
     font-size: 35px;
     font-family: 'Blok';
-    padding-left: 0px !important;
 }
 
 /*ToDo: tukaj bo prislo drugacno ozadje, background in link */;
@@ -53,7 +49,7 @@ img.download:hover {
 }
 
 .sejkspir-div{
-	color: black;
+	color: #696969c4;
 	opacity: 1;
 	padding-top: 120px;
 	margin-top: 120px;
@@ -93,7 +89,6 @@ footer.ng-scope {
 }
 
 .banner-text {
-	/* height: 400px; */
 	background-color: black;
 }
 
@@ -146,12 +141,12 @@ footer.ng-scope {
 	color: black;
 }
 .sejkspir-div {
-    color: black;
+    color: #696969c4;
     text-align: justify;
     margin-top: 40px;
 }
 
-.about-me, .sejkspir-div, .concerts-div, .audio-div {
+.concerts-div, .audio-div {
 	display: block;
 	width: 60%;
 	height: 600px;
@@ -241,7 +236,6 @@ footer.ng-scope {
 
 .main-body-div {
 	font-family: Verdana;
-	color: white;
     margin-top: 80px;
     padding-bottom: 120px;
     padding-left: 150px;
@@ -310,7 +304,7 @@ footer.ng-scope {
 }
 
 .about-me {
-	color: black;
+	color: #696969c4;
 	text-align: justify;
 	margin-top: 140px;
 }
@@ -384,7 +378,7 @@ ul {
 
 .about-description.member-name{
 	font-weight: bold;
-    color: saddlebrown;
+    color: darkgoldenrod;
     font-size: 18px;
 }
 
@@ -419,19 +413,9 @@ ul {
     color: black;
 }
 
-/*a:visited { 
-    color: grey;
-}*/
-
 a {
 	color: white;
 }
-
-/*.picture-elvis > img{
-		height: 500px;
-		width:100%;
-
-}*/
 
 @media screen and (min-width: 280px) and (max-width: 650px){
    .main-body-div {

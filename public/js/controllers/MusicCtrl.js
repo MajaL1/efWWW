@@ -1,8 +1,7 @@
 ﻿myApp.factory('DownloadFileFactory', function($http) { 
 
     var factory = {};
-    console.log('blablabalaaaa:   ');
-
+    
     factory.download = function(url, name, id) {
 
         $http({
@@ -52,8 +51,7 @@
     }    
 
     factory.setAudioData = function(fileToWrite, dataToWrite) {
-
-
+       
         $http({
                     method: 'POST',
                     url: '/api/update-download-counter',
@@ -71,7 +69,7 @@
 myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $stateParams, $http) {
     console.log('Music controller');
 
-    $scope.audioSources = [];
+    $scope.audioSkarabejiList = [];
     $scope.audioSingleList = [];
 
 
@@ -79,13 +77,13 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
         var audioDataList;
 
-        DownloadFileFactory.getAudioData("/api/get-audio-data/","music0.txt")
+        DownloadFileFactory.getAudioData("/api/get-audio-data/","skarabeji.json")
             .success(function (data, status, headers) {
                 //console.log('GET AUDIO DATA::: ', data);
 
                 audioDataList = data;
                 for (i=0; i<audioDataList.length; i++){
-                    $scope.audioSources.push(audioDataList[i]);
+                    $scope.audioSkarabejiList.push(audioDataList[i]);
                 }
            
             })
@@ -95,7 +93,7 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
 		
 
-        DownloadFileFactory.getAudioData("/api/get-audio-data/","music1.txt")
+        DownloadFileFactory.getAudioData("/api/get-audio-data/","singli.json")
             .success(function (data, status, headers) {
 
                 audioSingleSourcesList = data;
@@ -110,8 +108,21 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
     $scope.loadAudios();
 
-    $scope.downloadAudioFile = function(url, name, id, downloadCount){
+    $scope.downloadAudioFile = function(url, name, id, downloadCount, fileToWrite){
+
+        if(fileToWrite == 'singli'){
+            console.log('beremo iz $scope.audioSingleList');
+            $scope.audioSources = $scope.audioSingleList;
+        }
+        else {
+            console.log('beremo iz $scope.audioSkarabejiList');
+            $scope.audioSources = $scope.audioSkarabejiList;
+        }
+
+        fileToWrite = fileToWrite+'.json';
         DownloadFileFactory.download(url, name);
+
+
 
         for (var i = 0; i < $scope.audioSources.length; i++){
             console.log("iii: ", $scope.audioSources[i]);
@@ -129,8 +140,6 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
             
                 console.log('...all...', $scope.audioSources[i]);
         }
-
-        var fileToWrite = "music000.txt";
         
        DownloadFileFactory.setAudioData(fileToWrite, $scope.audioSources);
     }

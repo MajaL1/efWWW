@@ -149,7 +149,7 @@ footer.ng-scope {
 	width: 60%;
 	height: 600px;
 	background-color: transparent;
-	opacity: 0.65;
+	opacity: 1;
 	height: 550px;
 	margin-top: 50px;
 }
@@ -159,7 +159,7 @@ footer.ng-scope {
 	width: 60%;
 	height: 600px;
 	background-color: transparent;
-	opacity: 0.65;
+	opacity: 1;
 	height: 550px;
 	margin-top: 50px;
 }
@@ -237,6 +237,7 @@ footer.ng-scope {
     /*margin-top: 80px; */
     padding-bottom: 120px;
     padding-left: 150px;
+    width: 70%;
 }
 
 .top-div-subtitle {
@@ -339,6 +340,7 @@ iframe#video {
 .video-item-title {
 	font-weight: bold;
 	padding-top: 30px;
+	color: #696969c4;
 }
 
 
@@ -346,10 +348,16 @@ p > a {
 		color: black;
 }
 
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 90%;
+}
+
+
 .audio-div > .container.audio-section {
 	background-color: ghostwhite;
-	width: 80%;
-	padding-right: 30px;
+	width: 100%;
 	padding-top: 30px;
 	margin-left: 0px;
 }
@@ -397,6 +405,10 @@ ul {
 	 left: auto;
 }
 
+.audio-div {
+	width: 80%;
+}
+
 .video-div, .audio-div {
 	color: #696969c4;
 	font-family: Verdana;
@@ -423,9 +435,15 @@ a {
 		font-family: Verdana;
 		/*margin-left: 20px;*/
 	    margin-top: 5px;
-	    margin-left: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
 	    padding-left: 5px;
-    	padding-right: 5px;
+	    width:90%;
+    	
+	}
+
+	.video-item {
+     margin-bottom: 10px;
 	}
 
 	a.home-link-panel.music {

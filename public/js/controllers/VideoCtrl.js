@@ -3,15 +3,23 @@ var key = "AIzaSyD7M2bnCmImthSaTjJEwOqo8PqsSkTK4GQ";
 
 var playlistId = "PL_nl4EVD9m76KvUEJPNefNGunGimFA0yH";
 
+var channelId = "UCLk_WVpcnHJMVAR2Fzg9FkA";
+
 const YOUTUBE_URL = 'https://www.youtube.com/embed/';
 
 
 myApp.factory('youtubeService', function ($http) {
     return {
+
+        /***** returns playlist items for album SKARABEJI,... *****/
         getPlaylistVideos: function(playListId) {
-        return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet, contentDetails', maxResults: 20, playlistId: playlistId, key: key}});       
-    }
-}                
+            return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet, contentDetails', maxResults: 20, playlistId: playlistId, key: key}});       
+        },
+        /****** returns playlists: SINGLI, SKARABEJI and SEJKSPIR BAND *********/
+        getPlaylists: function(channelId) {
+            return  $http.get('https://www.googleapis.com/youtube/v3/playlists', {params :{ part: 'snippet, contentDetails', maxResults: 20, channelId: channelId, key: key}});       
+        }
+    }               
 });
 
 
@@ -19,7 +27,7 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
         
         /***************************************  videos za Skarabeji  ***************************************/
-        $scope.playlistVideos = [];
+       /* $scope.playlistVideos = [];
         $scope.videoSourcesSkarabeji = [];
 
         console.log('Start VideoCtrl');
@@ -44,11 +52,44 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
         function onError(error){
                   console.log('failure loading playlist', error);
+        } */
+
+
+        /****************************** end videos za skarabeji **********************************/
+
+
+
+        /*****  start get playlists  *****/
+
+        $scope.playlistVideos = [];
+        $scope.playlistSources = [];
+
+
+        var promise = youtubeService.getPlaylists(channelId);
+
+        promise.then(onSuccess, onError);
+
+        function onSuccess(event){
+            let itemsList = event.data.items;
+
+            console.log('---------------- ITEMS LIST --------------');
+            console.log(itemsList);
+            console.log('-------------------------------------------');
+
+                for(index in itemsList){
+                    let title = itemsList[index].snippet.title;
+                    let url = YOUTUBE_URL+itemsList[index].snippet.resourceId.videoId;
+                    let videoItem = {
+                        "title" : title,
+                        "url" : url
+                    };
+                    $scope.playlistSources.push(videoItem);
+            }
         }
 
-
-
-        /*****  for test purposes only, take into account that this is VERY BAD CODE  *****/
+        function onError(error){
+                  console.log('failure loading playlist', error);
+        } 
 
         
 }]);

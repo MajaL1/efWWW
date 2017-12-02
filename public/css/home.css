@@ -1,7 +1,5 @@
 
 body{
-	/*font-family: 'Raleway', Verdana; */
-	font-family: 'Didact Gothic';
 	margin: 0px auto;
 	color: #7c7c7c;
 	padding-bottom: 30px;
@@ -236,7 +234,7 @@ footer.ng-scope {
 
 .main-body-div {
 	font-family: Verdana;
-    margin-top: 80px;
+    /*margin-top: 80px; */
     padding-bottom: 120px;
     padding-left: 150px;
 }
@@ -311,7 +309,7 @@ footer.ng-scope {
 
 .about-me > .about-subtitle , .sejkspir-subtitle{
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 10px;
 
 }
@@ -377,7 +375,7 @@ ul {
 
 
 .about-description.member-name{
-	font-weight: bold;
+	font-weight: 300;
     color: darkgoldenrod;
     font-size: 18px;
 }
@@ -403,7 +401,6 @@ ul {
 }
 
 .video-item > p, .audio-item > p{
-	font-family: 'Didact Gothic';
     font-size: 16px;
     font-weight: 'bold';
 }
@@ -586,7 +583,7 @@ a {
 	}
 	.logo-elvis > img {
 
-        height: 120px;
+        height: 130px;
         width: 160px;
         background-color: white;
         float: left;

@@ -336,6 +336,11 @@ iframe#video {
 	margin-bottom:60px;
 }
 
+.video-item-title {
+	font-weight: bold;
+	padding-top: 30px;
+}
+
 
 p > a {
 		color: black;
@@ -393,10 +398,9 @@ ul {
 }
 
 .video-div, .audio-div {
-	color: black;
+	color: #696969c4;
 	font-family: Verdana;
 	background-color: transparent;
-	opacity: 0.65;
 	margin-top: 10%;
 }
 

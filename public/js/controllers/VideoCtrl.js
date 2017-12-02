@@ -1,8 +1,6 @@
 
 var key = "AIzaSyD7M2bnCmImthSaTjJEwOqo8PqsSkTK4GQ";
 
-var playlistId = "PL_nl4EVD9m76KvUEJPNefNGunGimFA0yH";
-
 var channelId = "UCLk_WVpcnHJMVAR2Fzg9FkA";
 
 const YOUTUBE_URL = 'https://www.youtube.com/embed/';
@@ -10,8 +8,7 @@ const YOUTUBE_URL = 'https://www.youtube.com/embed/';
 
 myApp.factory('youtubeService', function ($http) {
     return {
-
-        /***** returns playlist items for album SKARABEJI,... *****/
+        /***** returns playlist items for album SKARABEJI,...  currently unused *****/
         getPlaylistVideos: function(playListId) {
             return  $http.get('https://www.googleapis.com/youtube/v3/playlistItems', {params :{ part: 'snippet, contentDetails', maxResults: 20, playlistId: playlistId, key: key}});       
         },
@@ -59,7 +56,7 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
 
 
-        /*****  start get playlists  *****/
+        /*****************************************  start get playlists  ********************************/
 
         $scope.playlistVideos = [];
         $scope.playlistSources = [];
@@ -71,27 +68,26 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
 
         function onSuccess(event){
             let itemsList = event.data.items;
-
-            console.log('---------------- ITEMS LIST --------------');
-            console.log(itemsList);
-            console.log('-------------------------------------------');
-
                 for(index in itemsList){
-                    let title = itemsList[index].snippet.title;
-                    let url = YOUTUBE_URL+itemsList[index].snippet.resourceId.videoId;
-                    let videoItem = {
-                        "title" : title,
-                        "url" : url
-                    };
-                    $scope.playlistSources.push(videoItem);
+
+                    /****  do not show favorites channel****/
+
+                    var title = itemsList[index].snippet.title;
+                    if(title !== 'Favorites'){
+                        console.log('TITLE is not favorites :::: ', title);
+                        var playListId = (itemsList[index]).id;
+                        let url = YOUTUBE_URL+"watch?list="+playListId;
+                        let videoItem = {
+                            "title" : title,
+                            "url" : url
+                        };
+                        $scope.playlistSources.push(videoItem);
+                    }
             }
         }
-
         function onError(error){
                   console.log('failure loading playlist', error);
-        } 
-
-        
+        }
 }]);
 
 

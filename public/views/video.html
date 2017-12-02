@@ -2,7 +2,7 @@
     
     <div class="video-div">
 
-    	<div class="video-item" ng-repeat="video in videoSourcesSkarabeji">
+    	<!-- <div class="video-item" ng-repeat="video in videoSourcesSkarabeji">
 			<p class="video-item-title">{{video.title}}</p>
 			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
     	</div> 
@@ -10,9 +10,12 @@
     	<div class="video-item" ng-repeat="video in videoSourcesSejkspir">
 			<p class="video-item-title">{{video.title}}</p>
 			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
-    	</div> 
+    	</div>  -->
 
-
+    	<div class="video-item" ng-repeat="video in playlistSources">
+			<h4 class="video-item-title">{{video.title}}</h4>
+			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
+    	</div>
 
 	</div>
 </div>

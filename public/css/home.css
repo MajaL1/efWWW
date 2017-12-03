@@ -96,7 +96,7 @@ footer.ng-scope {
 
 .sejkspir-img {
 	width: 700px;
-	height: 500px;
+	height: auto;
 	margin-bottom: 30px;
 	opacity: 1;
 	border: 4px grey solid;
@@ -104,7 +104,7 @@ footer.ng-scope {
 
 .sejkspir-img.elvis-3 {
 	width: 500px;
-	height: 500px;
+	height: auto;
 	margin-bottom: 30px;
 	border: 4px grey solid;
 }
@@ -466,8 +466,8 @@ a {
 	}
 
 	.sejkspir-img {
-		width: 350px;
-		height: 200px;
+		width: 100%;
+		height: auto;
 		margin-bottom: 30px;
 		opacity: 1;
 		border: none;
@@ -475,7 +475,7 @@ a {
 
 	.sejkspir-img.elvis-3 {
 		width: 200px;
-		height: 200px;
+		height: auto;
 		margin-bottom: 30px;
 		border: 8px grey solid;
 	}

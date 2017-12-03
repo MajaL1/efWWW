@@ -467,10 +467,10 @@ a {
 
 	.sejkspir-img {
 		width: 350px;
-		height: 250px;
+		height: 200px;
 		margin-bottom: 30px;
 		opacity: 1;
-		border: 8px grey solid;
+		border: none;
 	}
 
 	.sejkspir-img.elvis-3 {

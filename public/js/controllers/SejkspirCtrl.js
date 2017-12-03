@@ -5,6 +5,6 @@
 
 	var sejkspirDiv = angular.element( document.querySelector( '.sejkspir-div' ) );
 	sejkspirDiv.css('margin-top', '0px');
-	sejkspirDiv.css('width', '70%');
+	sejkspirDiv.css('width', '100%');
 
 });

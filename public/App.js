@@ -30,11 +30,6 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider)
             templateUrl: "/views/video.html",
             controller: "VideoCtrl"
         })
-       .state("concerts", {
-            url: "/concerts",
-            templateUrl: "/views/concerts.html",
-            controller: "ConcertsCtrl"
-        })
        .state("gallery", {
            url: "/gallery",
            templateUrl: "/views/gallery.html",

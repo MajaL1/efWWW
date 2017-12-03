@@ -28,6 +28,10 @@ a.home-link-panel {
     font-family: 'Blok';
 }
 
+.sejkspir-subdiv {
+		width: 70%;
+}
+
 /*ToDo: tukaj bo prislo drugacno ozadje, background in link */;
 .row.title-toolbar {
 	background-color: black;
@@ -439,11 +443,22 @@ a {
 	    margin-right: auto;
 	    padding-left: 5px;
 	    width:90%;
-    	
+	}
+
+	.sejkspir-subdiv {
+		width: 95%;
 	}
 
 	.video-item {
-     margin-bottom: 10px;
+     margin-bottom: 5px;
+	}
+
+	.video-item-title {
+		padding-top: 20px;
+	}
+
+	.video-div, .audio-div {
+		margin-top: 0px;
 	}
 
 	a.home-link-panel.music {
@@ -486,12 +501,12 @@ a {
     	background-color: black;
 	}
 	audio {
-		width: 85%;
+		width: 80%;
 	}
 
 	h3 {
 		font-size: 15px;
-		margin-left: 10px;
+		font-weight: bold;
 	}
 
 	.audio-item {

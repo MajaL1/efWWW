@@ -12,10 +12,20 @@
 			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
     	</div>  -->
 
-    	<div class="video-item" ng-repeat="video in playlistSources">
+    	<div class="video-item" ng-repeat="video in playlistSources track by $index">
 			<h4 class="video-item-title">{{video.title}}</h4>
 			<iframe id="video" src="{{video.url}}" frameborder="0" allowfullscreen 'unsafe-inline' 'unsafe-eval'></iframe>
-    	</div>
 
+			<div ng-show="$index === 0" class="album-description">Skladba <strong>MESTO JEKLA IN NARCIS</strong>, ki je posvečena mestu Jesenice, skuša odvrniti negativno in prinesti pozitivno energijo mestu in je priprava na <strong>RDEČI ALBUM</strong>
+			</div>
+
+			<div ng-show="$index === 1" class="album-description"><strong>Skupina šeXpir band</strong>
+			</div>
+
+			<div ng-show="$index === 2" class="album-description"><strong>Aktualna povezava za zbrana dela skupine Skarabeji s fotografijami</strong>
+			</div>
+
+
+    	</div>
 	</div>
 </div>

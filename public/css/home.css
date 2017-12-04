@@ -612,7 +612,7 @@ a {
 	}
 }
 
-@media screen and (min-width: 651px) and (max-width: 1300px){
+@media screen and (min-width: 650px) and (max-width: 1300px){
 	.logo-elvis {
 	    float: initial;
 	    z-index: 99999;
@@ -620,8 +620,10 @@ a {
 	}
 	.logo-elvis > img {
 
-        height: 130px;
-        width: 160px;
+       /* height: 130px;
+        width: 160px; */
+        height: auto;
+        width: 220px;
         background-color: white;
         float: left;
         z-index: 99999;
@@ -633,6 +635,15 @@ a {
 	.picture-elvis > img  {
 		height: 320px;
 		padding-top: 40px; 
+	}
+
+	.page-counter {
+		margin-top: 10px;
+	}
+
+	.audio-div, .video-div{
+		margin-top: 150px;
+		margin-left: -80px;
 	}	
 
 }

@@ -5,20 +5,20 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider)
     $urlRouterProvider.when("", "/about_me");
 
     $stateProvider
-        .state("home", {
-            url: "/home",
-            templateUrl: "/views/home.html",
-            controller: "HomeCtrl"
-        })
        .state("about_me", {
             url: "/about_me",
             templateUrl: "/views/about_me.html",
             controller: "AboutMeCtrl"
         })
-       .state("aktualno", {
-            url: "/aktualno",
-            templateUrl: "/views/aktualno.html",
-            controller: "AktualnoCtrl"
+       .state("concerts", {
+            url: "/concerts",
+            templateUrl: "/views/concerts.html",
+            controller: "ConcertsCtrl"
+        })
+       .state("other", {
+            url: "/other",
+            templateUrl: "/views/other.html",
+            controller: "OtherCtrl"
         })
        .state("music", {
             url: "/music",
@@ -30,11 +30,6 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider)
             templateUrl: "/views/video.html",
             controller: "VideoCtrl"
         })
-       .state("gallery", {
-           url: "/gallery",
-           templateUrl: "/views/gallery.html",
-           controller: "GalleryCtrl"
-       })
        .state("sejkspir", {
            url: "/sejkspir",
            templateUrl: "/views/sejkspir.html",

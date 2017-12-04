@@ -34,7 +34,7 @@ a.home-link-panel {
 
 .album-description {
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
     color: gray;
 }
@@ -350,13 +350,13 @@ iframe#video {
 }
 
 .video-item {
-	margin-bottom:60px;
+	margin-bottom:30px;
 	width: 600px;
 }
 
 .video-item-title {
 	font-weight: bold;
-	padding-top: 50px;
+	padding-top: 20px;
 	color: #696969c4;
 }
 

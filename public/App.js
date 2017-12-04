@@ -30,11 +30,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider)
             templateUrl: "/views/video.html",
             controller: "VideoCtrl"
         })
-       .state("sejkspir", {
+       /*.state("sejkspir", {
            url: "/sejkspir",
            templateUrl: "/views/sejkspir.html",
            controller: "SejkspirCtrl"
-       })
+       }) */
        ;
 
        $sceDelegateProvider.resourceUrlWhitelist(['**']);

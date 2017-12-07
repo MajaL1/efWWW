@@ -110,8 +110,8 @@ footer.ng-scope {
 	width: 700px;
 	height: auto;
 	margin-bottom: 30px;
-	opacity: 1;
 	border: 4px grey solid;
+	content:url('/assets/img/Elvis_1.jpg');
 }
 
 .sejkspir-img.elvis-3 {
@@ -483,10 +483,9 @@ a {
 		width: 100%;
 		height: auto;
 		margin-bottom: 30px;
-		opacity: 1;
 		border: none;
+		content:url('/assets/img/Elvis_1_small.jpg');
 	}
-
 	.sejkspir-img.elvis-3 {
 		width: 200px;
 		height: auto;

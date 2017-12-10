@@ -329,7 +329,23 @@ footer.ng-scope {
 .about-me {
 	color: #696969c4;
 	text-align: justify;
-	margin-top: 140px;
+	margin-top: 50px;
+}
+
+a.home-link-panel:active, a.home-link-panel:focus {
+    text-decoration: none;
+    color: #337ab7;
+    background-color: white;
+    padding: 10px;
+}
+
+a.home-link-panel:hover{
+	text-decoration: none;
+    color: #337ab7;
+}
+
+a.home-link-panel:visited {
+    text-decoration: none;
 }
 
 .about-me > .about-subtitle , .sejkspir-subtitle{
@@ -693,7 +709,7 @@ a {
 	}
 
 	.audio-div, .video-div{
-		margin-top: 150px;
+		margin-top: 50px;
 		margin-left: -80px;
 	}	
 

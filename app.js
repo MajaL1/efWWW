@@ -33,7 +33,7 @@ app.post('/api/update-counter', function (req, res) {
        return console.log("Error writing to file", err);
     }
     console.log('Count write: ', req.body.count);
-    res.status(200).send(req.body.count);
+    res.send(JSON.stringify(req.body.count));
   }); 
 });
 
@@ -70,7 +70,7 @@ var server = app.listen(process.env.PORT || 3000, () => {
 		var host = server.address().address;
 		var port = server.address().port;
 
-		console.log('Demo app listening at http://%s:%s', host, port);	
+		console.log('......Demo app listening at http://%s:%s', host, port);	
 });
 
 

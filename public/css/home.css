@@ -100,6 +100,8 @@ footer.ng-scope {
 .email-title {
     margin-top: 10px;
     color: white;
+    font-family: fantasy;
+    font-size:18px;
 }
 
 .banner-text {
@@ -111,20 +113,26 @@ footer.ng-scope {
 	height: auto;
 	margin-bottom: 30px;
 	border: 4px grey solid;
-	content:url('/assets/img/Elvis_1.jpg');
+	content:url('/assets/img/Elvis_1-large.png');
 }
 
-.sejkspir-img.elvis-3 {
-	width: 500px;
+.skarabeji-img {
+	width: 700px;
 	height: auto;
-	margin-bottom: 30px;
 	border: 4px grey solid;
+	content:url('/assets/img/skarabeji-naslovnica-large.png');
 }
 
 .navbar-nav > li {
     float: left;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.navigation-bar-main{
+	display: block;
+	background-color: darkred;
+	height: 80px;
 }
 
 .navbar-nav {
@@ -357,7 +365,8 @@ iframe#video {
 .video-item-title {
 	font-weight: bold;
 	padding-top: 20px;
-	color: #696969c4;
+	/*color: #696969c4; */
+	color:dimgray;
 }
 
 
@@ -447,6 +456,15 @@ a {
 	color: white;
 }
 
+.demorow {
+		padding-top:15px;
+		padding-left:25px;
+}
+
+.about-me-link {
+	margin-left:110px;
+}
+
 @media screen and (min-width: 280px) and (max-width: 650px){
    .main-body-div {
 		font-family: Verdana;
@@ -456,6 +474,28 @@ a {
 	    margin-right: auto;
 	    padding-left: 5px;
 	    width:90%;
+	}
+
+.email-title{
+	margin-top: 10px;
+    color: white;
+    font-family: fantasy;
+    font-size:12px;
+}
+
+	.about-me-link {
+		margin-left:0px;
+	}
+
+	.navigation-bar-main{
+		display: block;
+		background-color: darkred;
+		height: 150px;
+	}
+
+	.demorow {
+		padding-top:5px;
+		padding-left:35px;
 	}
 
 	.sejkspir-subdiv {
@@ -484,13 +524,14 @@ a {
 		height: auto;
 		margin-bottom: 30px;
 		border: none;
-		content:url('/assets/img/Elvis_1_small.jpg');
+		content:url('/assets/img/Elvis_1-small.png');
 	}
-	.sejkspir-img.elvis-3 {
-		width: 200px;
+
+	.skarabeji-img {
+		width: 100%;
 		height: auto;
-		margin-bottom: 30px;
-		border: 8px grey solid;
+		border: none;
+		content:url('/assets/img/skarabeji-naslovnica-small.png');
 	}
 
 	.sejkspir-div {
@@ -501,10 +542,6 @@ a {
 
 	}
 
-	.svg-icons.pull-right {
-    	/*float: unset !important; */
-	}
-	
 	.navbar-nav {
     	margin-left: 0px;
     	margin-top: -15px;
@@ -580,6 +617,7 @@ a {
 	a.home-link-panel {
 	    font-size: 30px;
 	    font-family: 'Blok', Verdana;
+	    text-decoration: none;
 	}
 	a > small.pull-right {
 		display: none;

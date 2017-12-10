@@ -332,6 +332,10 @@ footer.ng-scope {
 	margin-top: 50px;
 }
 
+.inner-navbar-div {
+    max-width: 1200px;
+}
+
 a.home-link-panel:active, a.home-link-panel:focus {
     text-decoration: none;
     color: #337ab7;
@@ -455,7 +459,7 @@ ul {
 	color: #696969c4;
 	font-family: Verdana;
 	background-color: transparent;
-	margin-top: 10%;
+	margin-top: 50px;
 }
 
 .video-item > p, .audio-item > p{

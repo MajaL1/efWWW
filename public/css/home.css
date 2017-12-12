@@ -496,12 +496,12 @@ a {
 	    width:90%;
 	}
 
-.email-title{
-	margin-top: 10px;
-    color: white;
-    font-family: fantasy;
-    font-size:12px;
-}
+	.email-title{
+		margin-top: 10px;
+    	color: white;
+    	font-family: fantasy;
+    	font-size:12px;
+	}
 
 	.about-me-link {
 		margin-left:0px;
@@ -683,7 +683,7 @@ a {
 	}
 }
 
-@media screen and (min-width: 650px) and (max-width: 1300px){
+@media screen and (min-width: 650px) and (max-width: 1000px){
 	.logo-elvis {
 	    float: initial;
 	    z-index: 99999;
@@ -700,7 +700,23 @@ a {
         z-index: 99999;
         position: relative;
         /* top: 176px; */
+	}
 
+	.demorow {
+    	padding-top: 15px;
+    	margin-left: 10px;
+    	margin-right: 30px;
+    	width: 110px;
+	}
+
+	.about-me-link {
+		margin-left: 0px !important;
+	}
+
+	.navigation-bar-main{
+	    display: block;
+    	background-color: darkred;
+    	/*height: 150px; */
 	}
 
 	.picture-elvis > img  {

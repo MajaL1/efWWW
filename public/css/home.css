@@ -113,14 +113,14 @@ footer.ng-scope {
 	height: auto;
 	margin-bottom: 30px;
 	border: 4px grey solid;
-	content:url('/assets/img/Elvis_1-large.png');
+	content:url('/assets/img/Elvis_1-large.jpg');
 }
 
 .skarabeji-img {
 	width: 700px;
 	height: auto;
 	border: 4px grey solid;
-	content:url('/assets/img/skarabeji-naslovnica-large.png');
+	content:url('/assets/img/skarabeji-naslovnica-large.jpg');
 }
 
 .navbar-nav > li {
@@ -544,14 +544,14 @@ a {
 		height: auto;
 		margin-bottom: 30px;
 		border: none;
-		content:url('/assets/img/Elvis_1-small.png');
+		content:url('/assets/img/Elvis_1-small.jpg');
 	}
 
 	.skarabeji-img {
 		width: 100%;
 		height: auto;
 		border: none;
-		content:url('/assets/img/skarabeji-naslovnica-small.png');
+		content:url('/assets/img/skarabeji-naslovnica-small.jpg');
 	}
 
 	.sejkspir-div {

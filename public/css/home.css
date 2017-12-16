@@ -557,7 +557,7 @@ a {
 
 	.skarabeji-img {
 		width: 100%;
-		height: 100px;
+		height: 240px;
 		background:url('/assets/img/skarabeji-naslovnica-small.jpg');
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -692,7 +692,7 @@ a {
 	}
 }
 
-@media screen and (min-width: 650px) and (max-width: 1000px){
+@media screen and (min-width: 650px) and (max-width: 1024px){
 	.logo-elvis {
 	    float: initial;
 	    z-index: 99999;
@@ -718,6 +718,10 @@ a {
     	width: 110px;
 	}
 
+	.about-me {
+		width: 85%;
+	}
+
 	.about-me-link {
 		margin-left: 0px !important;
 	}
@@ -739,8 +743,13 @@ a {
 
 	.audio-div, .video-div{
 		margin-top: 50px;
-		margin-left: -80px;
+		margin-left: 30px;
 	}	
+
+	.main-body-div {
+		width: 100%;
+		margin-left: -50px;
+	}
 
 }
   

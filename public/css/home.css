@@ -557,7 +557,7 @@ a {
 
 	.skarabeji-img {
 		width: 100%;
-		height: 240px;
+		height: 100px;
 		background:url('/assets/img/skarabeji-naslovnica-small.jpg');
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -749,6 +749,23 @@ a {
 	.main-body-div {
 		width: 100%;
 		margin-left: -50px;
+	}
+
+	.sejkspir-img {
+		width: 100%;
+		height: 550px;
+		margin-bottom: 30px;
+		background:url('/assets/img/Elvis_1-large.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.skarabeji-img {
+		width: 100%;
+		height: 210px;
+		background:url('/assets/img/skarabeji-naslovnica-large.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 }

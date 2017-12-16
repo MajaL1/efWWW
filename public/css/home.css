@@ -100,7 +100,6 @@ footer.ng-scope {
 .email-title {
     margin-top: 10px;
     color: white;
-    font-family: fantasy;
     font-size:18px;
 }
 
@@ -109,18 +108,20 @@ footer.ng-scope {
 }
 
 .sejkspir-img {
-	width: 700px;
-	height: auto;
+	width: 100%;
+	height: 700px;
 	margin-bottom: 30px;
-	border: 4px grey solid;
-	content:url('/assets/img/Elvis_1-large.jpg');
+	background:url('/assets/img/Elvis_1-large.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .skarabeji-img {
-	width: 700px;
-	height: auto;
-	border: 4px grey solid;
-	content:url('/assets/img/skarabeji-naslovnica-large.jpg');
+	width: 100%;
+	height: 700px;
+	background:url('/assets/img/skarabeji-naslovnica-large.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .navbar-nav > li {
@@ -496,10 +497,16 @@ a {
 	    width:90%;
 	}
 
+	a.home-link-panel:active, a.home-link-panel:focus {
+    	padding-left:9px;
+    	padding-right: 9px;
+    	padding-bottom: 1px;
+    	padding-top:1px;
+	}
+
 	.email-title{
 		margin-top: 10px;
     	color: white;
-    	font-family: fantasy;
     	font-size:12px;
 	}
 
@@ -543,15 +550,17 @@ a {
 		width: 100%;
 		height: auto;
 		margin-bottom: 30px;
-		border: none;
-		content:url('/assets/img/Elvis_1-small.jpg');
+		background:url('/assets/img/Elvis_1-small.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 	.skarabeji-img {
 		width: 100%;
 		height: auto;
-		border: none;
-		content:url('/assets/img/skarabeji-naslovnica-small.jpg');
+		background:url('/assets/img/skarabeji-naslovnica-small.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 	.sejkspir-div {

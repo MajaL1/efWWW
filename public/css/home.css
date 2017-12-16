@@ -108,8 +108,8 @@ footer.ng-scope {
 }
 
 .sejkspir-img {
-	width: 100%;
-	height: 700px;
+	width: 746px;
+	height: 560px;
 	margin-bottom: 30px;
 	background:url('/assets/img/Elvis_1-large.jpg');
 	background-size: contain;
@@ -117,8 +117,8 @@ footer.ng-scope {
 }
 
 .skarabeji-img {
-	width: 100%;
-	height: 700px;
+	width: 746px;
+	height: 280px;
 	background:url('/assets/img/skarabeji-naslovnica-large.jpg');
 	background-size: contain;
 	background-repeat: no-repeat;

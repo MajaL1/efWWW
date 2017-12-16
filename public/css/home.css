@@ -548,7 +548,7 @@ a {
 
 	.sejkspir-img {
 		width: 100%;
-		height: auto;
+		height: 200px;
 		margin-bottom: 30px;
 		background:url('/assets/img/Elvis_1-small.jpg');
 		background-size: contain;
@@ -557,7 +557,7 @@ a {
 
 	.skarabeji-img {
 		width: 100%;
-		height: auto;
+		height: 100px;
 		background:url('/assets/img/skarabeji-naslovnica-small.jpg');
 		background-size: contain;
 		background-repeat: no-repeat;

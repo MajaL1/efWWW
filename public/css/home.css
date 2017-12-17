@@ -500,8 +500,8 @@ a {
 	a.home-link-panel:active, a.home-link-panel:focus {
     	padding-left:9px;
     	padding-right: 9px;
-    	padding-bottom: 1px;
-    	padding-top:1px;
+    	padding-bottom: 3px;
+    	padding-top:3px;
 	}
 
 	.email-title{

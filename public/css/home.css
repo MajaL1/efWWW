@@ -200,8 +200,8 @@ footer.ng-scope {
 }
 
 .logo-elvis > img {
-	width: 280px;
-	height: 240px;
+	width: auto;
+	height: 200px;
 	background-color: white;
 }
 
@@ -281,7 +281,7 @@ footer.ng-scope {
 
 .picture-elvis {
 	display: inline-block;
-	float: left;
+	/*float: left; */
 	z-index: 9999;
 	margin-top: -30px;
 }

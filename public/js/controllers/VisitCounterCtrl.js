@@ -28,9 +28,7 @@
                 })
                 .then(function(response) {
                     
-                }); 
-    		    console.log('new number of visits... ', numVisits);
-    		     
+                });
             })
             .error(function(data) {
                 console.log('Error: ' + data);

@@ -79,8 +79,6 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
         DownloadFileFactory.getAudioData("/api/get-audio-data/","skarabeji.json")
             .success(function (data, status, headers) {
-                //console.log('GET AUDIO DATA::: ', data);
-
                 audioDataList = data;
                 for (i=0; i<audioDataList.length; i++){
                     $scope.audioSkarabejiList.push(audioDataList[i]);
@@ -125,8 +123,6 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
 
 
         for (var i = 0; i < $scope.audioSources.length; i++){
-            console.log("iii: ", $scope.audioSources[i]);
-
             if(id===$scope.audioSources[i].id){
                 var newDownloadCount = parseInt(downloadCount) + 1;
                 $scope.downloadCount = newDownloadCount;
@@ -134,11 +130,6 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $state, $st
                 $scope.audioSources[i].downloadCount= newDownloadCount;
                 break;
             }
-        }
-
-        for (var i = 0; i < $scope.audioSources.length; i++){
-            
-                console.log('...all...', $scope.audioSources[i]);
         }
         
        DownloadFileFactory.setAudioData(fileToWrite, $scope.audioSources);

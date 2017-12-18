@@ -712,6 +712,10 @@ a {
         /* top: 176px; */
 	}
 
+	.picture-elvis {
+		margin-left: -10%;
+	}
+
 	.demorow {
     	padding-top: 15px;
     	margin-left: 10px;

@@ -774,6 +774,18 @@ a {
 	}
 
 }
+
+@media screen and (min-width: 1025px) and (max-width: 1324px){
+	.picture-elvis {
+		margin-left: 10%;
+	}
+
+	.page-counter {
+		/*margin-top: 0px; */
+	}
+
+}
+
   
 
 

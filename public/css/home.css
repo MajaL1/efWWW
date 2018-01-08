@@ -440,6 +440,25 @@ ul {
     font-size: 18px;
 }
 
+.concert-date {
+    color: darkblue;
+    display: inline-block;
+    background-color: lightgrey;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+}
+
+.concert-description {
+	display: block;
+	color: darkblue;
+}
+
+span.concert-description > h4 {
+    margin-top: 0px;
+}
+
 .p-link {
 	color: darkblue !important;
 }

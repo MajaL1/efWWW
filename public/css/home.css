@@ -116,6 +116,15 @@ footer.ng-scope {
 	background-repeat: no-repeat;
 }
 
+.elvis-new-2 {
+	width: 746px;
+	height: 560px;
+	margin-bottom: 30px;
+	background:url('/assets/img/Elvis_new_2.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 .skarabeji-img {
 	width: 746px;
 	height: 280px;

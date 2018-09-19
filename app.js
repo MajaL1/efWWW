@@ -1,4 +1,4 @@
-// node app server
+// node app server maja is testing app
 
 var express = require("express");
 

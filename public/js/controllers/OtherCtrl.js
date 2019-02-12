@@ -1,2 +1,2 @@
-﻿myApp.controller('OtherCtrl', function ($scope, $state, $stateParams) {
+﻿myApp.controller('OtherCtrl', function ($scope) {
 });

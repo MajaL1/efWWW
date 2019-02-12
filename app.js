@@ -13,6 +13,15 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing       application/x-www-form-urlencoded
 
 
+/*app.get('/concerts', function(req, res){
+  res.sendFile(__dirname + '/public/views/concerts.html');
+});
+app.get('/music', function(req, res){
+  res.sendFile(__dirname + '/public/views/music.html');
+});
+app.get('/video', function(req, res){
+  res.sendFile(__dirname + '/public/views/video.html');
+});*/
 
 /****************** read number of views ************************/
 app.get('/api/visit-counter', (req, res) => {
@@ -65,7 +74,9 @@ app.post('/api/update-download-counter', function (req, res) {
 	  }); 
 });
 
-
+/*app.get('/about_me', function(req, res){
+  res.sendFile(__dirname + '/public/views/about_me.html');
+});*/
 
 var server = app.listen(process.env.PORT || 3000, () => {
 
@@ -74,6 +85,16 @@ var server = app.listen(process.env.PORT || 3000, () => {
 
 		console.log('......Demo app listening at http://%s:%s', host, port);	
 });
+
+app.all('/*', function(req, res, next) {
+    // Just send the index.html for other files to support HTML5Mode
+    res.sendFile('public/index.html', { root: __dirname });
+}); 
+
+/*app.get('/',function(req,res){
+  res.render('public/index.html');
+});*/
+
 
 
 

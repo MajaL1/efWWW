@@ -1,3 +1,3 @@
-﻿myApp.controller('AboutMeCtrl', function ($scope, $state, $stateParams, $http) {
-    
+﻿myApp.controller('AboutMeCtrl', function ($scope) {
+    console.log('AboutMeCtrl init');
 });

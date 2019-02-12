@@ -1,41 +1,53 @@
-var myApp = angular.module("myApp", ['ui.router']);
+var myApp = angular.module("myApp", ['ngRoute']);
 
-myApp.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
-    $urlRouterProvider.when("", "/about_me");
+myApp.config(function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 
-    $stateProvider
-       .state("about_me", {
+    //$urlRouterProvider.when("", "/about_me");
+
+    //  $urlRouterProvider
+    // .otherwise('/about_me'); 
+
+
+    $locationProvider.html5Mode(true);
+
+    $routeProvider
+       .when("/about_me", {
             url: "/about_me",
             templateUrl: "/views/about_me.html",
             controller: "AboutMeCtrl"
         })
-       .state("concerts", {
+       .when("/concerts", {
             url: "/concerts",
             templateUrl: "/views/concerts.html",
             controller: "ConcertsCtrl"
         })
-       .state("other", {
+       .when("/other", {
             url: "/other",
             templateUrl: "/views/other.html",
             controller: "OtherCtrl"
         })
-       .state("music", {
+       .when("/music", {
             url: "/music",
             templateUrl: "/views/music.html",
             controller: "MusicCtrl"
         })
-       .state("video", {
+       .when("/video", {
             url: "/video",
             templateUrl: "/views/video.html",
             controller: "VideoCtrl"
-        })
+        });
+       $routeProvider.otherwise({redirectTo: '/'});
        /*.state("sejkspir", {
            url: "/sejkspir",
            templateUrl: "/views/sejkspir.html",
            controller: "SejkspirCtrl"
        }) */
-       ;
+     
 
        $sceDelegateProvider.resourceUrlWhitelist(['**']);
+       $locationProvider.html5Mode({
+                 enabled: true,
+                 requireBase: false
+          }); 
 });

@@ -289,7 +289,6 @@ footer.ng-scope {
 }
 
 .picture-elvis {
-	display: inline-block;
 	/*float: left; */
 	z-index: 9999;
 	margin-top: -30px;

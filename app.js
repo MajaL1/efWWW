@@ -6,6 +6,8 @@ var app = express();
 
 var fs = require('fs');
 
+var path = require('path');
+
 var bodyParser= require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
@@ -86,11 +88,36 @@ var server = app.listen(process.env.PORT || 3000, () => {
 		console.log('......Demo app listening at http://%s:%s', host, port);	
 });
 
-app.all('/*', function(req, res, next) {
-    // Just send the index.html for other files to support HTML5Mode
-    res.sendFile('public/index.html', { root: __dirname });
-}); 
+/*app.route('/*')
+  .get(function(req, res) {
+    res.sendFile(path.join(__dirname+'/public/index.html'));
+  });
+*/
+app.get('/*', function (req, res) {
+     res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
+});
 
+/*app.get('/about_me', function (req, res) {
+  res.send('about_me')
+})*/
+/*app.all('/*',function(req,res){
+
+   res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
+})*/
+
+
+
+//app.all('/*', function(req, res, next) {
+    // Just send the index.html for other files to support HTML5Mode
+   //res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
+   // res.render('public/index.html');
+   //res.redirect('/about_me');
+//}); 
+//app.use(function(req, res) {
+    //res.sendfile(__dirname + '/public/index.html');
+    
+  //  res.status(200).sendFile(path.join(__dirname+'../public/index.html'));
+//});
 /*app.get('/',function(req,res){
   res.render('public/index.html');
 });*/

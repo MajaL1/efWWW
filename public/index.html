@@ -1,44 +1,43 @@
-
 <!DOCTYPE html>
 <html ng-app="myApp">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 
 <head>
-   <!-- ******************* START css links ************************* -->
-   <!-- Bootstrap -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" href="css/home.css">
-   <!-- ******************* END css links ************************* -->
-    
+    <!-- ******************* START css links ************************* -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <!-- ******************* END css links ************************* -->
+
     <meta name="google-site-verification" content="HKz1dZB4Prr1Sf5p_tczi1kLIurkpHsLC8MOTRp8pVc" />
     <meta name="msvalidate.01" content="C75E1828CF7FE794478D49EEAFF0F2F3" />
     <meta name="keywords" content="elvis fajko" />
     <meta name="description" content="elvis fajko homepage" />
     <title>Elvis Fajko</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+
+    <base href="/">
 </head>
 
 <body>
-	<div ng-include src="'views/common/header.html'"></div>
-    <div data-ui-view="" class="main-body-div">
-
+    <div ng-include src="'views/common/header.html'"></div>
+    <div class="main-body-div">
+        <main ng-view></main>
     </div>
     <div ng-include src="'views/common/footer.html'"></div>
-</div>
-<!-- *************************** END about div ********************************-->
+    <!-- *************************** END about div ********************************-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-<script src="scripts/angular.js"></script>
-<script src="scripts/angular-ui-router.js"></script>
-
-<!--- ** scripts for controllers **  -->
-<script src="App.js"></script>
-<script src="js/controllers/VisitCounterCtrl.js"></script>
-<script src="js/controllers/MusicCtrl.js"></script>
-<script src="js/controllers/VideoCtrl.js"></script>
-<script src="js/controllers/AboutMeCtrl.js"></script>
-<script src="js/controllers/ConcertsCtrl.js"></script>
-<script src="js/controllers/OtherCtrl.js"></script>
-<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <script src="main.js"></script>
+    <script src="js/controllers/AboutMeCtrl.js"></script>
+    <script src="js/controllers/VisitCounterCtrl.js"></script>
+    <script src="js/controllers/MusicCtrl.js"></script>
+    <script src="js/controllers/VideoCtrl.js"></script>
+    <script src="js/controllers/ConcertsCtrl.js"></script>
+    <script src="js/controllers/OtherCtrl.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
 </body>
 </html>

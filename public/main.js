@@ -3,34 +3,24 @@ var myApp = angular.module("myApp", ['ngRoute']);
 
 myApp.config(function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 
-   
-
-    //  $urlRouterProvider
-    // .otherwise('/about_me'); 
-
-
     $locationProvider.html5Mode(true);
 
     $routeProvider
        .when("/", {
             url: "/about_me",
             templateUrl: "/views/about_me.html",
-            controller: "AboutMeCtrl"
         })
        .when("/about_me", {
             url: "/about_me",
-            templateUrl: "/views/about_me.html",
-            controller: "AboutMeCtrl"
+            templateUrl: "/views/about_me.html"
         })
        .when("/concerts", {
             url: "/concerts",
-            templateUrl: "/views/concerts.html",
-            controller: "ConcertsCtrl"
+            templateUrl: "/views/concerts.html"
         })
        .when("/other", {
             url: "/other",
-            templateUrl: "/views/other.html",
-            controller: "OtherCtrl"
+            templateUrl: "/views/other.html"
         })
        .when("/music", {
             url: "/music",

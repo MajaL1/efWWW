@@ -15,15 +15,6 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing       application/x-www-form-urlencoded
 
 
-/*app.get('/concerts', function(req, res){
-  res.sendFile(__dirname + '/public/views/concerts.html');
-});
-app.get('/music', function(req, res){
-  res.sendFile(__dirname + '/public/views/music.html');
-});
-app.get('/video', function(req, res){
-  res.sendFile(__dirname + '/public/views/video.html');
-});*/
 
 /****************** read number of views ************************/
 app.get('/api/visit-counter', (req, res) => {
@@ -80,7 +71,7 @@ app.post('/api/update-download-counter', function (req, res) {
   res.sendFile(__dirname + '/public/views/about_me.html');
 });*/
 
-var server = app.listen(process.env.PORT || 3000, () => {
+var server = app.listen(process.env.PORT || 5001, () => {
 
 		var host = server.address().address;
 		var port = server.address().port;
@@ -96,15 +87,6 @@ var server = app.listen(process.env.PORT || 3000, () => {
 app.get('/*', function (req, res) {
      res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
 });
-
-/*app.get('/about_me', function (req, res) {
-  res.send('about_me')
-})*/
-/*app.all('/*',function(req,res){
-
-   res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
-})*/
-
 
 
 //app.all('/*', function(req, res, next) {

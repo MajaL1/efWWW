@@ -1,4 +1,4 @@
-﻿myApp.factory('DownloadFileFactory', function($http) { 
+﻿myApp.factory('DownloadFileFactory', ['$http', function($http) { 
 
     var factory = {};
     
@@ -42,19 +42,23 @@
         });
     }
 
-    factory.getAudioData = function(url, fileName) {
-
-        return $http({
+   /* factory.getAudioData = function(url, fileName) {
+        
+        console.log('-- url -- fileName: ', url);
+        
+        var res = $http({
             method: 'GET',
             url: url+""+fileName 
             });
-        }    
-        console.log('-- factory: ', factory);
+        
+        console.log('-- res: ', res);
+        return res;
+        }*/
        return factory;
-    });
+    }]);
 
 
-myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $http) {
+myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', function (DownloadFileFactory ,$scope, $http) {
 
     $scope.audioSkarabejiList = [];
     $scope.audioSingleList = [];
@@ -64,20 +68,34 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $http) {
 
         var audioDataList;
 
-        DownloadFileFactory.getAudioData("/api/get-audio-data/","skarabeji.json")
+       /* DownloadFileFactory.getAudioData("/api/get-audio-data/","skarabeji.json")
            .then(function successCallback(response) {
              audioDataList = response.data;
                 for (i=0; i<audioDataList.length; i++){
                     $scope.audioSkarabejiList.push(audioDataList[i]);
                 }
           }, function errorCallback(response) {
-            console.log(response);
+            console.log('1**********response, ', response);
+            console.log('2**********response, ', audioDataList);
           });
-
-
+          */
+        $scope.audioSkarabejiList.push({"title":"Upanje","url":"assets/music/Skarabeji - Upanje.mp3"});
+		$scope.audioSkarabejiList.push({"title":"Vrtimo se","url":"assets/music/Skarabeji - Vrtimo se.mp3"});
+		$scope.audioSkarabejiList.push({"title":"Odsla sta v noc","url":"assets/music/Skarabeji - Odsla sta v noc.mp3"});
+        $scope.audioSkarabejiList.push({"title":"Navaden dan","url":"assets/music/Skarabeji - Navaden dan.mp3"});
+		$scope.audioSkarabejiList.push({"title":"Rock","url":"assets/music/Skarabeji - Rock.mp3"});
+        $scope.audioSkarabejiList.push({"title":"Drugo dejanje","url":"assets/music/Skarabeji - Drugo dejanje.mp3"});
+		$scope.audioSkarabejiList.push({"title":"Sam","url":"assets/music/Skarabeji - Sam.mp3"});
+		$scope.audioSkarabejiList.push({"title":"Gibaj sm pa ke","url":"assets/music/Skarabeji - Gibaj sm pa ke.mp3"});
 		
+        
+        
+        var audioSingleSources = [{"title":"Zgornjesavska dolina","url":"assets/music/Zgornjesavska dolina.mp3","id":"8","categoryId":"8"},{"title":"Mesto jekla in narcis","url":"assets/music/Mesto jekla in narcis.mp3","id":"8","categoryId":"8"},{"title":"Želja","url":"assets/music/Zelja.mp3","id":"18","categoryId":"8"},{"title":"Kaplja","url":"assets/music/Kaplja.mp3","id":"9","categoryId":"2"},{"title":"Mi smo tabol","url":"assets/music/Mi smo tabol.mp3","id":"10","categoryId":"2"},{"title":"Valentinovo","url":"assets/music/Valentinovo.mp3","id":"11","categoryId":"2"}];
 
-        DownloadFileFactory.getAudioData("/api/get-audio-data/","singli.json")
+        for (i=0; i<audioSingleSources.length; i++){
+                    $scope.audioSingleList.push(audioSingleSources[i]);
+                }
+       /* DownloadFileFactory.getAudioData("/api/get-audio-data/","singli.json")
 
             .then(function successCallback(response) {
              audioSingleSourcesList = response.data;
@@ -86,7 +104,7 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $http) {
                 }
           }, function errorCallback(response) {
             console.log(response);
-          });
+          }); */
     }
 
     $scope.loadAudios();
@@ -94,6 +112,5 @@ myApp.controller('MusicCtrl', function (DownloadFileFactory ,$scope, $http) {
     $scope.downloadAudioFile = function(url, name, id, downloadCount, fileToWrite){
         DownloadFileFactory.download(url, name);
     }    
-});
-
+}]);
 

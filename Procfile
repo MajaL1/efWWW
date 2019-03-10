@@ -1,1 +1,1 @@
-web: node app.js -p $PORT
+web: node node_modules/gulp/bin/gulp start-server

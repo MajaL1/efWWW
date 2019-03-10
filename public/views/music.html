@@ -1,4 +1,4 @@
-﻿<div ng-controller="MusicCtrl">
+﻿<div>
     <div class="audio-div">
 
     	
@@ -7,7 +7,7 @@
 
 	    <div class='container audio-section'>
 	    	
-	    	<div class="audio-item" ng-repeat="audio in audioSingleList">
+	    	<div class="audio-item" ng-repeat="audio in audioSingleList track by $index">
 	    		
 				<p class="audio-item-title">{{audio.title}}</p>
 			      

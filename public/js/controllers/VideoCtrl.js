@@ -3,7 +3,7 @@ var key = "AIzaSyD7M2bnCmImthSaTjJEwOqo8PqsSkTK4GQ";
 
 var channelId = "UCLk_WVpcnHJMVAR2Fzg9FkA";
 
-const YOUTUBE_URL = 'https://www.youtube.com/embed/';
+var YOUTUBE_URL = 'https://www.youtube.com/embed/';
 
 
 myApp.factory('youtubeService', function ($http) {
@@ -19,10 +19,9 @@ myApp.factory('youtubeService', function ($http) {
     }               
 });
 
-
+(function(app){
 myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($http, $scope, youtubeService) {
-
-        
+            
         /***************************************  videos za Skarabeji  ***************************************/
        /* $scope.playlistVideos = [];
         $scope.videoSourcesSkarabeji = [];
@@ -67,17 +66,16 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
         promise.then(onSuccess, onError);
 
         function onSuccess(event){
-            let itemsList = event.data.items;
+            var itemsList = event.data.items;
                 for(index in itemsList){
 
                     /****  do not show favorites channel****/
 
                     var title = itemsList[index].snippet.title;
                     if(title !== 'Favorites'){
-                        console.log('TITLE is not favorites :::: ', title);
                         var playListId = (itemsList[index]).id;
-                        let url = YOUTUBE_URL+"watch?list="+playListId;
-                        let videoItem = {
+                        var url = YOUTUBE_URL+"watch?list="+playListId;
+                        var videoItem = {
                             "title" : title,
                             "url" : url
                         };
@@ -86,10 +84,11 @@ myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($h
             }
         }
         function onError(error){
-                  console.log('failure loading playlist', error);
+                  console.log('ERROR:: problem loading playlist', error);
         }
-}]);
 
+}]);
+})(myApp);
 
 
 

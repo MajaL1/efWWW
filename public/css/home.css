@@ -63,7 +63,7 @@ img.download:hover {
 }
 
 .sejkspir-div {
-    color: #696969c4;
+    color: #696969;
     opacity: 1;
     padding-top: 120px;
     margin-top: 120px;
@@ -165,7 +165,7 @@ footer.ng-scope {
     display: inline-block;
 }
 
-. nav > li {
+.nav > li {
     display: inline-block;
 }
 
@@ -175,7 +175,7 @@ footer.ng-scope {
 }
 
 .sejkspir-div {
-    color: #696969c4;
+    color: #696969;
     text-align: justify;
     margin-top: 40px;
 }
@@ -339,7 +339,7 @@ footer.ng-scope {
 }
 
 .about-me {
-    color: #696969c4;
+    color: #696969;
     text-align: justify;
     margin-top: 50px;
 }
@@ -493,7 +493,7 @@ span.concert-description > h4 {
 
 .video-div,
 .audio-div {
-    color: #696969c4;
+    color: #696969;
     font-family: Verdana;
     background-color: transparent;
     margin-top: 50px;

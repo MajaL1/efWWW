@@ -35,7 +35,6 @@
     "gulp-webserver": "^0.9.1",
     "http-proxy-middleware": "^0.19.1",
     "node": "8.11.3",
-    "node-sass": "3.13.1",
     "npm-watch": "^0.6.0"
   },
   "main": "app.js",
@@ -53,8 +52,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "postinstall": "npm rebuild node-sass --force"
+    "start": "node app.js"
   },
   "author": "MajaL",
   "license": "ISC"

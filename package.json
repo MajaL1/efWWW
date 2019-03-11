@@ -3,6 +3,7 @@
   "description": "ef www",
   "version": "0.0.1",
   "dependencies": {
+    "gulp": "^3.9.1",
     "body-parser": "^1.12.4",
     "browser-sync": "^2.26.3",
     "certbot": "^1.0.0",

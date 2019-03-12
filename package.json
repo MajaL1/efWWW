@@ -33,6 +33,7 @@
     "gulp-print": "^5.0.0",
     "gulp-sass": "3.0.0",
     "gulp-template-compile": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
     "gulp-util": "3.0.8",
     "gulp-webserver": "^0.9.1",
     "http-proxy-middleware": "^0.19.1",

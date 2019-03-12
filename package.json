@@ -63,7 +63,7 @@
     "postinstall": "npm rebuild node-sass --force",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "heroku-postbuild": "gulp start-server"
+    "heroku-postbuild": "gulp build-html"
   },
   "author": "MajaL",
   "license": "ISC"

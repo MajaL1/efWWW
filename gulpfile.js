@@ -77,7 +77,7 @@ gulp.task('server', function() {
   });
 })
 
-gulp.task('start-server',  ['move', 'build-html', 'sass', 'scripts', 'fonts', 'assets'], function () {
+gulp.task('start-server' , function () {
     
     var proxyRest = proxy('/api/get-music-data', {target: 'http://localhost:5001'});
     

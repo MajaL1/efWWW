@@ -57,10 +57,10 @@
     "gulp-util": "3.0.8"
   },
   "scripts": {
-
+   "postinstall": "gulp heroku:production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "preinstall": "rm -rf node_modules && npm cache clean --force && npm install bindings",
+    
     "postinstall": "npm rebuild node-sass --force"
   },
   "author": "MajaL",

@@ -98,6 +98,9 @@ gulp.task('start-server',  ['move', 'build-html', 'sass', 'scripts', 'fonts', 'a
         defaultFile: 'public/dist/index.html'
     })).pipe(notify("Running webserver!"));
 });
+
+gulp.task('heroku:production', ['start-server']);
+
 gulp.task('scripts', function () {
     gulp.src(['public/scripts/angular.js', 'public/scripts/angular-route.js','public/main.js', 'public/js/controllers/*.js'])
         .pipe(concat('all.js'))

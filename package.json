@@ -60,8 +60,7 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "heroku-prebuild": "npm rebuild node-sass", 
-    "postinstall": "npm update && npm install bindings && npm rebuild node-sass --force"
+    "preinstall": "npm update && npm install bindings && npm rebuild node-sass --force"
   },
   "author": "MajaL",
   "license": "ISC"

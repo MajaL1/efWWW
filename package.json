@@ -57,7 +57,7 @@
     "build": "gulp start-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "heroku-postbuild": "gulp start server"
+    "heroku-postbuild": "gulp start-server"
   },
   "author": "MajaL",
   "license": "ISC"

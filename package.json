@@ -60,7 +60,7 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "preinstall": "rm node_modules && npm install && npm update && npm install bindings && npm rebuild node-sass --force"
+    "preinstall": "npm install && npm update && npm install bindings && npm rebuild node-sass --force"
   },
   "author": "MajaL",
   "license": "ISC"

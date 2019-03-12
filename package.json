@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "engines": {
     "node": "8.x",
-      "npm": "6.x"
+    "npm": "6.x"
   },
   "dependencies": {
     "bindings": "^1.5.0",
@@ -42,6 +42,7 @@
     "lodash": "^4.17.11",
     "node": "^8.0.0",
     "node-sass": "^4.11.0",
+    "notify-send": "^0.1.2",
     "npm-watch": "^0.6.0"
   },
   "main": "app.js",
@@ -58,11 +59,9 @@
     "gulp-util": "3.0.8"
   },
   "scripts": {
-   "postinstall": "gulp heroku:production",
+    "postinstall": "npm rebuild node-sass --force",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    
-    "postinstall": "npm rebuild node-sass --force",
     "heroku-postbuild": "gulp start-server"
   },
   "author": "MajaL",

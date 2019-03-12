@@ -22,7 +22,7 @@ var webserver = require('gulp-webserver');
 
 var ngAnnotate = require('gulp-ng-annotate');
 
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 
 //gulp.watch(['dist/**']).on('change', livereload.changed);
 var browserSync = require('browser-sync');
@@ -96,7 +96,7 @@ gulp.task('start-server',  ['move', 'build-html', 'sass', 'scripts', 'fonts', 'a
         ],
         middleware: [ historyApiFallback()],//, proxyRest ],
         defaultFile: 'public/dist/index.html'
-    })).pipe(notify("Running webserver!"));
+    }));//.pipe(notify("Running webserver!"));
 });
 
 gulp.task('heroku:production', ['start-server']);
@@ -107,8 +107,8 @@ gulp.task('scripts', function () {
         .pipe(ngAnnotate())
         .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-        .pipe(gulp.dest('public/dist/'))
-        .pipe(notify("JavaScript compiled!"));
+        .pipe(gulp.dest('public/dist/'));
+       // .pipe(notify("JavaScript compiled!"));
 });
 // Fonts
 gulp.task('fonts', function() {
@@ -288,8 +288,8 @@ gulp.task('move', function () {
             collapseWhitespace: true,
             removeComments: true
          }))
-        .pipe(gulp.dest('public/dist/views'))
-        .pipe(notify("Moved HTML files!"));
+        .pipe(gulp.dest('public/dist/views'));
+       // .pipe(notify("Moved HTML files!"));
 });
 
 gulp.task('watch', ['serve'], function () {

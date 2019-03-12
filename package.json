@@ -60,9 +60,7 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "hwroku-prebuild": "npm rebuild node-sass"        
-      
-   
+    "heroku-prebuild": "npm rebuild node-sass"    
   },
   "author": "MajaL",
   "license": "ISC"

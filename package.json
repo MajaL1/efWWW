@@ -60,7 +60,7 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start-server",
-    "postinstall": "npm rebuild node-sass";        
+    "postinstall": "npm rebuild node-sass"        
       
    
   },

@@ -1,1 +1,2 @@
-web: gulp start-server -p 5555
+web: gulp start-server --p 5000
+web1: node app

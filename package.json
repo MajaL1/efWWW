@@ -62,7 +62,7 @@
   "scripts": {
     "postinstall": "npm rebuild node-sass --force",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app",
+    "start": "browser-sync public/dist/",
     "heroku-postbuild": "gulp build-html"
   },
   "author": "MajaL",

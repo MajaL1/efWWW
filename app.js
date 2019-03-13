@@ -71,7 +71,7 @@ app.post('/api/update-download-counter', function (req, res) {
   res.sendFile(__dirname + '/public/views/about_me.html');
 });*/
 
-var server = app.listen(process.env.PORT || 5001, () => {
+var server = app.listen(5001, () => {
 
 		var host = server.address().address;
 		var port = server.address().port;

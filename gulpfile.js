@@ -82,7 +82,7 @@ gulp.task('start-server' , function () {
     var proxyRest = proxy('/api/get-music-data', {target: 'http://localhost:5001'});
     
     gulp.src('public/dist/').pipe(webserver({
-        port: process.env.PORT,
+        port: process.env.PORT || 5000,
         livereload: true,
         directoryListing: false,
         //open: false,

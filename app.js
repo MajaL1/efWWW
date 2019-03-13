@@ -73,7 +73,7 @@ app.post('/api/update-download-counter', function (req, res) {
 
 var server = app.listen(5001, () => {
 
-		var host = server.address().address;
+		var host = "0.0.0.0";
 		var port = server.address().port;
 
 		console.log('......Demo app listening at http://%s:%s', host, port);	

@@ -1,1 +1,1 @@
-web: gulp start-server -p $PORT
+web: gulp start-server -p 5000

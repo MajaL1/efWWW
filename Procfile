@@ -1,1 +1,1 @@
-web: node public/dist/index.html
+web: gulp start-server

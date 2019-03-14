@@ -71,19 +71,20 @@ app.post('/api/update-download-counter', function (req, res) {
   res.sendFile(__dirname + '/public/views/about_me.html');
 });*/
 
-var server = app.listen(5001, () => {
+var server = app.listen(5000, () => {
 
-		var host = "0.0.0.0";
-		var port = process.env.PORT;
+		var host = process.env.HOST || "localhost";
+		var port = process.env.PORT || 5000;
 
 		console.log('......Demo app listening at http://%s:%s', host, port);	
 });
 
-/*app.route('/*')
-  .get(function(req, res) {
-    res.sendFile(path.join(__dirname+'/public/index.html'));
-  });
-*/
+app.use(express.static(__dirname + '/public', {
+        maxAge: 86400000,
+        setHeaders: function(res, path) {
+            res.setHeader("Expires", new Date(Date.now() + 2592000000*30).toUTCString());
+          }
+    }))
 app.get('/*', function (req, res) {
      res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
 });

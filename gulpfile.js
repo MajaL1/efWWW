@@ -104,7 +104,8 @@ gulp.task('start-server' , function () {
                    source: '/api', target: 'http://localhost:5000/api/'
                   }
         ],
-        middleware: [ historyApiFallback(), compression()], function(res.setHeader("Cache-Control", "public, max-age=2592000");,//, proxyRest ],
+        middleware: [ historyApiFallback(), compression()//, //function(res.setHeader("Cache-Control", "public, max-age=2592000"))] //, proxyRest ],
+                     ],
         defaultFile: 'public/dist/index.html'
     }));//.pipe(notify("Running webserver!"));
 });
@@ -149,7 +150,7 @@ gulp.task('build-html', ['move', 'sass', 'scripts', 'fonts', 'assets'], function
 });
 
 gulp.task('image-minify', function(){
-    gulp.src('public/assets/img/*.+(png|jpg|gif)')
+    gulp.src('public/assets/img/*.+(png|jpg|jpeg|gif)')
         //.pipe(changed('public/dist/assets/img'))
         .pipe(imagemin())
         .pipe(gulp.dest('public/dist/assets/img/'))
@@ -158,8 +159,11 @@ gulp.task('image-minify', function(){
 
  
 gulp.task('assets', function () {
-     gulp.src(['public/assets/img/*.*'])
-        .pipe(gulp.dest('public/dist/assets/img'));
+     gulp.src(['public/assets/img/*.+(png|jpg|jpeg|gif)'])
+        //.pipe(changed('public/dist/assets/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/dist/assets/img/'))
+
     
      gulp.src(['public/assets/music/*.*'])
         .pipe(gulp.dest('public/dist/assets/music'));

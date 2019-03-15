@@ -104,7 +104,7 @@ gulp.task('start-server' , function () {
                    source: '/api', target: 'http://localhost:5000/api/'
                   }
         ],
-        middleware: [ historyApiFallback(), compression()],//, proxyRest ],
+        middleware: [ historyApiFallback(), compression()], function(res.setHeader("Cache-Control", "public, max-age=2592000");,//, proxyRest ],
         defaultFile: 'public/dist/index.html'
     }));//.pipe(notify("Running webserver!"));
 });

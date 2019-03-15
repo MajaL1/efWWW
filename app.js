@@ -67,9 +67,7 @@ app.post('/api/update-download-counter', function (req, res) {
 	  }); 
 });
 
-/*app.get('/about_me', function(req, res){
-  res.sendFile(__dirname + '/public/views/about_me.html');
-});*/
+app.use(express.compress());
 
 var server = app.listen(5000, () => {
 

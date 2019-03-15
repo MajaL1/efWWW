@@ -33,6 +33,7 @@
     "gulp-ng-templates": "^1.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-print": "^5.0.0",
+    "gulp-purgecss": "^1.1.1",
     "gulp-sass": "3.0.0",
     "gulp-template-compile": "^1.4.0",
     "gulp-uglify": "^3.0.2",
@@ -60,7 +61,6 @@
     "gulp-util": "3.0.8"
   },
   "scripts": {
-   
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync public/dist/",
     "heroku-postbuild": "gulp build-html"

@@ -50,19 +50,18 @@ const imagemin = require('gulp-imagemin');
 
 var changed = require('gulp-changed');
 
-/*gulp.task('serve', function() {
-    browserSync.init(null,{
-       server: "app.js",
-      // startPath: "public/index.html", // After it browser running
-        browser: 'chrome',
-        host: 'localhost',
-        port: 3000,
-        open: true,
-        //tunnel: true,
-        reloadDelay: 100
-    });
-});*/
+const purgecss = require('gulp-purgecss')
 
+gulp.task('purgecss', () => {
+  return gulp
+    .src(['public/*.css', 'public'])
+    .pipe(
+      purgecss({
+        content: ['public/*.html']
+      })
+    )
+    .pipe(gulp.dest('public/dist/purgecss'))
+})
 var connect = require('gulp-clean');
 
 gulp.task('clean', function() {

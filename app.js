@@ -67,7 +67,7 @@ app.post('/api/update-download-counter', function (req, res) {
 	  }); 
 });
 
-app.use(express.compress());
+//app.use(express.compress());
 
 var server = app.listen(5000, () => {
 
@@ -84,7 +84,10 @@ app.use(express.static(__dirname + '/public', {
           }
     }))
 app.get('/*', function (req, res) {
-     res.status(200).sendFile(path.join(__dirname+'/public/index.html'));
+   // res.writeHead(200, {
+  //'Content-Encoding': 'gzip' });
+   res.status(200,{
+  'Content-Encoding': 'gzip' }).sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 

@@ -50,7 +50,9 @@ const imagemin = require('gulp-imagemin');
 
 var changed = require('gulp-changed');
 
-const purgecss = require('gulp-purgecss')
+const purgecss = require('gulp-purgecss');
+
+var compression  = require('compression');
 
 gulp.task('purgecss', () => {
   return gulp
@@ -76,6 +78,14 @@ gulp.task('server', function() {
   });
 })
 
+var gzip = require('gulp-gzip');
+ 
+gulp.task('compress', function() {
+    gulp.src('public/dist/all.js')
+    .pipe(gzip())
+    .pipe(gulp.dest('public/dist'));
+});
+
 gulp.task('start-server' , function () {
     
     var proxyRest = proxy('/api/get-music-data', {target: 'http://localhost:5001'});
@@ -94,7 +104,7 @@ gulp.task('start-server' , function () {
                    source: '/api', target: 'http://localhost:5000/api/'
                   }
         ],
-        middleware: [ historyApiFallback()],//, proxyRest ],
+        middleware: [ historyApiFallback(), compression()],//, proxyRest ],
         defaultFile: 'public/dist/index.html'
     }));//.pipe(notify("Running webserver!"));
 });

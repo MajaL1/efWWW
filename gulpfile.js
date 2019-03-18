@@ -51,6 +51,8 @@ var paths = {
     img: ['public/assets/img/*'],
 
     fonts: ['public/fonts/*.{eot,svg,ttf,woff,woff2}'],
+
+    assets: ['public/dist/assets/img']
 }
 
 gulp.task('purgecss', () => {
@@ -118,7 +120,7 @@ gulp.task('scripts', function () {
 // Fonts
 gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
-        .pipe(gulp.dest('public/dist/fonts'));
+        .pipe(gulp.dest(paths.dist+'/fonts'));
 });
 gulp.task('build', ['move', 'sass', 'scripts', 'fonts', 'assets'], function () {
 

@@ -48,7 +48,11 @@ var paths = {
      css: ['public/css/*.css', 
         'public/css/**/*.scss'],
     
-    music: ['public/assets/music/*.*']
+    music: ['public/assets/music/*.*'],
+    
+    img: ['public/assets/img/*'],
+    
+    fonts: [''],
 }    
 
 gulp.task('purgecss', () => {
@@ -140,7 +144,7 @@ gulp.task('build-html', ['move', 'sass', 'scripts', 'fonts', 'assets'], function
 });
 
 gulp.task('image-minify', function(){
-    gulp.src('public/assets/img/*.+(png|jpg|jpeg|gif)')
+    gulp.src(paths.img+'.+(png|jpg|jpeg|gif)')
         .pipe(changed('public/dist/assets/img'))
         .pipe(imagemin())
         .pipe(gulp.dest('public/dist/assets/img/'))

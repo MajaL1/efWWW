@@ -7,6 +7,7 @@
     "npm": "6.x"
   },
   "dependencies": {
+    "angular-picture": "^1.0.0",
     "bindings": "^1.5.0",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.26.3",

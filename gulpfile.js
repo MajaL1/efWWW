@@ -46,7 +46,9 @@ var paths = {
         'public/dist'
     ],
      css: ['public/css/*.css', 
-        'public/css/**/*.scss']
+        'public/css/**/*.scss'],
+    
+    music: ['public/assets/music/*.*']
 }    
 
 gulp.task('purgecss', () => {
@@ -153,7 +155,7 @@ gulp.task('assets', function () {
         .pipe(gulp.dest('public/dist/assets/img/'))
 
     
-     gulp.src(['public/assets/music/*.*'])
+     gulp.src(paths.music)
         .pipe(gulp.dest('public/dist/assets/music'));
     
      gulp.src(['public/img/*.*'])

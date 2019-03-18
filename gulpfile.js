@@ -1,58 +1,53 @@
-// Include gulp
 var gulp = require('gulp');
- // Define base folders
 var src = 'src/';
 var dest = 'build/';
 var flatten = require('gulp-flatten'); 
-
- // Include plugins
-
 var minifyCss = require('gulp-minify-css'); 
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var csso = require('gulp-csso');
-
 var proxy = require('http-proxy-middleware');
-
 var debug = require("gulp-debug");
-
 var gulpif = require('gulp-if');
-
 var webserver = require('gulp-webserver');
-
 var ngAnnotate = require('gulp-ng-annotate');
-
-//var notify = require('gulp-notify');
-
-//gulp.watch(['dist/**']).on('change', livereload.changed);
 var browserSync = require('browser-sync');
 var del = require("del");
-
 var inject = require('gulp-inject');
-
 var injectPartials = require('gulp-inject-partials');
-
 var print = require('gulp-print');
-
 var htmlmin = require('gulp-htmlmin');
-
 var gutil = require('gulp-util');
-
 var historyApiFallback = require('connect-history-api-fallback');
-
 var template = require('gulp-template-compile');
-
-const p = require('path');
-
-var  ngTemplates = require('gulp-ng-templates');
-
-const imagemin = require('gulp-imagemin');
-
+var p = require('path');
+var ngTemplates = require('gulp-ng-templates');
+var imagemin = require('gulp-imagemin');
 var changed = require('gulp-changed');
-
-const purgecss = require('gulp-purgecss');
-
+var purgecss = require('gulp-purgecss');
 var compression  = require('compression');
+var templateCache = require('gulp-angular-templatecache');
+var connect = require('gulp-clean');
+var gzip = require('gulp-gzip');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+var paths = {
+  javascripts: [
+   'public/main.js',
+    'public/js/controllers/*.js',
+    'public/scripts/*.js' 
+  ],
+  templates: [
+    '/public/views/*.html',
+    '/public/index.html'
+  ],
+    dist: [
+        'public/dist'
+    ],
+     css: ['public/css/*.css', 
+        'public/css/**/*.scss']
+}    
 
 gulp.task('purgecss', () => {
   return gulp
@@ -64,24 +59,17 @@ gulp.task('purgecss', () => {
     )
     .pipe(gulp.dest('public/dist/purgecss'))
 })
-var connect = require('gulp-clean');
+
 
 gulp.task('clean', function() {
-  return del("public/dist");
+  return del(templates.dist);
 });
 
-gulp.task('server', function() {
-  browserSync({
-    server: {
-     baseDir: './public/dist' 
-    }
-  });
-})
 
-var gzip = require('gulp-gzip');
+
  
 gulp.task('compress', function() {
-    gulp.src('public/dist/all.js')
+    gulp.src(paths.dist+'/all.js')
     .pipe(gzip())
     .pipe(gulp.dest('public/dist'));
 });
@@ -90,7 +78,7 @@ gulp.task('start-server' , function () {
     
     var proxyRest = proxy('/api/get-music-data', {target: 'http://localhost:5001'});
     
-    gulp.src('public/dist/').pipe(webserver({
+    gulp.src(paths.dist).pipe(webserver({
         port:  process.env.PORT || 5000,
         host: "0.0.0.0",
         livereload: true,
@@ -113,12 +101,12 @@ gulp.task('start-server' , function () {
 gulp.task('heroku:production', ['start-server']);
 
 gulp.task('scripts', function () {
-    gulp.src(['public/scripts/angular.js', 'public/scripts/angular-route.js','public/main.js', 'public/js/controllers/*.js'])
+   gulp.src(['public/scripts/angular.js', 'public/scripts/angular-route.js','public/main.js', 'public/js/controllers/*.js'])
         .pipe(concat('all.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-        .pipe(gulp.dest('public/dist/'));
+        .pipe(gulp.dest(paths.dist+'/'));
        // .pipe(notify("JavaScript compiled!"));
 });
 // Fonts
@@ -130,9 +118,9 @@ gulp.task('build-html', ['move', 'sass', 'scripts', 'fonts', 'assets'], function
     
     // We src all files under build
    gulp.src('public/dist/index.html')
-       .pipe(inject(gulp.src('public/dist/all.js'), {
+       .pipe(inject(gulp.src(paths.dist+'/all.js'), {
                         addRootSlash: false,  // ensures proper relative paths
-                        ignorePath: 'public/dist' // ensures proper relative paths
+                        ignorePath: paths.dist // ensures proper relative paths
                     }))
         .pipe(inject(gulp.src(['public/dist/views/header.html']), {
          starttag: '<!-- inject:public/views/common/header.html -->',
@@ -146,12 +134,12 @@ gulp.task('build-html', ['move', 'sass', 'scripts', 'fonts', 'assets'], function
            return file.contents.toString();
          }
       }))
-    .pipe(gulp.dest('public/dist'));
+    .pipe(gulp.dest(paths.dist+'/'));
 });
 
 gulp.task('image-minify', function(){
     gulp.src('public/assets/img/*.+(png|jpg|jpeg|gif)')
-        //.pipe(changed('public/dist/assets/img'))
+        .pipe(changed('public/dist/assets/img'))
         .pipe(imagemin())
         .pipe(gulp.dest('public/dist/assets/img/'))
 });
@@ -172,7 +160,7 @@ gulp.task('assets', function () {
         .pipe(gulp.dest('public/dist/img'));
 });
 
-var angularTemplateCache = require('gulp-angular-templatecache');
+
 
 /****************************************************/
 // tole je potrebno pogledat, kako bi dali vse html v js. (in pri tem obdrzali routing)
@@ -183,7 +171,7 @@ gulp.task('html-conc', function () {
             module: 'myApp',
             root: '/'
         }))*/
-        .pipe(templateCache('/public/dist/all.js', {
+        .pipe(templateCache(paths.dist+'/all.js', {
         root: updateRoot(['/public/dist/index.html', '/public/views/*.html'])
     },
     { module:'templateCache', standalone:true })
@@ -193,7 +181,7 @@ gulp.task('html-conc', function () {
                 mangle:false
             }))
         //.pipe(concat('all.js'))
-        .pipe(gulp.dest('/public/dist'))
+        .pipe(gulp.dest(paths.dist))
 });
 
 function updateRoot(paths) {
@@ -204,10 +192,6 @@ function updateRoot(paths) {
     }
 }
 
-
-//var templateCache = require('gulp-templatecache');
-var templateCache = require('gulp-angular-templatecache');
-
 gulp.task('bla', function () {
     
   return gulp.src('/public/views/*.html')
@@ -217,28 +201,13 @@ gulp.task('bla', function () {
             module: 'myApp',
         }))
         .pipe(debug())
-        .pipe(gulp.dest('/public/dist'));
+        .pipe(gulp.dest(paths.dist));
     
 });
 
 gulp.task('bla1', function() {
     
-var paths = {
-  javascripts: [
-   'public/main.js',
-    /*
-     * this file should not be commited to git, you write HTML!
-     * it should also not beeing watched by gulp if it then triggers a change
-     * or gulp will be left in an infinite loop (see below)
-     */
-    'public/js/controllers/*.js',
-    'public/scripts/*.js' 
-  ],
-  templates: [
-    '/public/views/*.html',
-    '/public/index.html'
-  ]
-}    
+
   return gulp.src(paths.templates)
    pipe(htmlmin({
         empty: true,
@@ -250,51 +219,25 @@ var paths = {
       module: 'templates',
       standalone: true,
        root:'/'
-      /**
-       * Here, I'm removing .html so that `$templateCache` holds
-       * the template in `views/home` instead of `views/home.html`.
-       * I'm keeping the directory structure for the template's name
-       */
-      //transformUrl: function(url) {
-        //return url.replace(p.extname(url), '')
-     //}
     }))
     .pipe(debug())
-    //put all those to our javascript file
     .pipe(concat('all.js'))
-     .pipe(debug())
-    .pipe(gulp.dest('public/dist'))
+    .pipe(debug())
+    .pipe(gulp.dest(paths.dist))
 })
 
-gulp.task('bla2', function() {
-    
-  var paths = {
-  javascripts: [
-   'public/main.js',
-    /*
-     * this file should not be commited to git, you write HTML!
-     * it should also not beeing watched by gulp if it then triggers a change
-     * or gulp will be left in an infinite loop (see below)
-     */
-    'public/js/controllers/*.js',
-    'public/scripts/*.js' 
-  ],
-  templates: [
-    'public/views/*.html',
-    'public/index.html'
-  ]
-}        
+gulp.task('bla2', function() {      
     
   return gulp.src(paths.templates)
   .pipe(gulpif(/\.html$/, htmlmin({ collapseWhitespace: true })))
   .pipe(gulpif(/\.html$/, ngTemplates()))
   .pipe(concat('index.html'))
-  .pipe(gulp.dest('public/dist'));
+  .pipe(gulp.dest(paths.dist));
 })
 
 gulp.task('move', function () {
     gulp.src(['public/index.html'])
-        .pipe(gulp.dest('public/dist'));
+        .pipe(gulp.dest(paths.dist+'/'));
 
     gulp.src(['./public/views/*.html', './public/views/common/*.html'])
         .pipe(flatten())
@@ -302,7 +245,7 @@ gulp.task('move', function () {
             collapseWhitespace: true,
             removeComments: true
          }))
-        .pipe(gulp.dest('public/dist/views'));
+        .pipe(gulp.dest(paths.dist+'/views'));
        // .pipe(notify("Moved HTML files!"));
 });
 
@@ -312,16 +255,15 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch(['public/views/**/*.html'], ['move']);
 });
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+
 
 //sass
 gulp.task('sass', function () {
-    gulp.src(['public/css/*.css', 'public/css/**/*.scss'])
+    gulp.src(paths.css)
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(minifyCss())
         .pipe(csso())
-        .pipe(gulp.dest('public/dist/css/'));
+        .pipe(gulp.dest(paths.dist+'/css/'));
 });
 
 // Default task
@@ -333,5 +275,5 @@ gulp.task('default', function () {
 gulp.task('minify-js', function () {
     gulp.src('./public/js/controllers/*.js') // path to your files
     .pipe(uglify())
-    .pipe(gulp.dest('public/dist/js'));
+    .pipe(gulp.dest(paths.dist+'/js'));
 });

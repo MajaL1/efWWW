@@ -29,6 +29,7 @@ var connect = require('gulp-clean');
 var gzip = require('gulp-gzip');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concatcss = require('gulp-concat-css');
 
 var paths = {
     javascripts: [
@@ -55,6 +56,17 @@ var paths = {
     assets: ['public/dist/assets/img']
 }
 
+var postcss = require('gulp-postcss');
+
+ var autoprefixer = require('autoprefixer');
+
+ 
+gulp.task('uncss', function () {
+    return gulp.src('./public/css/*.css')
+        .pipe(postcss())
+        .pipe(gulp.dest('./'+paths.dist));
+});
+
 gulp.task('purgecss', () => {
     return gulp
         .src(['public/*.css', 'public'])
@@ -65,6 +77,17 @@ gulp.task('purgecss', () => {
         )
         .pipe(gulp.dest('public/dist/purgecss'))
 })
+
+gulp.task('inject-css', function () {
+  var target = gulp.src('./public/index.html');
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(['public/dist/all.css'], {read: false});
+ 
+  return target.pipe(inject(sources, {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist}))
+    .pipe(gulp.dest('./public/dist'));
+});
 
 
 gulp.task('clean', function () {
@@ -122,7 +145,7 @@ gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
         .pipe(gulp.dest(paths.dist+'/fonts'));
 });
-gulp.task('build', ['move', 'sass', 'scripts', 'fonts', 'assets'], function () {
+gulp.task('build', ['move', 'scripts', 'fonts', 'assets', 'sass', 'inject-css'], function () {
 
     gulp.src('public/dist/index.html')
         .pipe(inject(gulp.src(paths.dist + '/all.js'), {
@@ -213,38 +236,6 @@ gulp.task('bla', function () {
 
 });
 
-gulp.task('bla1', function () {
-
-
-    return gulp.src(paths.templates)
-    pipe(htmlmin({
-            empty: true,
-            spare: true,
-            quotes: true
-        }))
-        .pipe(debug())
-        .pipe(templateCache({
-            module: 'templates',
-            standalone: true,
-            root: '/'
-        }))
-        .pipe(debug())
-        .pipe(concat('all.js'))
-        .pipe(debug())
-        .pipe(gulp.dest(paths.dist))
-})
-
-gulp.task('bla2', function () {
-
-    return gulp.src(paths.templates)
-        .pipe(gulpif(/\.html$/, htmlmin({
-            collapseWhitespace: true
-        })))
-        .pipe(gulpif(/\.html$/, ngTemplates()))
-        .pipe(concat('index.html'))
-        .pipe(gulp.dest(paths.dist));
-})
-
 gulp.task('move', function () {
     gulp.src(['public/index.html'])
         .pipe(gulp.dest(paths.dist + '/'));
@@ -273,9 +264,11 @@ gulp.task('sass', function () {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
+        .pipe(postcss())
         .pipe(minifyCss())
         .pipe(csso())
-        .pipe(gulp.dest(paths.dist + '/css/'));
+        .pipe(concatcss('all.css'))
+        .pipe(gulp.dest(paths.dist+'/'));
 });
 
 // Default task

@@ -23,14 +23,14 @@
 
 <body>
     <!-- inject:public/views/common/header.html -->
-    <div class="row title-toolbar"><div class="header-logo col-lg-2"><div class="logo-elvis"><img ng-src="/img/logo-inv-3.jpg" alt="logo"></div></div><div class="svg-icons pull-right col-md-4 col-md-3 col-lg-2"><a href="https://www.facebook.com/elvisfajkokantavtor/" target="blank"><img ng-src="/img/icon-fb.png"> </a><a href="https://www.youtube.com/user/elvisfajko1" target="blank"><img ng-src="/img/youtube-icon.png"></a><div class="email-title"><p>elvisfajko@yahoo.com</p></div></div><div class="picture-elvis col-lg-8 col-sm-12 col-md-12"><img src="/assets/img/elvis-front-3-2.png" alt="naslovnica elvis fajko"></div><div style="clear: both;"></div></div><div class="navigation-bar-main nav"><div class="inner-navbar-div"><div class="header-link col-lg-2 col-md-2 col-sm-6 col-xs-12 about-me-link"><a class="home-link-panel" href="about_me">DOMOV</a></div><div class="header-link col-lg-2 col-md-2 col-sm-6 col-xs-6"><a class="home-link-panel" href="/concerts">KONCERTI</a></div><div class="header-link col-lg-2 col-md-2 col-sm-6 col-xs-6"><a class="home-link-panel" href="/other">DOGODKI</a></div><div class="header-link col-lg-2 col-md-2 col-sm-6 col-xs-6"><a class="home-link-panel" href="/music">GLASBA</a></div><div class="header-link col-lg-2 col-md-2 col-sm-6 col-xs-6"><a class="home-link-panel" href="/video">VIDEO</a></div></div></div>
+    <div ng-include src="'views/common/header.html'"></div>
     <!-- endinject -->
     
     <div class="main-body-div">
         <main ng-view></main>
     </div>
     <!-- inject:public/views/common/footer.html -->
-    <footer><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-color-2"><p class="footer-text"><small>Copyright © 2017</small></p></div></div></footer>
+    <div ng-include src="'views/common/footer.html'"></div>
     <!-- endinject -->
 
     
@@ -40,7 +40,12 @@
     <!-- endinject -->
     
     <!-- inject:js -->
-    <script src="all.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="main.js"></script>
+    <script src="js/controllers/MusicCtrl.js"></script>
+    <script src="js/controllers/VideoCtrl.js"></script>
     <!-- endinject-->
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 

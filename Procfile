@@ -1,1 +1,1 @@
-web: gulp start-server -p 5000
+web: gulp start -p 5000

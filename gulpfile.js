@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+//var gulp = require('gulp-run-seq'); 
 var flatten = require('gulp-flatten');
 var minifyCss = require('gulp-minify-css');
 var concat = require('gulp-concat');
@@ -79,11 +80,11 @@ gulp.task('purgecss', () => {
 })
 
 gulp.task('inject-css', function () {
-  var target = gulp.src('./public/index.html');
   // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(['public/dist/all.css'], {read: false});
+  var sources = gulp.src(['public/dist/all.css'], {read: true});
  
-  return target.pipe(inject(sources, {
+  gulp.src('public/dist/index.html')
+      .pipe(inject(sources, {
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist}))
     .pipe(gulp.dest('./public/dist'));
@@ -100,7 +101,7 @@ gulp.task('compress', function () {
         .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('start-server', function () {
+gulp.task('start', function () {
 
     var proxyRest = proxy('/api/get-music-data', {
         target: 'http://localhost:5001'
@@ -127,7 +128,7 @@ gulp.task('start-server', function () {
     })); //.pipe(notify("Running webserver!"));
 });
 
-gulp.task('heroku:production', ['start-server']);
+gulp.task('heroku:production', ['start']);
 
 gulp.task('scripts', function () {
     gulp.src(['public/scripts/angular.js', 'public/scripts/angular-route.js', 'public/main.js', 'public/js/controllers/*.js'])
@@ -145,7 +146,7 @@ gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
         .pipe(gulp.dest(paths.dist+'/fonts'));
 });
-gulp.task('build', ['move', 'scripts', 'fonts', 'assets', 'sass', 'inject-css'], function () {
+gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {
 
     gulp.src('public/dist/index.html')
         .pipe(inject(gulp.src(paths.dist + '/all.js'), {
@@ -164,8 +165,13 @@ gulp.task('build', ['move', 'scripts', 'fonts', 'assets', 'sass', 'inject-css'],
                 return file.contents.toString();
             }
         }))
+ 
+    .pipe(gulp.src('public/dist/index.html'))
+      .pipe(inject('public/dist/all.css', {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist}))
         .pipe(gulp.dest(paths.dist + '/'));
-});
+})
 
 gulp.task('image-minify', function () {
     gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
@@ -173,6 +179,8 @@ gulp.task('image-minify', function () {
         .pipe(imagemin())
         .pipe(gulp.dest(paths.dist+'/assets/img/'))
 });
+
+//gulp.task('build1', ['build', 'move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {});
 
 
 
@@ -222,19 +230,6 @@ function updateRoot(paths) {
         return paths[i];
     }
 }
-
-gulp.task('bla', function () {
-
-    return gulp.src('/public/views/*.html')
-        .pipe(debug())
-        .pipe(templateCache({
-            filename: 'templates.js',
-            module: 'myApp',
-        }))
-        .pipe(debug())
-        .pipe(gulp.dest(paths.dist));
-
-});
 
 gulp.task('move', function () {
     gulp.src(['public/index.html'])

@@ -42,6 +42,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-print": "^5.0.0",
     "gulp-purgecss": "^1.1.1",
+    "gulp-run-seq": "^1.2.4",
     "gulp-sass": "3.0.0",
     "gulp-template-compile": "^1.4.0",
     "gulp-uglify": "^3.0.2",

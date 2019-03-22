@@ -57,16 +57,16 @@ var paths = {
     assets: ['public/dist/assets/img']
 }
 
-var postcss = require('gulp-postcss');
+//var postcss = require('gulp-postcss');
 
  var autoprefixer = require('autoprefixer');
 
  
-gulp.task('uncss', function () {
+/*gulp.task('uncss', function () {
     return gulp.src('./public/css/*.css')
         .pipe(postcss())
         .pipe(gulp.dest('./'+paths.dist));
-});
+});*/
 
 gulp.task('purgecss', () => {
     return gulp

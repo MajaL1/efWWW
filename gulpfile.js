@@ -261,7 +261,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .pipe(postcss())
+        //.pipe(postcss())
         .pipe(minifyCss())
         .pipe(csso())
         .pipe(concatcss('all.css'))

@@ -84,10 +84,12 @@ gulp.task('inject-css', function () {
   var sources = gulp.src(['public/dist/all.css'], {read: true});
  
   gulp.src('public/dist/index.html')
+    .pipe(debug())
       .pipe(inject(sources, {
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist}))
-    .pipe(gulp.dest('./public/dist'));
+    .pipe(debug())
+    .pipe(gulp.dest('public/dist'));
 });
 
 
@@ -146,7 +148,7 @@ gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
         .pipe(gulp.dest(paths.dist+'/fonts'));
 });
-gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {
+gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets'], function () {
 
     gulp.src('public/dist/index.html')
         .pipe(inject(gulp.src(paths.dist + '/all.js'), {
@@ -165,11 +167,11 @@ gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'],
                 return file.contents.toString();
             }
         }))
- 
-    .pipe(gulp.src('public/dist/index.html'))
-      .pipe(inject('public/dist/all.css', {
+        
+  //.pipe(gulp.src(['public/dist/index.html']))
+      .pipe(inject(gulp.src('public/dist/all.css'), {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist}))
+            ignorePath: paths.dist})) 
         .pipe(gulp.dest(paths.dist + '/'));
 })
 

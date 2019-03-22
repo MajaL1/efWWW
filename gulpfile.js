@@ -57,7 +57,7 @@ var paths = {
     assets: ['public/dist/assets/img']
 }
 
-//var postcss = require('gulp-postcss');
+var postcss = require('gulp-postcss');
 
  var autoprefixer = require('autoprefixer');
 
@@ -261,7 +261,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        //.pipe(postcss())
+        .pipe(postcss())
         .pipe(minifyCss())
         .pipe(csso())
         .pipe(concatcss('all.css'))

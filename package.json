@@ -52,6 +52,7 @@
     "gulp-util": "3.0.8",
     "gulp-webserver": "^0.9.1",
     "http-proxy-middleware": "^0.19.1",
+    "install": "^0.12.2",
     "lodash": "^4.17.11",
     "node": "^8.0.0",
     "node-sass": "^4.11.0",

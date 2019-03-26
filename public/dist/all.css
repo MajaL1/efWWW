@@ -8158,12 +8158,6 @@ footer.ng-scope {
   font-family: sans-serif;
 }
 
-.elvis-new-2,
-.sejkspir-img {
-  height: 560px;
-  margin-bottom: 30px;
-}
-
 footer.ng-scope {
   width: 100%;
   position: fixed;
@@ -8180,11 +8174,6 @@ footer.ng-scope {
   font-size: 18px;
 }
 
-.sejkspir-img {
-  background: url("../../assets/img/Elvis_1-large.jpg") no-repeat;
-}
-
-.elvis-new-2,
 .sejkspir-img,
 .skarabeji-img {
   width: 746px;
@@ -8192,8 +8181,10 @@ footer.ng-scope {
   background-size: contain;
 }
 
-.elvis-new-2 {
-  background: url("../../assets/img/Elvis_new_2.png") no-repeat;
+.sejkspir-img {
+  margin-bottom: 30px;
+  background: url("../../assets/img/Elvis_1-large.jpg") no-repeat;
+  height: 560px;
 }
 
 .skarabeji-img {
@@ -8755,7 +8746,7 @@ a {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/img/Elvis_2.jpg");
+    background-image: url("../../assets/img/Elvis_2.png");
     background-position: fixed;
   }
 

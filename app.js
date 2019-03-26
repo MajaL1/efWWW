@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing       applica
 
 var server = app.listen(() => {
 
-		var host = "localhost";
-		var port =  5000;
+		var host = process.env.HOST || "localhost";
+		var port = process.env.PORT || 5000;
 
 		console.log('Web app listening at http://%s:%s', host, port);	
 });

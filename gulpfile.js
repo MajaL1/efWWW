@@ -59,9 +59,9 @@ var paths = {
 
 var postcss = require('gulp-postcss');
 
- var autoprefixer = require('autoprefixer');
+var autoprefixer = require('autoprefixer');
 
- 
+
 /*gulp.task('uncss', function () {
     return gulp.src('./public/css/*.css')
         .pipe(postcss())
@@ -80,16 +80,19 @@ gulp.task('purgecss', () => {
 })
 
 gulp.task('inject-css', function () {
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(['public/dist/all.css'], {read: true});
- 
-  gulp.src('public/dist/index.html')
-    .pipe(debug())
-      .pipe(inject(sources, {
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    var sources = gulp.src(['public/dist/all.css'], {
+        read: true
+    });
+
+    gulp.src('public/dist/index.html')
+        .pipe(debug())
+        .pipe(inject(sources, {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist}))
-    .pipe(debug())
-    .pipe(gulp.dest('public/dist'));
+            ignorePath: paths.dist
+        }))
+        .pipe(debug())
+        .pipe(gulp.dest('public/dist'));
 });
 
 
@@ -146,7 +149,7 @@ gulp.task('scripts', function () {
 // Fonts
 gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
-        .pipe(gulp.dest(paths.dist+'/fonts'));
+        .pipe(gulp.dest(paths.dist + '/fonts'));
 });
 gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets'], function () {
 
@@ -167,11 +170,12 @@ gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets'], function () {
                 return file.contents.toString();
             }
         }))
-        
-  //.pipe(gulp.src(['public/dist/index.html']))
-      .pipe(inject(gulp.src('public/dist/all.css'), {
+
+        //.pipe(gulp.src(['public/dist/index.html']))
+        .pipe(inject(gulp.src('public/dist/all.css'), {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist})) 
+            ignorePath: paths.dist
+        }))
         .pipe(gulp.dest(paths.dist + '/'));
 })
 
@@ -179,7 +183,7 @@ gulp.task('image-minify', function () {
     gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
         .pipe(changed('public/dist/assets/img'))
         .pipe(imagemin())
-        .pipe(gulp.dest(paths.dist+'/assets/img/'))
+        .pipe(gulp.dest(paths.dist + '/assets/img/'))
 });
 
 //gulp.task('build1', ['build', 'move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {});
@@ -187,7 +191,7 @@ gulp.task('image-minify', function () {
 
 
 gulp.task('assets', function () {
-    gulp.src(paths.img+'.+(png|jpg|jpeg|gif)')
+    gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
         .pipe(changed('public/dist/assets/img'))
         .pipe(imagemin())
         .pipe(gulp.dest('public/dist/assets/img/'))
@@ -265,7 +269,7 @@ gulp.task('sass', function () {
         .pipe(minifyCss())
         .pipe(csso())
         .pipe(concatcss('all.css'))
-        .pipe(gulp.dest(paths.dist+'/'));
+        .pipe(gulp.dest(paths.dist + '/'));
 });
 
 // Default task

@@ -1,38 +1,40 @@
 ﻿myApp.controller('VisitCounterCtrl', function ($scope, $state, $stateParams, $http) {
     console.log('VisitCounter controller');
 
-    var incrementPageCount = function(){
+    var incrementPageCount = function () {
 
         $http.get('/api/visit-counter')
-            .success(function(data) {
+            .success(function (data) {
                 console.log(data);
-               
-    		    var numVisits;
-    		    if(data!=null){
-                   
-                    if (!isNaN(parseFloat(data)) && isFinite(data)){
+
+                var numVisits;
+                if (data != null) {
+
+                    if (!isNaN(parseFloat(data)) && isFinite(data)) {
                         numVisits = parseInt(data) + 1;
                     }
-                }else {
-                    
+                } else {
+
                     // todo: skrij cel div za stevec
-                     $(".page-counter").css( "visibility", "hidden");
-    		    	numVisits = 1015;
-    		    }
+                    $(".page-counter").css("visibility", "hidden");
+                    numVisits = 1015;
+                }
                 $scope.counter = numVisits;
 
                 $http({
-                    method: 'POST',
-                    url: '/api/update-counter',
-                    data: {'count': $scope.counter}
-                })
-                .then(function(response) {
-                    
-                });
+                        method: 'POST',
+                        url: '/api/update-counter',
+                        data: {
+                            'count': $scope.counter
+                        }
+                    })
+                    .then(function (response) {
+
+                    });
             })
-            .error(function(data) {
+            .error(function (data) {
                 console.log('Error: ' + data);
-            });	
+            });
     }
     incrementPageCount();
 });

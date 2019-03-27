@@ -1,15 +1,15 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 
-angular.module("myApp.templates", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("public/views/about_me", "<div>test1</div>");
+angular.module("myApp.templates", []).run(["$templateCache", function ($templateCache) {
+    $templateCache.put("public/views/about_me", "<div>test1</div>");
     $templateCache.put("public/views/concerts", "<div>test3</div>");
     $templateCache.put("public/views/music", "<div>test4</div>");
     $templateCache.put("public/views/video", "<div>test5</div>");
-    $templateCache.put("public/views/other", "<div>test6</div>"); 
+    $templateCache.put("public/views/other", "<div>test6</div>");
 }]);
 
-myApp.controller("MusicCtrl"); 
-myApp.controller("VideoCtrl"); 
+myApp.controller("MusicCtrl");
+myApp.controller("VideoCtrl");
 
 
 myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -17,37 +17,39 @@ myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', fun
     $locationProvider.html5Mode(true);
 
     $routeProvider
-       .when("/", {
+        .when("/", {
             url: "/about_me",
             templateUrl: "/views/about_me.html",
         })
-       .when("/about_me", {
+        .when("/about_me", {
             url: "/about_me",
             templateUrl: "/views/about_me.html"
         })
-       .when("/concerts", {
+        .when("/concerts", {
             url: "/concerts",
             templateUrl: "/views/concerts.html"
         })
-       .when("/other", {
+        .when("/other", {
             url: "/other",
             templateUrl: "/views/other.html"
         })
-       .when("/music", {
+        .when("/music", {
             url: "/music",
             templateUrl: "/views/music.html",
             controller: "MusicCtrl"
         })
-       .when("/video", {
+        .when("/video", {
             url: "/video",
             templateUrl: "/views/video.html",
             controller: "VideoCtrl"
         });
-       $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({
+        redirectTo: '/'
+    });
 
-       $sceDelegateProvider.resourceUrlWhitelist(['**']);
-       $locationProvider.html5Mode({
-                 enabled: true,
-                 requireBase: false
-          }); 
+    $sceDelegateProvider.resourceUrlWhitelist(['**']);
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
 }]);

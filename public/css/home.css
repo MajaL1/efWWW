@@ -116,15 +116,6 @@ footer.ng-scope {
     background-repeat: no-repeat;
 }
 
-/*.elvis-new-2 {
-    width: 746px;
-    height: 560px;
-    margin-bottom: 30px;
-    background: url('/assets/img/rdeci_album.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}*/
-
 .skarabeji-img {
     width: 746px;
     height: 280px;
@@ -838,7 +829,4 @@ a {
 
 }
 
-@media screen and (min-width: 200px) and (max-width: 281px) {
-  
-
-}
+@media screen and (min-width: 200px) and (max-width: 281px) {}

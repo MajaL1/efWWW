@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/src'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({
     extended: true
@@ -34,7 +34,7 @@ app.use(function (err, req, res, next) {
     // additional logic, like emailing OPS staff w/ stack trace
 });
 
-app.use(express.static(__dirname + '/public', {
+app.use(express.static(__dirname + '/src', {
     maxAge: 86400000,
     setHeaders: function (res, path) {
         res.setHeader("Expires", new Date(Date.now() + 2592000000 * 30).toUTCString());
@@ -44,12 +44,11 @@ app.get('/*', function (req, res) {
     // res.writeHead(200, {
     //'Content-Encoding': 'gzip' });
 
-    if (req.url.indexOf("/images/") === 0 || req.url.indexOf("/stylesheets/") === 0) {
+    //if (req.url.indexOf("/images/") === 0 || req.url.indexOf("/stylesheets/") === 0) {
         res.setHeader("Cache-Control", "public, max-age=2592000");
         res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
-
-    }
+    //}
     res.status(200, {
         'Content-Encoding': 'gzip'
-    }).sendFile(path.join(__dirname + '/public/index.html'));
+    }).sendFile(path.join(__dirname + '/src/index.html'));
 });

@@ -3,21 +3,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139045514-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-139045514-1');
+    </script>
+
     <link rel="icon" href="data:,">
     <!-- ******************* START css links ************************* -->
     <!-- Bootstrap -->
-   
+
     <!-- ******************* END css links ************************* -->
 
     <meta name="google-site-verification" content="HKz1dZB4Prr1Sf5p_tczi1kLIurkpHsLC8MOTRp8pVc" />
     <meta name="msvalidate.01" content="C75E1828CF7FE794478D49EEAFF0F2F3" />
     <meta name="keywords" content="elvis fajko domača stran" />
     <meta name="description" content="elvis fajko jeseniški kantavtor" />
-    
-    <meta http-equiv="Content-Security-Policy"
-      content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'   "/>
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'   " />
     <title>Elvis Fajko</title>
-    
+
     <base href="/">
 </head>
 
@@ -25,7 +33,7 @@
     <!-- inject:public/views/common/header.html -->
     <div ng-include src="'views/common/header.html'"></div>
     <!-- endinject -->
-    
+
     <div class="main-body-div">
         <main ng-view></main>
     </div>
@@ -33,12 +41,12 @@
     <div ng-include src="'views/common/footer.html'"></div>
     <!-- endinject -->
 
-    
+
     <!-- inject:css -->
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <!-- endinject -->
-    
+
     <!-- inject:js -->
     <script src="scripts/angular.js"></script>
     <script src="scripts/jquery-3.1.1.min.js"></script>
@@ -50,4 +58,5 @@
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
 </body>
+
 </html>

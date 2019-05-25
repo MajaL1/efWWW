@@ -34,62 +34,65 @@ var concatcss = require('gulp-concat-css');
 
 var paths = {
     javascripts: [
-   'public/main.js',
-    'public/js/controllers/*.js',
-    'public/scripts/*.js'
+   'src/main.js',
+    'src/js/controllers/*.js',
+    'src/scripts/*.js'
   ],
     templates: [
-    '/public/views/*.html',
-    '/public/index.html'
+    '/src/views/*.html',
+    '/src/index.html'
   ],
     dist: [
-        'public/dist'
+        'src/dist'
     ],
-    css: ['public/css/*.css',
-        'public/css/**/*.scss'],
+    css: ['src/css/*.css',
+        'src/css/**/*.scss'],
 
-    music: ['public/assets/music/*.*'],
+    music: ['src/assets/music/*.*'],
 
-    img: ['public/assets/img/*'],
+    img: ['src/assets/img/*'],
 
-    fonts: ['public/fonts/*.{eot,svg,ttf,woff,woff2}'],
+    fonts: ['src/fonts/*.{eot,svg,ttf,woff,woff2}'],
 
-    assets: ['public/dist/assets/img']
+    assets: ['src/dist/assets/img']
 }
 
 var postcss = require('gulp-postcss');
 
- var autoprefixer = require('autoprefixer');
+var autoprefixer = require('autoprefixer');
 
- 
+
 /*gulp.task('uncss', function () {
-    return gulp.src('./public/css/*.css')
+    return gulp.src('./src/css/*.css')
         .pipe(postcss())
         .pipe(gulp.dest('./'+paths.dist));
 });*/
 
 gulp.task('purgecss', () => {
     return gulp
-        .src(['public/*.css', 'public'])
+        .src(['src/*.css', 'public'])
         .pipe(
             purgecss({
-                content: ['public/*.html']
+                content: ['src/*.html']
             })
         )
-        .pipe(gulp.dest('public/dist/purgecss'))
+        .pipe(gulp.dest('src/dist/purgecss'))
 })
 
 gulp.task('inject-css', function () {
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(['public/dist/all.css'], {read: true});
- 
-  gulp.src('public/dist/index.html')
-    .pipe(debug())
-      .pipe(inject(sources, {
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    var sources = gulp.src(['src/dist/all.css'], {
+        read: true
+    });
+
+    gulp.src('src/dist/index.html')
+        .pipe(debug())
+        .pipe(inject(sources, {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist}))
-    .pipe(debug())
-    .pipe(gulp.dest('public/dist'));
+            ignorePath: paths.dist
+        }))
+        .pipe(debug())
+        .pipe(gulp.dest('src/dist'));
 });
 
 
@@ -115,8 +118,8 @@ gulp.task('start', function () {
         livereload: true,
         directoryListing: false,
         //open: false,
-        //open: 'http://localhost:3000/public/dist/',
-        //  fallback: 'public/dist/index.html',
+        //open: 'http://localhost:3000/src/dist/',
+        //  fallback: 'src/dist/index.html',
 
         proxies: [
             {
@@ -126,14 +129,14 @@ gulp.task('start', function () {
         ],
         middleware: [historyApiFallback(), compression() //, //function(res.setHeader("Cache-Control", "public, max-age=2592000"))] //, proxyRest ],
                      ],
-        defaultFile: 'public/dist/index.html'
+        defaultFile: 'src/dist/index.html'
     })); //.pipe(notify("Running webserver!"));
 });
 
 gulp.task('heroku:production', ['start']);
 
 gulp.task('scripts', function () {
-    gulp.src(['public/scripts/angular.js', 'public/scripts/angular-route.js', 'public/main.js', 'public/js/controllers/*.js'])
+    gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
         .pipe(concat('all.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
@@ -146,40 +149,41 @@ gulp.task('scripts', function () {
 // Fonts
 gulp.task('fonts', function () {
     return gulp.src(paths.fonts, function (err) {})
-        .pipe(gulp.dest(paths.dist+'/fonts'));
+        .pipe(gulp.dest(paths.dist + '/fonts'));
 });
 gulp.task('build', ['move', 'scripts', 'sass', 'fonts', 'assets'], function () {
 
-    gulp.src('public/dist/index.html')
+    gulp.src('src/dist/index.html')
         .pipe(inject(gulp.src(paths.dist + '/all.js'), {
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist // ensures proper relative paths
         }))
-        .pipe(inject(gulp.src(['public/dist/views/header.html']), {
-            starttag: '<!-- inject:public/views/common/header.html -->',
+        .pipe(inject(gulp.src(['src/dist/views/header.html']), {
+            starttag: '<!-- inject:src/views/common/header.html -->',
             transform: function (filepath, file) {
                 return file.contents.toString();
             }
         }))
-        .pipe(inject(gulp.src(['public/dist/views/footer.html']), {
-            starttag: '<!-- inject:public/views/common/footer.html -->',
+        .pipe(inject(gulp.src(['src/dist/views/footer.html']), {
+            starttag: '<!-- inject:src/views/common/footer.html -->',
             transform: function (filepath, file) {
                 return file.contents.toString();
             }
         }))
-        
-  //.pipe(gulp.src(['public/dist/index.html']))
-      .pipe(inject(gulp.src('public/dist/all.css'), {
+
+        //.pipe(gulp.src(['src/dist/index.html']))
+        .pipe(inject(gulp.src('src/dist/all.css'), {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist})) 
+            ignorePath: paths.dist
+        }))
         .pipe(gulp.dest(paths.dist + '/'));
 })
 
 gulp.task('image-minify', function () {
     gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
-        .pipe(changed('public/dist/assets/img'))
+        .pipe(changed('src/dist/assets/img'))
         .pipe(imagemin())
-        .pipe(gulp.dest(paths.dist+'/assets/img/'))
+        .pipe(gulp.dest(paths.dist + '/assets/img/'))
 });
 
 //gulp.task('build1', ['build', 'move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {});
@@ -187,17 +191,17 @@ gulp.task('image-minify', function () {
 
 
 gulp.task('assets', function () {
-    gulp.src(paths.img+'.+(png|jpg|jpeg|gif)')
-        .pipe(changed('public/dist/assets/img'))
+    gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
+        .pipe(changed('src/dist/assets/img'))
         .pipe(imagemin())
-        .pipe(gulp.dest('public/dist/assets/img/'))
+        .pipe(gulp.dest('src/dist/assets/img/'))
 
 
     gulp.src(paths.music)
-        .pipe(gulp.dest('public/dist/assets/music'));
+        .pipe(gulp.dest('src/dist/assets/music'));
 
-    gulp.src(['public/img/*.*'])
-        .pipe(gulp.dest('public/dist/img'));
+    gulp.src(['src/img/*.*'])
+        .pipe(gulp.dest('src/dist/img'));
 });
 
 
@@ -205,14 +209,14 @@ gulp.task('assets', function () {
 /****************************************************/
 // tole je potrebno pogledat, kako bi dali vse html v js. (in pri tem obdrzali routing)
 gulp.task('html-conc', function () {
-    gulp.src(['/public/dist/index.html', '/public/views/*.html', '/public/main.js'])
+    gulp.src(['/src/dist/index.html', '/src/views/*.html', '/src/main.js'])
         // .pipe(template()) // converts html to JS
-        /*.pipe(angularTemplateCache('public/dist/all.js', {
+        /*.pipe(angularTemplateCache('src/dist/all.js', {
                 module: 'myApp',
                 root: '/'
             }))*/
         .pipe(templateCache(paths.dist + '/all.js', {
-            root: updateRoot(['/public/dist/index.html', '/public/views/*.html'])
+            root: updateRoot(['/src/dist/index.html', '/src/views/*.html'])
         }, {
             module: 'templateCache',
             standalone: true
@@ -234,10 +238,10 @@ function updateRoot(paths) {
 }
 
 gulp.task('move', function () {
-    gulp.src(['public/index.html'])
+    gulp.src(['src/index.html'])
         .pipe(gulp.dest(paths.dist + '/'));
 
-    gulp.src(['./public/views/*.html', './public/views/common/*.html'])
+    gulp.src(['./src/views/*.html', './src/views/common/*.html'])
         .pipe(flatten())
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -246,14 +250,6 @@ gulp.task('move', function () {
         .pipe(gulp.dest(paths.dist + '/views'));
     // .pipe(notify("Moved HTML files!"));
 });
-
-gulp.task('watch', ['serve'], function () {
-    gulp.start(['clean', 'scripts', 'move']);
-    gulp.watch(['public/js/**/*.js'], ['scripts']);
-    gulp.watch(['public/views/**/*.html'], ['move']);
-});
-
-
 
 //sass
 gulp.task('sass', function () {
@@ -265,7 +261,7 @@ gulp.task('sass', function () {
         .pipe(minifyCss())
         .pipe(csso())
         .pipe(concatcss('all.css'))
-        .pipe(gulp.dest(paths.dist+'/'));
+        .pipe(gulp.dest(paths.dist + '/'));
 });
 
 // Default task
@@ -275,7 +271,7 @@ gulp.task('default', function () {
 
 // task
 gulp.task('minify-js', function () {
-    gulp.src('./public/js/controllers/*.js') // path to your files
+    gulp.src('./src/js/controllers/*.js') // path to your files
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist + '/js'));
 });

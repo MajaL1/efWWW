@@ -11,6 +11,7 @@ body {
         url("/fonts/Blok.woff2") format("woff2"),
         url("/fonts/BlokHeavy.woff") format("woff"),
         url("/fonts/Blok.ttf") format("truetype");
+    font-display: failure;
     font-style: normal;
 }
 
@@ -21,6 +22,7 @@ body {
         url("/fonts/TickingTimebombBB.woff2") format("woff2"),
         url("/fonts/TickingTimebombBB.woff") format("woff");
     font-style: normal;
+    font-display: failure;
 }
 
 a.home-link-panel {

@@ -8095,7 +8095,7 @@ body {
 @font-face {
   font-family: Blok;
   src: url("../../fonts/Verdana.eot"),url("../../fonts/Blok.woff2") format("woff2"),url("../../fonts/BlokHeavy.woff") format("woff"),url("../../fonts/Blok.ttf") format("truetype");
-  font-display: failure;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -8103,7 +8103,7 @@ body {
   font-family: TickingTimebombBB;
   src: url("../../fonts/TickingTimebombBB.ttf") format("truetyoe"),url("../../fonts/TickingTimebombBB.woff2") format("woff2"),url("../../fonts/TickingTimebombBB.woff") format("woff");
   font-style: normal;
-  font-display: failure;
+  font-display: swap;
 }
 
 a.home-link-panel {

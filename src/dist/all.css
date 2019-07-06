@@ -8783,19 +8783,15 @@ a {
 @media screen and (min-width:650px) and (max-width:1024px) {
   .logo-elvis,
   .logo-elvis>img {
+    float: left;
     z-index: 99999;
     position: relative;
-  }
-
-  .logo-elvis {
-    float: initial;
   }
 
   .logo-elvis>img {
     height: auto;
     width: 220px;
     background-color: #fff;
-    float: left;
   }
 
   .svg-icons>a>img {

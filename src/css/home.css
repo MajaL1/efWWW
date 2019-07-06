@@ -743,7 +743,7 @@ a {
 
 @media screen and (min-width: 650px) and (max-width: 1024px) {
     .logo-elvis {
-        float: initial;
+        float: left;
         z-index: 99999;
         position: relative;
     }

@@ -168,7 +168,7 @@ gulp.task('start', function () {
                 target: 'http://localhost:5000/api/'
                   }
         ],
-        middleware: [historyApiFallback(), compression],
+        middleware: [historyApiFallback(), compression()],
         defaultFile: 'src/dist/index.html'
     }));
 });

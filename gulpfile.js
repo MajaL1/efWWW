@@ -85,19 +85,31 @@ gulp.task('move', async function () {
     gulp.src(['src/index.html'])
         .pipe(gulp.dest(paths.dist + '/'));
 
+<<<<<<< HEAD
    return gulp.src(['./src/views/*.html', './src/views/common/*.html'])
+=======
+    gulp.src(['./src/views/*.html', './src/views/common/*.html'])
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         .pipe(flatten())
         .pipe(htmlmin({
             collapseWhitespace: true,
             removeComments: true
         }))
         .pipe(gulp.dest(paths.dist + '/views'))
+<<<<<<< HEAD
         
+=======
+        .pipe(print(function() { return 'Gulp build completed.'; }))
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
          
 });
 //sass
 gulp.task('sass', async function () {
+<<<<<<< HEAD
    return gulp.src(paths.css)
+=======
+    gulp.src(paths.css)
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         .pipe(sass({
             outputStyle: 'compressed'
         }))
@@ -105,6 +117,7 @@ gulp.task('sass', async function () {
         .pipe(minifyCss())
         .pipe(csso())
         .pipe(concatcss('all.css'))
+<<<<<<< HEAD
         .pipe(gulp.dest(paths.dist))
 });
 
@@ -122,6 +135,32 @@ gulp.task('assets', async function () {
         .pipe(gulp.dest('src/dist/assets/music'));
    
 });
+=======
+        .pipe(gulp.dest(paths.dist + '/'))
+        .pipe(print(function() { return 'Gulp sass completed.'; }));
+});
+
+gulp.task('assets-music',async function () {
+     gulp.src(paths.music)
+        .pipe(gulp.dest('src/dist/assets/music')).pipe(print(function() { return 'Gulp assets-music completed.'; }));
+
+});
+gulp.task('assets-img',async function () {
+     gulp.src(['src/img/*.*'])
+        .pipe(gulp.dest('src/dist/img')).pipe(print(function() { return 'Gulp assets-img completed.'; }));
+
+})
+gulp.task('assets', gulp.parallel('assets-music','assets-img', async function () {
+    gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
+        .pipe(changed('src/dist/assets/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('src/dist/assets/img/')).pipe(print(function() { return 'Gulp assets completed.'; }));
+
+
+}));
+
+
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
 
 
 gulp.task('inject-css', function () {
@@ -138,8 +177,12 @@ gulp.task('inject-css', function () {
         }))
         .pipe(debug())
         .pipe(gulp.dest('src/dist'))
+<<<<<<< HEAD
         .pipe(print(function() { return 'Gulp inject-css completed.'; })).pipe(print(function() { return 'Gulp assets completed.'; }));
    
+=======
+        .pipe(print(function() { return 'Gulp inject-css completed.'; }));
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
 });
 
 
@@ -184,7 +227,11 @@ gulp.task('start', function () {
 gulp.task('heroku:production', gulp.series('start'));
 
 gulp.task('scripts', async function () {
+<<<<<<< HEAD
     return gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
+=======
+    gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         .pipe(concat('all.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
@@ -192,6 +239,10 @@ gulp.task('scripts', async function () {
             gutil.log(gutil.colors.red('[Error]'), err.toString());
         })
         .pipe(gulp.dest(paths.dist + '/'))
+<<<<<<< HEAD
+=======
+        .pipe(print(function() { return 'Gulp scripts completed.'; }));
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
 });
 // Fonts
 gulp.task('fonts', function () {
@@ -200,6 +251,7 @@ gulp.task('fonts', function () {
         .pipe(print(function() { return 'Gulp fonts completed.'; }));
 });
 
+<<<<<<< HEAD
 // inject
 gulp.task('inject', async function () {
     console.log('inject task...')
@@ -221,15 +273,73 @@ gulp.task('inject', async function () {
         })) .pipe(gulp.dest(paths.dist + '/'))
         .pipe(inject(gulp.src(['./src/dist/views/header.html']), {
             starttag: '<!-- inject:header:html -->',
+=======
+gulp.task('inject-js', async function () {
+    gulp.src(['src/dist/index.html'])
+        .pipe(inject(gulp.src(paths.dist + '/all.js'), {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist // ensures proper relative paths
+        }))
+        .pipe(gulp.dest(paths.dist + '/'))
+        .pipe(inject(gulp.src('src/dist/all.css'), {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist
+        }))
+        .pipe(gulp.dest(paths.dist + '/'))
+        
+        .pipe(print(function() { return 'Gulp inject-js completed.'; }));
+});
+gulp.task('inject-css', async function () {
+    gulp.src(['src/dist/index.html'])
+        .pipe(inject(gulp.src('src/dist/all.css'), {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist
+        }))
+        .pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject-css completed.'; }));
+});
+gulp.task('inject-header-footer', async function () {
+    gulp.src('src/dist/index.html').pipe(inject(gulp.src(['src/dist/views/header.html']), {
+            starttag: '<!-- inject:src/views/common/header.html -->',
+            transform: function (filepath, file) {
+                return file.contents.toString();
+            }
+        })).pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject completed.'; }));
+        /*
+        .pipe(inject(gulp.src(['src/dist/views/footer.html']), {
+            starttag: '<!-- inject:src/views/common/footer.html -->',
+            transform: function (filepath, file) {
+                return file.contents.toString();
+            }
+        }))*/
+        
+});
+// inject
+gulp.task('inject',gulp.series('inject-js'), async function () {
+     console.log('inject task...')
+    
+        
+        gulp.src('src/dist/index.html').pipe(inject(gulp.src(['src/dist/views/header.html']), {
+            starttag: '<!-- inject:src/views/common/header.html -->',
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
             transform: function (filepath, file) {
                 return file.contents.toString();
             },
             allowEmpty: true
             
         }))
+<<<<<<< HEAD
        .pipe(gulp.dest(paths.dist + '/'))
        .pipe(inject(gulp.src(['./src/dist/views/footer.html']), {
             starttag: '<!-- inject:footer:html -->',
+=======
+            .pipe(inject(gulp.src('src/dist/all.css'), {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist
+        })).pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject completed.'; }));
+        /*
+        .pipe(inject(gulp.src(['src/dist/views/footer.html']), {
+            starttag: '<!-- inject:src/views/common/footer.html -->',
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
             transform: function (filepath, file) {
                 return file.contents.toString();
             },
@@ -248,6 +358,26 @@ gulp.task('build', gulp.series(['sass'],'move', 'scripts', 'fonts', 'assets', 'i
        return (print(function() { return 'Gulp build completed.'; }));
 });
 
+<<<<<<< HEAD
+=======
+        //.pipe(gulp.src(['src/dist/index.html']))
+        .pipe(inject(gulp.src('src/dist/all.css'), {
+            addRootSlash: false, // ensures proper relative paths
+            ignorePath: paths.dist
+        }))
+        .pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject completed.'; }));
+        */
+});
+//move works
+// scripts works
+//gulp.task('build', gulp.series('move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css', 'inject'), function () {
+gulp.task('build', gulp.series('move', 'scripts', 'sass', 'fonts', 'assets', 'inject'), function () {
+
+         
+        (print(function() { return 'Gulp build completed.'; }));
+});
+
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
 
 gulp.task('image-minify', function () {
     gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
@@ -294,16 +424,23 @@ function updateRoot(paths) {
     }
 }
 
+<<<<<<< HEAD
 
 // Default task
 gulp.task('default', function () {
     gulp.start('sass');
 });
 
+=======
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
 // task
 gulp.task('minify-js', function () {
     gulp.src('./src/js/controllers/*.js') // path to your files
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist + '/js'))
         .pipe(print(function() { return 'Gulp minify-js completed.'; }));
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23

@@ -126,9 +126,6 @@ gulp.task('assets', async function () {
    
 });
 
-        .pipe(gulp.dest(paths.dist + '/'))
-        .pipe(print(function() { return 'Gulp sass completed.'; }));
-});
 
 gulp.task('assets-music',async function () {
      gulp.src(paths.music)
@@ -166,10 +163,7 @@ gulp.task('inject-css', function () {
             ignorePath: paths.dist
         }))
         .pipe(debug())
-        .pipe(gulp.dest('src/dist'))
-
-        .pipe(print(function() { return 'Gulp inject-css completed.'; })).pipe(print(function() { return 'Gulp assets completed.'; }));
-   
+        .pipe(gulp.dest('src/dist'))   
 
         .pipe(print(function() { return 'Gulp inject-css completed.'; }));
 });
@@ -257,9 +251,8 @@ gulp.task('inject', async function () {
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist, // ensures proper relative paths`
             allowEmpty: true
-        })) .pipe(gulp.dest(paths.dist + '/'))
-        .pipe(inject(gulp.src(['./src/dist/views/header.html']), {
-            starttag: '<!-- inject:header:html -->',
+        })) 
+})
         
 gulp.task('inject-js', async function () {
     gulp.src(['src/dist/index.html'])
@@ -316,7 +309,6 @@ gulp.task('inject',gulp.series('inject-js'), async function () {
        .pipe(gulp.dest(paths.dist + '/'))
        .pipe(inject(gulp.src(['./src/dist/views/footer.html']), {
             starttag: '<!-- inject:footer:html -->',
-            .pipe(inject(gulp.src('src/dist/all.css'), {
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist
         })).pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject completed.'; }));
@@ -342,14 +334,7 @@ gulp.task('build', gulp.series(['sass'],'move', 'scripts', 'fonts', 'assets', 'i
 });
 
 
-        //.pipe(gulp.src(['src/dist/index.html']))
-        .pipe(inject(gulp.src('src/dist/all.css'), {
-            addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist
-        }))
-        .pipe(gulp.dest(paths.dist + '/')).pipe(print(function() { return 'Gulp inject completed.'; }));
-        */
-});
+
 //move works
 // scripts works
 //gulp.task('build', gulp.series('move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css', 'inject'), function () {

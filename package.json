@@ -19,14 +19,9 @@
         "cross-env": "^5.2.1",
         "del": "^4.1.1",
         "dotenv": "^7.0.0",
-<<<<<<< HEAD
-        "express": "^4.17.1",
-        "gulp-angular-templatecache": "^2.2.7",
-=======
         "express": "^4.16.4",
+        "gulp-angular-templatecache": "^2.2.7",
         "gulp": "^4.0.0",
-        "gulp-angular-templatecache": "^2.2.6",
->>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         "gulp-changed": "^3.2.0",
         "gulp-clean": "^0.4.0",
         "gulp-cli": "^2.2.0",
@@ -42,11 +37,7 @@
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "^5.0.3",
         "gulp-inject": "^5.0.4",
-<<<<<<< HEAD
         "gulp-inject-partials": "^1.0.5",
-=======
-        "gulp-inject-partials": "^1.0.4",
->>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         "gulp-minify-css": "^1.2.4",
         "gulp-ng-annotate": "^2.1.0",
         "gulp-ng-templates": "^1.0.2",
@@ -55,38 +46,23 @@
         "gulp-print": "^5.0.2",
         "gulp-purgecss": "^1.2.0",
         "gulp-run-seq": "^1.2.4",
-<<<<<<< HEAD
         "gulp-sass": "3.0.0",
         "gulp-template-compile": "^1.5.1",
-=======
-        "gulp-sass": "3.1.0",
-        "gulp-template-compile": "^1.4.0",
->>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         "gulp-uglify": "^3.0.2",
         "gulp-util": "3.0.8",
         "gulp-webserver": "^0.9.1",
         "http-proxy-middleware": "^0.19.1",
         "install": "^0.12.2",
-<<<<<<< HEAD
-        "lodash": "^4.17.15",
-        "node": "^12.0.0",
-        "node-sass": "^4.13.0",
-=======
         "lodash": "^4.17.11",
         "node": "^12.0.0",
         "node-sass": "^4.11.0",
->>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         "notify-send": "^0.1.2",
         "npm-watch": "^0.6.0"
     },
     "main": "app.js",
     "devDependencies": {
         "cors": "^2.8.5",
-<<<<<<< HEAD
         "gulp": "^4.0.2",
-=======
-        "gulp": "^4.0.0",
->>>>>>> 813ad93106f9ba9564ae27aa352565e543d36a23
         "gulp-coffee": "2.3.4",
         "gulp-concat": "^2.6.1",
         "gulp-connect": "5.0.0",

@@ -339,6 +339,7 @@ footer.ng-scope {
 
 .inner-navbar-div {
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 a.home-link-panel:active,

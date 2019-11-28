@@ -239,17 +239,6 @@ gulp.task('build', gulp.series('move', 'scripts', 'fonts', 'assets', 'inject', '
     return (print(function() { return 'Gulp build completed.'; }));
 });
 
-
-
-gulp.task('image-minify', function () {
-    gulp.src(paths.img + '.+(png|jpg|jpeg|gif)')
-        .pipe(changed('src/dist/assets/img'))
-        .pipe(imagemin())
-        .pipe(gulp.dest(paths.dist + '/assets/img/'))
-        .pipe(print(function() { return 'Gulp image-minify completed.'; }));
-});
-
-
 /****************************************************/
 // tole je potrebno pogledat, kako bi dali vse html v js. (in pri tem obdrzali routing)
 gulp.task('html-conc', function () {

@@ -137,7 +137,7 @@ gulp.task('inject-css', function () {
 
 
 gulp.task('clean', function () {
-    return del(paths.templates.dist);
+    return del(['src/dist/**']);
 });
 
 gulp.task('compress', function () {
@@ -236,9 +236,7 @@ gulp.task('inject-css', async function () {
 });
 
 gulp.task('build', gulp.series('move', 'scripts', 'fonts', 'assets', 'inject', 'sass'), function () {
-
-         
-       return (print(function() { return 'Gulp build completed.'; }));
+    return (print(function() { return 'Gulp build completed.'; }));
 });
 
 
@@ -250,11 +248,6 @@ gulp.task('image-minify', function () {
         .pipe(gulp.dest(paths.dist + '/assets/img/'))
         .pipe(print(function() { return 'Gulp image-minify completed.'; }));
 });
-
-//gulp.task('build1', ['build', 'move', 'scripts', 'sass', 'fonts', 'assets', 'inject-css'], function () {});
-
-
-
 
 
 /****************************************************/

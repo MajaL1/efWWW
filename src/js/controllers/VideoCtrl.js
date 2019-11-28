@@ -35,39 +35,6 @@ myApp.factory('youtubeService', function ($http) {
 (function (app) {
     myApp.controller('VideoCtrl', ['$http', '$scope', 'youtubeService', function ($http, $scope, youtubeService) {
 
-        /***************************************  videos za Skarabeji  ***************************************/
-        /* $scope.playlistVideos = [];
-         $scope.videoSourcesSkarabeji = [];
-
-         console.log('Start VideoCtrl');
-
-         var promise = youtubeService.getPlaylistVideos(playlistId);
-
-         promise.then(onSuccess, onError);
-
-         function onSuccess(event){
-             let itemsList = event.data.items;
-
-                 for(index in itemsList){
-                     let title = itemsList[index].snippet.title;
-                     let url = YOUTUBE_URL+itemsList[index].snippet.resourceId.videoId;
-                     let videoItem = {
-                         "title" : title,
-                         "url" : url
-                     };
-                     $scope.videoSourcesSkarabeji.push(videoItem);
-             }
-         }
-
-         function onError(error){
-                   console.log('failure loading playlist', error);
-         } */
-
-
-        /****************************** end videos za skarabeji **********************************/
-
-
-
         /*****************************************  start get playlists  ********************************/
 
         $scope.playlistVideos = [];

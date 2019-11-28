@@ -46,19 +46,6 @@
                 console.log(data);
             });
     }
-
-    /* factory.getAudioData = function(url, fileName) {
-         
-         console.log('-- url -- fileName: ', url);
-         
-         var res = $http({
-             method: 'GET',
-             url: url+""+fileName 
-             });
-         
-         console.log('-- res: ', res);
-         return res;
-         }*/
     return factory;
     }]);
 
@@ -72,18 +59,6 @@ myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', functio
     $scope.loadAudios = function () {
 
         var audioDataList;
-
-        /* DownloadFileFactory.getAudioData("/api/get-audio-data/","skarabeji.json")
-            .then(function successCallback(response) {
-              audioDataList = response.data;
-                 for (i=0; i<audioDataList.length; i++){
-                     $scope.audioSkarabejiList.push(audioDataList[i]);
-                 }
-           }, function errorCallback(response) {
-             console.log('1**********response, ', response);
-             console.log('2**********response, ', audioDataList);
-           });
-           */
         $scope.audioSkarabejiList.push({
             "title": "Upanje",
             "url": "assets/music/Skarabeji - Upanje.mp3"
@@ -154,16 +129,6 @@ myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', functio
         for (i = 0; i < audioSingleSources.length; i++) {
             $scope.audioSingleList.push(audioSingleSources[i]);
         }
-        /* DownloadFileFactory.getAudioData("/api/get-audio-data/","singli.json")
-
-             .then(function successCallback(response) {
-              audioSingleSourcesList = response.data;
-                 for (i=0; i<audioSingleSourcesList.length; i++){
-                     $scope.audioSingleList.push(audioSingleSourcesList[i]);
-                 }
-           }, function errorCallback(response) {
-             console.log(response);
-           }); */
     }
 
     $scope.loadAudios();

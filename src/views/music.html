@@ -14,7 +14,7 @@
                 <audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar" volume="0.1" preload="metadata">
                     <source ng-src="{{audio.url}}" type="audio/mp3">
                 </audio>
-                <a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title, audio.id, audio.downloadCount, 'singli')" target="_blank" download><img class="download" src='assets/img/download1.png' /></a>
+                <a class="audio-download-button" href="{{audio.url}}" target="_blank" download><img class="download" src='assets/img/download1.png' /></a>
                 <span class="download-count">{{audio.downloadCount}}</span>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <audio controls="controls" controlsList="fullscreen nodownload remoteplayback foobar" volume="0.1" preload="metadata">
                     <source ng-src="{{audio.url}}" type="audio/mp3">
                 </audio>
-                <a class="audio-download-button" ng-click="downloadAudioFile(audio.url, audio.title, audio.id, audio.downloadCount, 'skarabeji')" target="_blank" download><img class="download" src='assets/img/download1.png' /></a>
+                <a class="audio-download-button" href="{{audio.url}}" target="_blank" download><img class="download" src='assets/img/download1.png' /></a>
             </div>
         </div>
 

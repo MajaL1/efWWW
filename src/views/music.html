@@ -22,7 +22,14 @@
         <h4 class='video-item-title'> <strong>Skarabeji - drugo dejanje </strong></h4>
         <br>
         <div class='music-description'>
-            <div class="skarabeji-img"></div>
+            
+              <picture>
+                <source srcset="assets/img/skarabeji-naslovnica-large.png" media="(min-width: 1200px)" />
+                <source srcset="assets/img/skarabeji-naslovnica-md.png" media="(min-width: 600px)" />
+                <source srcset="assets/img/skarabeji-naslovnica-sm.png" media="(min-width: 280px)" />
+
+                <img ng-src="assets/img/skarabeji-naslovnica-md.png" alt="logo">
+            </picture>
             <div class='album-description'> Leta 2003 je Elvis Fajko kot član skupine Skarabeji izdal svoj prvi CD, kjer je sodeloval kot vokalist, ter z akustično kitaro ... </div>
         </div>
         <br>

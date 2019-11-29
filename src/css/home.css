@@ -135,6 +135,8 @@ footer.ng-scope {
     display: block;
     background-color: darkred;
     height: 80px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .navbar-nav {
@@ -512,10 +514,6 @@ a {
     padding-left: 25px;
 }
 
-.about-me-link {
-    margin-left: 40px;
-}
-
 @media screen and (min-width: 280px) and (max-width: 650px) {
     .main-body-div {
         font-family: Verdana;
@@ -558,6 +556,8 @@ a {
         display: block;
         background-color: darkred;
         height: 150px;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .header-link {

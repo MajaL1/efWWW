@@ -20,7 +20,6 @@ var changed = require('gulp-changed');
 var purgecss = require('gulp-purgecss');
 var compression = require('compression');
 var templateCache = require('gulp-angular-templatecache');
-var connect = require('gulp-clean');
 var gzip = require('gulp-gzip');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -57,12 +56,11 @@ var autoprefixer = require('autoprefixer');
 
 const print = require('gulp-print').default;
 
-
-/*gulp.task('uncss', function () {
-    return gulp.src('./src/css/*.css')
-        .pipe(postcss())
-        .pipe(gulp.dest('./'+paths.dist));
-});*/
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: "./app"
+    });
+});
 
 gulp.task('purgecss', () => {
     return gulp

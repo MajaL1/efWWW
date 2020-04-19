@@ -1,15 +1,15 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 
 angular.module("myApp.templates", []).run(["$templateCache", function ($templateCache) {
-    $templateCache.put("public/views/about_me", "<div>test1</div>");
-    $templateCache.put("public/views/concerts", "<div>test3</div>");
-    $templateCache.put("public/views/music", "<div>test4</div>");
+    $templateCache.put("public/views/domov", "<div>test1</div>");
+    $templateCache.put("public/views/koncerti", "<div>test3</div>");
+    $templateCache.put("public/views/glasba", "<div>test4</div>");
     $templateCache.put("public/views/video", "<div>test5</div>");
-    $templateCache.put("public/views/other", "<div>test6</div>");
 }]);
 
 myApp.controller("MusicCtrl");
 myApp.controller("VideoCtrl");
+myApp.controller("HomeCtrl");
 
 
 myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
@@ -18,24 +18,21 @@ myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', fun
 
     $routeProvider
         .when("/", {
-            url: "/about_me",
-            templateUrl: "/views/about_me.html",
+            url: "/domov",
+            templateUrl: "/views/domov.html",
         })
-        .when("/about_me", {
-            url: "/about_me",
-            templateUrl: "/views/about_me.html"
+        .when("/domov", {
+            url: "/domov",
+            templateUrl: "/views/domov.html",
+            controller: "HomeCtrl"
         })
-        .when("/concerts", {
-            url: "/concerts",
-            templateUrl: "/views/concerts.html"
+        .when("/koncerti", {
+            url: "/koncerti",
+            templateUrl: "/views/koncerti.html"
         })
-        .when("/other", {
-            url: "/other",
-            templateUrl: "/views/other.html"
-        })
-        .when("/music", {
-            url: "/music",
-            templateUrl: "/views/music.html",
+        .when("/glasba", {
+            url: "/glasba",
+            templateUrl: "/views/glasba.html",
             controller: "MusicCtrl"
         })
         .when("/video", {

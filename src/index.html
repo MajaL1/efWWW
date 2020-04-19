@@ -1,53 +1,143 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 
-<head>
-    <link rel="icon" href="data:,">
-    <!-- ******************* START css links ************************* -->
-    <!-- Bootstrap -->
+    <head>
+        <link rel="icon" href="data:,">
+        <!-- ******************* START css links ************************* -->
 
-    <!-- ******************* END css links ************************* -->
+        <!-- ******************* END css links ************************* -->
 
-    <meta name="google-site-verification" content="HKz1dZB4Prr1Sf5p_tczi1kLIurkpHsLC8MOTRp8pVc" />
-    <meta name="msvalidate.01" content="C75E1828CF7FE794478D49EEAFF0F2F3" />
-    <meta name="keywords" content="elvis fajko domača stran" />
-    <meta name="description" content="elvis fajko jeseniški kantavtor" />
+        <meta name="google-site-verification" content="HKz1dZB4Prr1Sf5p_tczi1kLIurkpHsLC8MOTRp8pVc" />
+        <meta name="msvalidate.01" content="C75E1828CF7FE794478D49EEAFF0F2F3" />
+        <meta name="keywords" content="elvis fajko domača stran" />
+        <meta name="description" content="elvis fajko jeseniški kantavtor" />
+        <!-- <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"> -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline';
+                                                        style-src 'self' 'unsafe-inline'  https://fonts.googleapis.com; 
+                                                        font-src 'self' https://fonts.gstatic.com;  " />
+        <title>Elvis Fajko</title>
 
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'   " />
-    <title>Elvis Fajko</title>
+        <base href="/">
+    </head>
 
-    <base href="/">
-</head>
+    <body>
+        <!-- inject:header:html -->
+        <div ng-include src="'src/views/common/header.html'"></div>
+        <!-- endinject -->
 
-<body>
-    <!-- inject:header:html -->
-    <div ng-include src="'src/views/common/header.html'"></div>
-    <!-- endinject -->
+        <div class="navigation-bar">
+            <div class="nav-logo">
+                <a href="domov">
+                    <img class="logo-img" src="/img/logo-sm.png" alt="" />
+                </a>
+            </div>
+            <a class="btn nav-link" href="domov">
+                DOMOV
+            </a>
+            <a class="btn nav-link" href="/koncerti">
+                KONCERTI
+            </a>
+            <a class="btn nav-link" href="/glasba">
+                GLASBA
+            </a>
+            <a class="btn nav-link" href="/video">
+                VIDEO
+            </a>
+            <div class="nav-link-icons">
+                <a href="https://www.facebook.com/kantavtorelvisfajko/" target="_blank">
+                    <img class="logo-fb" src="/img/icon-fb-1.png" alt="" />
+                </a>
+                <a href="https://www.youtube.com/user/elvisfajko1" target="_blank">
+                    <img class="logo-youtube" src="/img/y1.png" alt="" />
+                </a>
+            </div>
+        </div>
+        </div>
 
-    <div class="main-body-div">
-        <main ng-view></main>
-    </div>
-    <!-- inject:footer:html -->
-    <div ng-include src="'src/views/common/footer.html'"></div>
-    <!-- endinject -->
+        <div ng-include src="'src/views/common/header.html'"></div>
+
+        <div class="main-body-div">
+            <main ng-view></main>
+        </div>
+        <!-- inject:footer:html -->
+        <div ng-include src="'src/views/common/footer.html'"></div>
+        <!-- endinject -->
 
 
-    <!-- inject:css -->
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <!-- endinject -->
+        <!-- inject:css -->
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/header.css">
+        <link rel="stylesheet" type="text/css" href="css/presentation.css">
+        <link rel="stylesheet" type="text/css" href="css/about.css">
+        <link rel="stylesheet" type="text/css" href="css/video.css">
+        <link rel="stylesheet" type="text/css" href="css/audio.css">
+        <link rel="stylesheet" type="text/css" href="css/koncerti.css">
 
-    <!-- inject:js -->
-    <script src="scripts/angular.js"></script>
-    <script src="scripts/jquery-3.1.1.min.js"></script>
-    <script src="scripts/angular-route.js"></script>
-    <script src="main.js"></script>
-    <script src="js/controllers/MusicCtrl.js"></script>
-    <script src="js/controllers/VideoCtrl.js"></script>
-    <!-- endinject-->
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+        <link rel="stylesheet" type="text/css" href="css/img-grid.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
 
-</body>
+
+
+        <!-- endinject -->
+
+        <!-- inject:js -->
+        <script src="scripts/angular.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.3.1.slim.min.js"></script>
+
+        <script src="scripts/angular-animate.min.js"></script>
+
+        <script src="scripts/angular-route.js"></script>
+        <script src="main.js"></script>
+        <script src="js/controllers/MusicCtrl.js"></script>
+        <script src="js/controllers/VideoCtrl.js"></script>
+        <script src="js/controllers/HomeCtrl.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                let scroll_pos = 0;
+                return;
+
+                // change colors of background on scroll
+                $(document).scroll(function () {
+                    let step = 10;
+                    let maxHeight = $('body').height();
+                    console.log('maxHeight: ', maxHeight);
+                    console.log('scroll_pos: ', scroll_pos);
+
+                    scroll_pos = $(this).scrollTop();
+                    let interval = parseInt(maxHeight / scroll_pos);
+
+                    let normalize = 255 / maxHeight;
+
+                    console.log('normalize: ', normalize);
+                    /* if (interval % step == 0) {
+                        let colorVal = interval * step;
+                        let color = colorVal; */
+
+                    let color = 255 - parseInt(normalize * scroll_pos);
+                    console.log('color: ', color);
+                    let red = color * 2;
+
+
+                    let colorName = "rgba(" + red + ", " + color + "," + color + ", 0.5)";
+
+                    $("body").css('background-color', colorName);
+
+                    /* console.log('maxHeight: ', maxHeight);
+                    console.log('scroll_pos: ', scroll_pos);
+                     */// if(scroll_pos > 300) {
+                    //     $("body").css('background-color', 'aliceblue');
+                    // } else {
+                    //     $("body").css('background-color', 'white');
+                    // }
+                });
+            });
+        </script>
+        <!-- endinject-->
+        <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+    </body>
 
 </html>

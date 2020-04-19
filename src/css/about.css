@@ -1,0 +1,203 @@
+.about {
+    margin: 0 auto;
+    color: black;
+    text-align: justify;
+}
+
+.about-div {
+    padding: 5% 10%;
+}
+
+.about-div-1 {
+    font-size: medium;
+    padding: 5% 10%;
+}
+
+.about-1-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-div-inner-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.about-1-img {
+    width: auto;
+    max-width: 400px;
+}
+
+.about-desc-inner {
+    width: 40%;
+}
+
+.about-description {
+    padding: 0 4%;
+    /*  border-left: 4px solid #a76a6a; */
+}
+
+.about-div-border-3 {
+    padding: 0 4%;
+}
+
+.p-link {
+    color: darkred;
+}
+
+.active {
+    background-color: rgb(245, 245, 245);
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -moz-animation: blink normal 1.5s infinite ease-in-out;
+    /* Firefox */
+    -webkit-animation: blink normal 1.5s infinite ease-in-out;
+    /* Webkit */
+    -ms-animation: blink normal 1.5s infinite ease-in-out;
+    /* IE */
+    animation: blink normal 1.5s infinite ease-in-out;
+    /* Opera */
+}
+
+/*.about-div.about-div-1 {
+     background: linear-gradient(to right, white, white, transparent);
+    background-size: 600% 100%;
+    animation: gradient 2s linear;
+    animation-direction: alternate; 
+}*/
+
+/* 
+change background of .about div */
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+        background-color: transparent;
+    }
+    50% {
+        background-position: 30%;
+        background-color: dimgray;
+    }
+    100% {
+        background-position: 100%;
+        background-color: transparent;
+    }
+}
+
+.about-subtitle {
+    font-size: x-large;
+    text-align: center;
+    margin: 20px 0px;
+    /*    border-bottom: 1px solid transparent;
+   */
+    color: #350909;
+    /*  background-image: linear-gradient(brown, #ea4343);
+    */
+    background-color: darkred;
+    width: 59%;
+    color: ghostwhite;
+    margin: 20px auto;
+    opacity: 0.7;
+}
+
+.about-subtitle.about-1 {
+    animation: move-in-steps ease-in 1s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+/***********************************************/
+
+/********  BORDER-LEFT with div before-after ********/
+
+.about-description:before {
+    /* content: ""; */
+    width: 2px;
+    /* color white ("no color") color (each 2px wide); here you can adjust the width */
+    height: 100%;
+    background-color: transparent;
+    /*linear-gradient(#dd4141, #dd5341) left/2px 100% no-repeat, linear-gradient(#dd4141, #dd5341) right/2px 100% no-repeat; */
+    margin-left: -5%;
+    position: absolute;
+    /* needs to be absolute */
+    /*  top: 0%; */
+    height: 0px;
+    content: "";
+    animation: linedown 1s forwards;
+}
+
+@keyframes linedown {
+    0% {
+        background-color: transparent
+    }
+    50% {
+        height: 200px;
+        background-color: darkred;
+    }
+    100% {
+        height: 250px;
+        background-color: darkred;
+    }
+}
+
+/************************************************/
+
+/**********************************************/
+
+/**  trying to implement border-left **/
+
+.about-description {
+    /* border-left: solid 1px green; */
+    animation: anim-border-left 1s ease-in-out;
+    /*  transform: scaleX(0);
+    transition: transform 250ms ease-in-out; */
+}
+
+@keyframes anim-border-left {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1.05);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.about-description:hover:before {
+    transform-origin: 0% 50%;
+}
+
+/** move subtitle from left to center */
+
+/* @keyframes move-in-steps {
+    0% {
+        margin-left: -30%;
+        background: darkred;
+    }
+    30% {
+        margin-left: 30%;
+        opacity: 0.8;
+        background: brown;
+    }
+    100% {
+        margin-left: 20%;
+        opacity: 0.8;
+        background: brown;
+    }
+} */

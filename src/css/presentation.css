@@ -1,0 +1,55 @@
+.main-body-div {
+    position: absolute;
+}
+
+.presentation-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url('/assets/img/elvis-front1.png');
+    background-size: cover;
+    height: 800px;
+    margin-top: 15px;
+}
+
+.presentation-img-div {
+    width: 50%;
+}
+
+.presentation-img {
+    max-width: 600px;
+}
+
+.presentation-p {
+    text-align: center;
+}
+
+.presentation-text-div {
+    width: 40%;
+    padding: 8% 3%;
+}
+
+.presentation-text-div-1 {
+    padding: 8% 3%;
+    font-family: "Aguafina Script";
+    font-size: xxx-large;
+    opacity: 0.5;
+    color: lightgray;
+}
+
+.presentation-text-div-1>small {
+    font-size: 0.5em;
+}
+
+.presentation-text-div-2 {
+    width: 60%;
+    padding: 8% 5%;
+    background: linear-gradient(45deg, #000, #1b191900);
+    font-size: medium;
+    color: #8a8a8a;
+}
+
+h3>strong {
+    text-align: center;
+}

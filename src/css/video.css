@@ -1,0 +1,21 @@
+.video-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 30px auto 20px auto;
+    top: 100px;
+    position: relative;
+}
+
+.video-item {
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+#video {
+    height: 300px;
+    width: 90%;
+}

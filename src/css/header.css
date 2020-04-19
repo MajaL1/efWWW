@@ -1,0 +1,93 @@
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
+.navigation-bar {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  height: 60px;
+  z-index: 1001;
+}
+
+.btn {
+  /* display: inline-block;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: large;
+    width: 8%;
+    letter-spacing: 0; */
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  /* margin: 0 0 2em; */
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: auto;
+  width: 100px;
+  text-align: center;
+  /*  width: 100%;  */
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:active {
+  letter-spacing: 5px;
+}
+
+.nav-link:after, .nav-link:before {
+  backface-visibility: hidden;
+  border: 1px solid transparent;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.nav-link:hover:after, .nav-link:hover:before {
+  backface-visibility: hidden;
+  border-color: brown;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.nav-link:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+.logo-img {
+  max-height: 60px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.nav-link-icons {
+  position: absolute;
+  right: 0px;
+}
+
+img.logo-fb {
+  width: 30px;
+}
+
+img.logo-youtube {
+  width: 30px;
+}

@@ -34,6 +34,11 @@ app.use(function (err, req, res, next) {
     // additional logic, like emailing OPS staff w/ stack trace
 });
 
+
+app.use(express.static(__dirname + '/public'));
+app.use('/views/common', express.static(__dirname + '/views/common')); //serve views directory as assets
+
+
 app.use(express.static(__dirname + '/src', {
     maxAge: 86400000,
     setHeaders: function (res, path) {

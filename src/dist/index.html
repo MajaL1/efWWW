@@ -4,14 +4,18 @@
 
     <head>
         <link rel="icon" href="data:,">
+        <!-- ******************* START css links ************************* -->
+
+        <!-- ******************* END css links ************************* -->
 
         <meta name="google-site-verification" content="HKz1dZB4Prr1Sf5p_tczi1kLIurkpHsLC8MOTRp8pVc" />
         <meta name="msvalidate.01" content="C75E1828CF7FE794478D49EEAFF0F2F3" />
         <meta name="keywords" content="elvis fajko domača stran" />
         <meta name="description" content="elvis fajko jeseniški kantavtor" />
-
-        <meta http-equiv="Content-Security-Policy"
-            content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'   " />
+        <!-- <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"> -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' ws://localhost:* http://localhost:3000 https://apis.google.com https://ajax.googleapis.com/ http://localhost:35729/ 'unsafe-inline';
+                                                        style-src 'self' 'unsafe-inline'  https://fonts.googleapis.com; 
+                                                        font-src 'self' https://fonts.gstatic.com;  " />
         <title>Elvis Fajko</title>
 
         <base href="/">
@@ -19,30 +23,59 @@
 
     <body>
         <!-- inject:header:html -->
-        <div class="navigation-bar"><a class="nav-link" href="domov">DOMOV </a><a class="nav-link"
-                href="/koncerti">KONCERTI </a><a class="nav-link" href="/glasba">GLASBA </a><a class="nav-link"
-                href="/video">VIDEO</a></div>
+        <div class="navigation-bar"><div class="nav-logo"><img class="logo-img" src="/img/logo-sm.png" alt=""></div><a class="nav-link" href="domov">DOMOV </a><a class="nav-link" href="/koncerti">KONCERTI </a><a class="nav-link" href="/glasba">GLASBA </a><a class="nav-link" href="/video">VIDEO</a></div>
         <!-- endinject -->
 
+        <div class="navigation-bar">
+            <div class="nav-logo">
+                <a href="domov">
+                    <img class="logo-img" src="/img/logo-sm.png" alt="" />
+                </a>
+            </div>
+            <a class="btn nav-link" href="domov">
+                DOMOV
+            </a>
+            <a class="btn nav-link" href="/koncerti">
+                KONCERTI
+            </a>
+            <a class="btn nav-link" href="/glasba">
+                GLASBA
+            </a>
+            <a class="btn nav-link" href="/video">
+                VIDEO
+            </a>
+            <div class="nav-link-icons">
+                <a href="https://www.facebook.com/kantavtorelvisfajko/" target="_blank">
+                    <img class="logo-fb" src="/img/icon-fb-11.png" alt="" />
+                </a>
+                <a href="https://www.youtube.com/user/elvisfajko1" target="_blank">
+                    <img class="logo-youtube" src="/img/icon-youtube.png" alt="" />
+                </a>
+            </div>
+        </div>
+        </div>
+
+        <div ng-include src="'src/views/common/header.html'"></div>
+
         <div class="main-body-div">
-            <main class="main-view" ng-view></main>
+            <main ng-view></main>
         </div>
         <!-- inject:footer:html -->
-        <footer>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-color-2">
-                    <p class="footer-text"><small>Copyright © 2017</small></p>
-                </div>
-            </div>
-        </footer>
+        <footer><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-color-2"><p class="footer-text"><small>Copyright © 2017</small></p></div></div></footer>
         <!-- endinject -->
 
 
         <!-- inject:css -->
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/home.css">
         <link rel="stylesheet" type="text/css" href="css/header.css">
         <link rel="stylesheet" type="text/css" href="css/presentation.css">
+        <link rel="stylesheet" type="text/css" href="css/about.css">
+        <link rel="stylesheet" type="text/css" href="css/video.css">
+        <link rel="stylesheet" type="text/css" href="css/audio.css">
+        <link rel="stylesheet" type="text/css" href="css/koncerti.css">
 
+        <link rel="stylesheet" type="text/css" href="css/img-grid.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
 
 

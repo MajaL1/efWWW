@@ -1,11 +1,6 @@
-.about {
-    margin: 0 auto;
-    color: black;
-    text-align: justify;
-}
-
 .about-div {
     padding: 5% 10%;
+    /*  background: linear-gradient(to bottom, black, transparent); */
 }
 
 .about-div-1 {
@@ -19,6 +14,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 30px 0px;
 }
 
 .about-div-inner-2 {
@@ -26,6 +22,39 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: space-evenly;
+}
+
+.aktualne-povezave-div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.about-div.about-div-3 {
+    position: unset;
+}
+
+.aktualno-link {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+a.aktualno-link:before {
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    background-color: darkred;
+    content: " ";
+    margin-right: 10px;
+}
+
+.aktualne-povezave-1, .aktualne-povezave-2 {
+    padding: 15px 20px;
+    width: 40%;
+    text-align: left;
 }
 
 .about-1-img {
@@ -46,8 +75,16 @@
     padding: 0 4%;
 }
 
-.p-link {
-    color: darkred;
+.about-div-border-2 {
+    margin: 10% 0%;
+}
+
+.about-div-inner-2 {
+    background-color: white;
+}
+
+.aktualno-link {
+    display: block;
 }
 
 .active {
@@ -96,20 +133,37 @@ change background of .about div */
     font-size: x-large;
     text-align: center;
     margin: 20px 0px;
-    /*    border-bottom: 1px solid transparent;
-   */
     color: #350909;
-    /*  background-image: linear-gradient(brown, #ea4343);
-    */
     background-color: darkred;
+    background-image: linear-gradient(#dc4242, #9b5757);
     width: 59%;
     color: ghostwhite;
     margin: 20px auto;
-    opacity: 0.7;
+}
+
+.about-subtitle-2 {
+    font-size: large;
+    text-align: center;
+    margin: 20px 0px;
+    color: #350909;
+    width: 59%;
+    background-color: darkred;
+    background-image: linear-gradient(#dc4242, #9b5757);
+    color: ghostwhite;
+    margin: 20px auto;
+}
+
+.about-subtitle-md {
+    font-size: medium;
+    text-align: center;
+    margin: 20px 0px;
+    color: #350909;
+    width: 59%;
+    margin: 20px auto;
 }
 
 .about-subtitle.about-1 {
-    animation: move-in-steps ease-in 1s;
+    animation: move-in-steps ease-in-out smooth 1s;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
@@ -120,21 +174,31 @@ change background of .about div */
     -webkit-font-smoothing: antialiased;
 }
 
+@keyframes move-in-steps {
+    0% {
+        background-color: transparent;
+    }
+    30% {
+        margin-left: 10%;
+        background-color: darkred;
+    }
+    100% {
+        margin-left: 0%;
+        background-color: darkred;
+    }
+}
+
 /***********************************************/
 
 /********  BORDER-LEFT with div before-after ********/
 
-.about-description:before {
-    /* content: ""; */
+/* .about-description:before {
+    display: none;
     width: 2px;
-    /* color white ("no color") color (each 2px wide); here you can adjust the width */
     height: 100%;
     background-color: transparent;
-    /*linear-gradient(#dd4141, #dd5341) left/2px 100% no-repeat, linear-gradient(#dd4141, #dd5341) right/2px 100% no-repeat; */
     margin-left: -5%;
     position: absolute;
-    /* needs to be absolute */
-    /*  top: 0%; */
     height: 0px;
     content: "";
     animation: linedown 1s forwards;
@@ -152,7 +216,7 @@ change background of .about div */
         height: 250px;
         background-color: darkred;
     }
-}
+} */
 
 /************************************************/
 
@@ -183,21 +247,18 @@ change background of .about div */
     transform-origin: 0% 50%;
 }
 
-/** move subtitle from left to center */
-
-/* @keyframes move-in-steps {
-    0% {
-        margin-left: -30%;
-        background: darkred;
+@media screen and (max-width: 600px) {
+    .about-subtitle {
+        font-size: medium;
+        width: auto;
     }
-    30% {
-        margin-left: 30%;
-        opacity: 0.8;
-        background: brown;
+    .about-div {
+        font-size: small;
     }
-    100% {
-        margin-left: 20%;
-        opacity: 0.8;
-        background: brown;
+    .about-desc-inner {
+        text-align: left;
     }
-} */
+    .aktualne-povezave-1, .aktualne-povezave-2 {
+        width: 100%;
+    }
+}

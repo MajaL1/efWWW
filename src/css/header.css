@@ -84,10 +84,14 @@
   right: 0px;
 }
 
+.nav-link-icons>a {
+  text-decoration: none;
+}
+
 img.logo-fb {
-  width: 30px;
+  width: 23px;
 }
 
 img.logo-youtube {
-  width: 30px;
+  width: 23px;
 }

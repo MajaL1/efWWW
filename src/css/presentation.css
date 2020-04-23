@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: url('/assets/img/elvis-front1.png');
+    background: url('/assets/img/elvis-front-lg.png');
     background-size: cover;
     height: 800px;
     margin-top: 15px;
@@ -58,7 +58,14 @@ h3>strong {
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    .presentation-div {
+        background: url('/assets/img/elvis-front-md.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 59px;
+        height: auto;
+    }
     .presentation-text-div {
         width: 100%;
     }
@@ -66,7 +73,34 @@ h3>strong {
         text-align: center;
     }
     .presentation-text-div-2 {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .presentation-text-div-1 {
+        margin-top: 106px;
+        opacity: 0.8;
+    }
+    .presentation-text-div-2 {
+        background: radial-gradient(whitesmoke, lightgray);
+        color: dimgray;
+        ;
+    }
+    .presentation-div {
+        background: url('/assets/img/elvis-front-sm.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 59px;
+        height: auto;
+    }
+    .presentation-text-div {
         width: 100%;
+    }
+    .presentation-text-div {
+        text-align: center;
+    }
+    .presentation-text-div-2 {
         margin: 0 auto;
     }
 }

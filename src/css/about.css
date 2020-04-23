@@ -68,6 +68,7 @@ a.aktualno-link:before {
 
 .about-description {
     padding: 0 4%;
+    text-align: justify;
     /*  border-left: 4px solid #a76a6a; */
 }
 
@@ -79,9 +80,7 @@ a.aktualno-link:before {
     margin: 10% 0%;
 }
 
-.about-div-inner-2 {
-    background-color: white;
-}
+.about-div-inner-2 {}
 
 .aktualno-link {
     display: block;

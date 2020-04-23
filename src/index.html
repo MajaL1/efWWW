@@ -26,31 +26,36 @@
         <div ng-include src="'src/views/common/header.html'"></div>
         <!-- endinject -->
 
-        <div class="navigation-bar">
-            <div class="nav-logo">
-                <a href="domov">
-                    <img class="logo-img" src="/img/logo-sm.png" alt="" />
+        <div class="navigation-bar" ng-controller="NavCtrl">
+
+            <img class="burger-menu-icon" ng-click="classToggle = !classToggle" src="/img/burger-menu.png" alt="" />
+
+            <div class="nav-bar-panel" ng-class="{'active-panel': classToggle}">
+                <div class="nav-logo">
+                    <a href="domov">
+                        <img class="logo-img" src="/img/logo-sm.png" alt="" />
+                    </a>
+                </div>
+                <a class="btn nav-link home" ng-click="classToggle = !classToggle" href="domov">
+                    DOMOV
                 </a>
-            </div>
-            <a class="btn nav-link" href="domov">
-                DOMOV
-            </a>
-            <a class="btn nav-link" href="/koncerti">
-                KONCERTI
-            </a>
-            <a class="btn nav-link" href="/glasba">
-                GLASBA
-            </a>
-            <a class="btn nav-link" href="/video">
-                VIDEO
-            </a>
-            <div class="nav-link-icons">
-                <a href="https://www.facebook.com/kantavtorelvisfajko/" target="_blank">
-                    <img class="logo-fb" src="/img/icon-fb-11.png" alt="" />
+                <a class="btn nav-link" ng-click="classToggle = !classToggle" href="/koncerti">
+                    KONCERTI
                 </a>
-                <a href="https://www.youtube.com/user/elvisfajko1" target="_blank">
-                    <img class="logo-youtube" src="/img/icon-youtube.png" alt="" />
+                <a class="btn nav-link" ng-click="classToggle = !classToggle" href="/glasba">
+                    GLASBA
                 </a>
+                <a class="btn nav-link" ng-click="classToggle = !classToggle" href="/video">
+                    VIDEO
+                </a>
+                <div class="nav-link-icons">
+                    <a href="https://www.facebook.com/kantavtorelvisfajko/" target="_blank">
+                        <img class="logo-fb" src="/img/icon-fb.png" alt="" />
+                    </a>
+                    <a href="https://www.youtube.com/user/elvisfajko1" target="_blank">
+                        <img class="logo-youtube" src="/img/icon-youtube.png" alt="" />
+                    </a>
+                </div>
             </div>
         </div>
         </div>
@@ -90,6 +95,8 @@
 
         <script src="scripts/angular-route.js"></script>
         <script src="main.js"></script>
+        <script src="js/controllers/NavCtrl.js"></script>
+
         <script src="js/controllers/MusicCtrl.js"></script>
         <script src="js/controllers/VideoCtrl.js"></script>
         <script src="js/controllers/HomeCtrl.js"></script>

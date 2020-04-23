@@ -6,11 +6,11 @@ angular.module("myApp.templates", []).run(["$templateCache", function ($template
     $templateCache.put("public/views/glasba", "<div>test4</div>");
     $templateCache.put("public/views/video", "<div>test5</div>");
 }]);
+myApp.controller("NavCtrl");
 
 myApp.controller("MusicCtrl");
 myApp.controller("VideoCtrl");
 myApp.controller("HomeCtrl");
-
 
 myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 

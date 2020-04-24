@@ -15,7 +15,6 @@
 	float: left;
 	overflow: hidden;
 	margin: 10px 1%;
-	min-width: 320px;
 	max-width: 480px;
 	width: 48%;
 	background: #3085a3;
@@ -95,16 +94,6 @@ figure.fig-1 figcaption {
 	transform: translate3d(0, 100%, 0);
 }
 
-figure.fig-1 p.icon-links a {
-	float: right;
-	color: #3c4a50;
-	font-size: 1.4em;
-}
-
-figure.fig-1:hover p.icon-links a:hover, figure.fig-1:hover p.icon-links a:focus {
-	color: #252d31;
-}
-
 figure.fig-1 p.description {
 	position: absolute;
 	bottom: 8em;
@@ -120,20 +109,11 @@ figure.fig-1 p.description {
 	/* Fix for Chrome 37.0.2062.120 (Mac) */
 }
 
-figure.fig-1 h2, figure.fig-1 p.icon-links a {
+figure.fig-1 h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0, 200%, 0);
 	transform: translate3d(0, 200%, 0);
-}
-
-figure.fig-1 p.icon-links a span::before {
-	display: inline-block;
-	padding: 8px 10px;
-	font-family: 'feathericons';
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon-eye::before {
@@ -156,7 +136,7 @@ figure.fig-1:hover p.description {
 	opacity: 1;
 }
 
-figure.fig-1:hover figcaption, figure.fig-1:hover h2, figure.fig-1:hover p.icon-links a {
+figure.fig-1:hover figcaption, figure.fig-1:hover h2 {
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
@@ -164,19 +144,4 @@ figure.fig-1:hover figcaption, figure.fig-1:hover h2, figure.fig-1:hover p.icon-
 figure.fig-1:hover h2 {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
-}
-
-figure.fig-1:hover p.icon-links a:nth-child(3) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-}
-
-figure.fig-1:hover p.icon-links a:nth-child(2) {
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
-}
-
-figure.fig-1:hover p.icon-links a:first-child {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
 }

@@ -7,16 +7,18 @@
     position: relative;
     margin-top: 110px;
     margin: 110px auto 0px auto;
+    justify-content: center;
 }
 
 .audio-item-desc {
-    padding: 30px 0px;
+    padding: 7px 0px;
     background-color: #565656;
     text-align: center;
 }
 
 .audio-p-link {
     color: antiquewhite;
+    text-decoration: none;
 }
 
 .audio-item-blue {

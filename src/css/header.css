@@ -15,6 +15,7 @@
 
 .nav-bar-panel {
   display: flex;
+  height: 60px;
   align-items: center;
   justify-content: center;
 }
@@ -107,16 +108,15 @@ img.logo-youtube {
   display: none;
 }
 
-.nav-bar-panel.active-panel {
-  display: none;
-}
-
 @media screen and (min-device-width: 320px) and (max-device-width: 600px) and (orientation: portrait) {
   .nav-bar-panel {
     display: block;
     height: 300px;
     width: 60%;
     background-color: black;
+  }
+  .nav-bar-panel.active-panel {
+    display: none;
   }
   .nav-logo {
     right: 18%;
@@ -165,6 +165,9 @@ img.logo-youtube {
   .logo-img {
     right: 0%;
     height: 50px;
+  }
+  .nav-bar-panel.active-panel {
+    display: none;
   }
   .nav-link-icons {
     left: 20px;

@@ -27,14 +27,14 @@ var sass = require('gulp-sass');
 
 var paths = {
     javascripts: [
-   'src/main.js',
-    'src/js/controllers/*.js',
-    'src/scripts/*.js'
-  ],
+        'src/main.js',
+        'src/js/controllers/*.js',
+        'src/scripts/*.js'
+    ],
     templates: [
-    '/src/views/*.html',
-    '/src/index.html'
-  ],
+        '/src/views/*.html',
+        '/src/index.html'
+    ],
     dist: [
         'src/dist'
     ],
@@ -56,7 +56,7 @@ var autoprefixer = require('autoprefixer');
 
 const print = require('gulp-print').default;
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync.init({
         server: "./app"
     });
@@ -78,7 +78,7 @@ gulp.task('move', async function () {
         .pipe(gulp.dest(paths.dist + '/'));
 
     gulp.src(['./src/views/*.html', './src/views/common/*.html'])
-    
+
     return gulp.src(['./src/views/*.html', './src/views/common/*.html'])
         .pipe(flatten())
         .pipe(htmlmin({
@@ -86,12 +86,12 @@ gulp.task('move', async function () {
             removeComments: true
         }))
         .pipe(gulp.dest(paths.dist + '/views'))
-        
-         
+
+
 });
 //sass
 gulp.task('sass', async function () {
-   return gulp.src(paths.css)
+    return gulp.src(paths.css)
         .pipe(sass({
             outputStyle: 'compressed'
         }))
@@ -99,7 +99,7 @@ gulp.task('sass', async function () {
         .pipe(minifyCss())
         .pipe(csso())
         //.pipe(concatcss('all.css'))
-        .pipe(gulp.dest(paths.dist+"/css/"))
+        .pipe(gulp.dest(paths.dist + "/css/"))
 });
 
 
@@ -111,10 +111,10 @@ gulp.task('assets', async function () {
 
     gulp.src(['src/img/*'] + '.+(png|jpg|jpeg|gif)')
         .pipe(gulp.dest('src/dist/assets/img'));
-    
+
     return gulp.src(paths.music)
         .pipe(gulp.dest('src/dist/assets/music'));
-   
+
 });
 
 
@@ -142,7 +142,7 @@ gulp.task('compress', function () {
     gulp.src(paths.dist + '/all.js')
         .pipe(gzip())
         .pipe(gulp.dest(paths.dist))
-        .pipe(print(function() { return 'Gulp compress completed.'; }));
+        .pipe(print(function () { return 'Gulp compress completed.'; }));
 });
 
 gulp.task('start', function () {
@@ -161,10 +161,10 @@ gulp.task('start', function () {
         //  fallback: 'src/dist/index.html',
 
         proxies: [
-                 {
+            {
                 source: '/api',
                 target: 'http://localhost:5000/api/'
-                  }
+            }
         ],
         middleware: [historyApiFallback(), compression()],
         defaultFile: 'src/dist/index.html'
@@ -188,13 +188,13 @@ gulp.task('scripts', async function () {
 });
 // Fonts
 gulp.task('fonts', function () {
-    return gulp.src(paths.fonts, function (err) {})
+    return gulp.src(paths.fonts, function (err) { })
         .pipe(gulp.dest(paths.dist + '/fonts'))
-        .pipe(print(function() { return 'Gulp fonts completed.'; }));
+        .pipe(print(function () { return 'Gulp fonts completed.'; }));
 });
 
 
-        
+
 gulp.task('inject', async function () {
     return gulp.src(['src/dist/index.html'])
         .pipe(inject(gulp.src(paths.dist + '/all.js'), {
@@ -209,18 +209,18 @@ gulp.task('inject', async function () {
             },
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist
-            
+
         }))
-       .pipe(gulp.dest(paths.dist + '/'))
-        
-       .pipe(inject(gulp.src('src/dist/views/footer.html'), {
+        .pipe(gulp.dest(paths.dist + '/'))
+
+        .pipe(inject(gulp.src('src/dist/views/footer.html'), {
             starttag: '<!-- inject:footer:html -->',
             transform: function (filepath, file) {
                 return file.contents.toString();
             },
             addRootSlash: false, // ensures proper relative paths
             ignorePath: paths.dist
-            
+
         }))
         .pipe(gulp.dest(paths.dist + '/'))
 });
@@ -234,7 +234,7 @@ gulp.task('inject-css', async function () {
 });
 
 gulp.task('build', gulp.series('move', 'scripts', 'fonts', 'assets', 'inject', 'sass'), function () {
-    return (print(function() { return 'Gulp build completed.'; }));
+    return (print(function () { return 'Gulp build completed.'; }));
 });
 
 /****************************************************/
@@ -280,6 +280,6 @@ gulp.task('minify-js', function () {
     gulp.src('./src/js/controllers/*.js') // path to your files
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist + '/js'))
-        .pipe(print(function() { return 'Gulp minify-js completed.'; }));
+        .pipe(print(function () { return 'Gulp minify-js completed.'; }));
 });
 

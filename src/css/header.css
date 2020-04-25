@@ -161,7 +161,7 @@ img.logo-youtube {
   }
 }
 
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) and (orientation: landscape) {
+@media screen and (min-device-width: 200px) and (max-device-width: 800px) and (orientation: landscape) {
   .logo-img {
     right: 0%;
     height: 50px;

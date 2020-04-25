@@ -259,6 +259,12 @@
     }
     .presentation-text-div-2 {
         margin: 0 auto;
+        opacity: 0.9;
+    }
+    .presentation-text-div-2 button>span>span>.presentation-link {
+        color: dimgray;
+        border-bottom: 1px dimgray solid;
+        font-size: medium;
     }
 }
 
@@ -270,7 +276,6 @@
     .presentation-text-div-2 {
         background: radial-gradient(whitesmoke, lightgray);
         color: dimgray;
-        ;
     }
     .presentation-div {
         background: url('/assets/img/elvis-front-sm.png');
@@ -287,5 +292,21 @@
     }
     .presentation-text-div-2 {
         margin: 0 auto;
+        opacity: 0.9;
+    }
+    .presentation-text-div-2 button>span>span>.presentation-link {
+        color: dimgray;
+        border-bottom: 1px dimgray solid;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+    .presentation-text-div-2 {
+        margin-top: 210px;
+    }
+    .presentation-text-div-2 button>span>span>.presentation-link {
+        color: white;
+        border-bottom: 1px white solid;
     }
 }

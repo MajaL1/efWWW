@@ -5,7 +5,7 @@
 
 .about-div-1 {
     font-size: medium;
-    padding: 5% 8%;
+    padding: 2% 8%;
 }
 
 .about-1-inner {
@@ -33,7 +33,11 @@
 }
 
 .about-div.about-div-3 {
-    position: unset;
+    padding-bottom: 2%;
+}
+
+.about-div.about-div-4 {
+    padding-top: 2%;
 }
 
 .aktualno-link {
@@ -77,7 +81,7 @@ a.aktualno-link:before {
 }
 
 .about-div-border-2 {
-    margin: 6% 0%;
+    margin: 2% 0% 4% 0%;
 }
 
 .about-div-inner-2 {}

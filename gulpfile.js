@@ -263,7 +263,7 @@ gulp.task('html-conc', function () {
 function updateRoot(paths) {
     for (var i = 0; i < paths.length; i++) {
         // console.log(paths);
-        console.log(paths[i]);
+        /*  console.log(paths[i]); */
         return paths[i];
     }
 }

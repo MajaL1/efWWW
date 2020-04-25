@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "angular-picture": "^1.0.0",
-        "autoprefixer": "^9.7.2",
+        "autoprefixer": "^9.7.6",
         "bindings": "^1.5.0",
         "body-parser": "^1.19.0",
         "browser-sync": "^2.26.7",
@@ -73,6 +73,24 @@
         "start-test-popravi-me-nazaj": "browser-sync src/dist/",
         "start": "browser-sync src/dist/",
         "heroku-postbuild": "gulp build"
+    },
+    "browserslist": [
+        "> 1%",
+        "ie >= 8",
+        "edge >= 15",
+        "ie_mob >= 10",
+        "ff >= 45",
+        "chrome >= 45",
+        "safari >= 7",
+        "opera >= 23",
+        "ios >= 7",
+        "android >= 4",
+        "bb >= 10"
+    ],
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
     },
     "author": "MajaL",
     "license": "ISC"

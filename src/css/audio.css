@@ -1,60 +1,60 @@
 .audio-div {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-flow: wrap;
-    position: relative;
-    margin-top: 110px;
-    margin: 110px auto 0px auto;
-    justify-content: center;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-flow: wrap;
+  position: relative;
+  margin-top: 110px;
+  margin: 110px auto 0px auto;
+  justify-content: center;
 }
 
 .audio-item-desc {
-    padding: 7px 0px;
-    background-color: #565656;
-    text-align: center;
+  padding: 7px 0px;
+  background-color: #565656;
+  text-align: center;
 }
 
 .audio-p-link {
-    color: antiquewhite;
-    text-decoration: none;
+  color: antiquewhite;
+  text-decoration: none;
 }
 
 .audio-item-blue {
-    background-color: darkblue;
+  background-color: darkblue;
 }
 
 .audio-item-red {
-    background-color: brown;
+  background-color: brown;
 }
 
 .audio-item {
-    animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scaleX(0.9);
-    }
-    500% {
-        opacity: 1;
-        transform: scaleX(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scaleX(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: translateY(1);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(2);
-    }
+  0% {
+    opacity: 1;
+    transform: translateY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2);
+  }
 }

@@ -22,16 +22,49 @@
     </head>
 
     <body>
+        <script type="text/javascript">
+            /** Checking if fonts are loaded**/
+            console.log('Sulphur Point loaded? ' + document.fonts.check('1em Sulphur Point'));  // false
+
+            document.fonts.ready.then(function () {
+                // alert('All fonts in use by visible text have loaded.');
+                console.log('Sulphur Point loaded? ' + document.fonts.check('1em Sulphur Point'));  // true
+            });
+
+            document.fonts.onloadingdone = function (fontFaceSetEvent) {
+                console.log('onloadingdone we have ' + fontFaceSetEvent.fontfaces.length + ' font faces loaded');
+            };
+        </script>
+
+
+        </div>
         <!-- inject:header:html -->
         <div ng-include src="'src/views/common/header.html'"></div>
         <!-- endinject -->
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function (event) {
+
+                var element = $(".spinner");
+                console.log("element: ", element);
+
+                //console.log("DOMContentLoaded")
+
+                setTimeout(function () {
+                    $('.spinner')
+                        .fadeOut(4000);
+                    $('.spinner').addClass("inactive");
+                }, 3000);
+            });
+        </script>
+
 
         <div class="navigation-bar" ng-controller="NavCtrl">
 
             <img class="burger-menu-icon" ng-click="classToggle = !classToggle" src="/assets/img/burger-menu.png"
                 alt="" />
 
-            <div class="nav-bar-panel" ng-class="{'active-panel': classToggle}">
+            <div class="nav-bar-panel" ng-class="{'active-panel': !classToggle}">
                 <div class="nav-logo">
                     <a href="domov">
                         <img class="logo-img" src="/assets/img/logo-sm.png" alt="" />
@@ -80,8 +113,11 @@
         <link rel="stylesheet" type="text/css" href="css/video.css">
         <link rel="stylesheet" type="text/css" href="css/audio.css">
         <link rel="stylesheet" type="text/css" href="css/koncerti.css">
+        <link rel="stylesheet" type="text/css" href="css/spinner.css">
 
         <link rel="stylesheet" type="text/css" href="css/img-grid.css">
+        <link rel="stylesheet" type="text/css" href="css/img-container.css">
+
         <link rel="stylesheet" type="text/css" href="css/footer.css">
 
 
@@ -91,12 +127,14 @@
         <!-- inject:js -->
         <script src="scripts/angular.js"></script>
         <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="scripts/jquery-3.5.0.js"></script>
 
         <script src="scripts/angular-animate.min.js"></script>
 
         <script src="scripts/angular-route.js"></script>
         <script src="main.js"></script>
         <script src="js/controllers/NavCtrl.js"></script>
+        <script src="js/controllers/SpinnerCtrl.js"></script>
 
         <script src="js/controllers/MusicCtrl.js"></script>
         <script src="js/controllers/VideoCtrl.js"></script>
@@ -145,7 +183,24 @@
         </script>
         <!-- endinject-->
         <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-
+        <div class="spinner-container">
+            <div class="spinner" nav-controller="SpinnerCtrl">
+                <div class="mul7">
+                    <div class="mul7circ m7c1"></div>
+                    <div class="mul7circ m7c2"></div>
+                    <div class="mul7circ m7c3"></div>
+                    <div class="mul7circ m7c4"></div>
+                    <div class="mul7circ m7c5"></div>
+                    <div class="mul7circ m7c6"></div>
+                    <div class="mul7circ m7c7"></div>
+                    <div class="mul7circ m7c8"></div>
+                    <div class="mul7circ m7c9"></div>
+                    <div class="mul7circ m7c10"></div>
+                    <div class="mul7circ m7c11"></div>
+                    <div class="mul7circ m7c12"></div>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>

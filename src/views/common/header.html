@@ -1,8 +1,8 @@
-﻿<div class="navigation-bar" ng-controller="NavCtrl">
+﻿<div class="navigation-bar">
 
     <img class="burger-menu-icon" ng-click="classToggle = !classToggle" src="/assets/img/burger-menu.png" alt="" />
 
-    <div class="nav-bar-panel" ng-class="{'active-panel': classToggle}">
+    <div class="nav-bar-panel" ng-class="{'active-panel': !classToggle}">
         <div class="nav-logo">
             <a href="domov">
                 <img class="logo-img" src="/assets/img/logo-sm.png" alt="" />

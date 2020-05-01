@@ -7,7 +7,7 @@ angular.module("myApp.templates", []).run(["$templateCache", function ($template
     $templateCache.put("public/views/video", "<div>test5</div>");
 }]);
 myApp.controller("NavCtrl");
-
+myApp.controller("SpinnerCtrl");
 myApp.controller("MusicCtrl");
 myApp.controller("VideoCtrl");
 myApp.controller("HomeCtrl");
@@ -18,7 +18,7 @@ myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', fun
 
     $routeProvider
         .when("/", {
-            url: "/domov",
+            url: "/",
             templateUrl: "/views/domov.html",
         })
         .when("/domov", {

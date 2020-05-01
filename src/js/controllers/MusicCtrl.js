@@ -5,14 +5,14 @@
     factory.download = function (url, name, id) {
 
         $http({
-                method: 'GET',
+            method: 'GET',
+            url: url,
+            params: {
                 url: url,
-                params: {
-                    url: url,
-                    name: name
-                },
-                responseType: 'arraybuffer'
-            })
+                name: name
+            },
+            responseType: 'arraybuffer'
+        })
             .success(function (data, status, headers) {
 
                 headers = headers();
@@ -47,10 +47,10 @@
             });
     }
     return factory;
-    }]);
+}]);
 
 
-myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', function (DownloadFileFactory, $scope, $http) {
+myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', function (DownloadFileFactory, $scope) {
 
     $scope.audioSkarabejiList = [];
     $scope.audioSingleList = [];
@@ -58,7 +58,6 @@ myApp.controller('MusicCtrl', ['DownloadFileFactory', '$scope', '$http', functio
 
     $scope.loadAudios = function () {
 
-        var audioDataList;
         $scope.audioSkarabejiList.push({
             "title": "Upanje",
             "url": "assets/music/Skarabeji - Upanje.mp3"

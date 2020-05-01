@@ -1,110 +1,114 @@
 .about-div {
-    padding: 5% 10%;
-    /*  background: linear-gradient(to bottom, black, transparent); */
+  padding: 5% 10%;
+  /*  background: linear-gradient(to bottom, black, transparent); */
 }
 
 .about-div-1 {
-    font-size: medium;
-    padding: 2% 8%;
+  font-size: medium;
+  padding: 2% 8%;
 }
 
 .about-1-inner {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 30px 0px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 0px;
+  padding-bottom: 30px;
 }
 
 .about-div-inner-2 {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
 }
 
 .aktualne-povezave-div {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .about-div.about-div-3 {
-    padding-bottom: 2%;
+  padding-bottom: 2%;
 }
 
 .about-div.about-div-4 {
-    padding-top: 2%;
+  padding-top: 2%;
 }
 
 .aktualno-link {
-    color: black;
-    text-decoration: none;
-    margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 a.aktualno-link:before {
-    height: 5px;
-    width: 5px;
-    display: inline-block;
-    background-color: darkred;
-    content: " ";
-    margin-right: 10px;
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background-color: darkred;
+  content: " ";
+  margin-right: 10px;
 }
 
-.aktualne-povezave-1, .aktualne-povezave-2 {
-    padding: 15px 20px;
-    width: 40%;
-    text-align: left;
+.aktualne-povezave-1,
+.aktualne-povezave-2 {
+  padding: 15px 20px;
+  width: 40%;
+  text-align: left;
 }
 
 .about-1-img {
-    width: auto;
-    max-width: 400px;
+  width: auto;
+  max-width: 400px;
 }
 
 .about-desc-inner {
-    width: 40%;
+  width: 40%;
 }
 
 .about-description {
-    padding: 0 4%;
-    text-align: justify;
-    /*  border-left: 4px solid #a76a6a; */
+  padding: 0 4%;
+  text-align: justify;
+  /*  border-left: 4px solid #a76a6a; */
 }
 
 .about-div-border-3 {
-    padding: 0 4%;
+  padding: 0% 4%;
 }
 
 .about-div-border-2 {
-    margin: 2% 0% 4% 0%;
+  margin-top: 100px;
+  margin-bottom: 30px;
 }
 
-.about-div-inner-2 {}
+.about-div-inner-2 {
+}
 
 .aktualno-link {
-    display: block;
+  display: block;
 }
 
 .active {
-    background-color: rgb(245, 245, 245);
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    -moz-animation: blink normal 1.5s infinite ease-in-out;
-    /* Firefox */
-    -webkit-animation: blink normal 1.5s infinite ease-in-out;
-    /* Webkit */
-    -ms-animation: blink normal 1.5s infinite ease-in-out;
-    /* IE */
-    animation: blink normal 1.5s infinite ease-in-out;
-    /* Opera */
+  background-color: rgb(245, 245, 245);
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -moz-animation: blink normal 1.5s infinite ease-in-out;
+  /* Firefox */
+  -webkit-animation: blink normal 1.5s infinite ease-in-out;
+  /* Webkit */
+  -ms-animation: blink normal 1.5s infinite ease-in-out;
+  /* IE */
+  animation: blink normal 1.5s infinite ease-in-out;
+  /* Opera */
 }
 
 /*.about-div.about-div-1 {
@@ -118,112 +122,167 @@ a.aktualno-link:before {
 change background of .about div */
 
 @keyframes gradient {
-    0% {
-        background-position: 0%;
-        background-color: transparent;
-    }
-    50% {
-        background-position: 30%;
-        background-color: dimgray;
-    }
-    100% {
-        background-position: 100%;
-        background-color: transparent;
-    }
+  0% {
+    background-position: 0%;
+    background-color: transparent;
+  }
+  50% {
+    background-position: 30%;
+    background-color: dimgray;
+  }
+  100% {
+    background-position: 100%;
+    background-color: transparent;
+  }
 }
 
 .about-subtitle {
-    font-size: x-large;
-    text-align: center;
-    margin: 20px 0px;
-    color: #350909;
-    background-color: darkred;
-    background-image: linear-gradient(#dc4242, #9b5757);
-    width: 59%;
-    color: ghostwhite;
-    margin: 20px auto;
+  font-size: x-large;
+  text-align: center;
+  margin: 20px 0px;
+  color: #350909;
+  /* background-color: darkred;
+  background-image: linear-gradient(#dc4242, #9b5757); */
+  width: 59%;
+  color: ghostwhite;
+  margin: 0px auto;
+  color: black;
 }
 
+/************ subtitle **************/
 .about-subtitle-2 {
-    font-size: large;
-    text-align: center;
-    margin: 20px 0px;
-    color: #350909;
-    width: 59%;
-    background-color: darkred;
-    background-image: linear-gradient(#dc4242, #9b5757);
-    color: ghostwhite;
-    margin: 20px auto;
+  font-size: large;
+  text-align: center;
+  margin: 20px 0px;
+  color: #350909;
+  width: 59%;
+  color: black;
+  margin: 20px auto;
 }
+
+.svg-wrapper {
+  position: relative;
+  /*   top: 50%; */
+  margin: 0 auto;
+  margin-top: 4%;
+  width: 520px;
+  text-align: center;
+}
+.shape {
+  stroke-dasharray: 0 580;
+  stroke-dashoffset: 580;
+  stroke-width: 4px;
+  fill: transparent;
+  stroke: black;
+  border-bottom: 5px solid black;
+  transition: stroke-width 2.7s, stroke-dashoffset 2.7s, stroke-dasharray 1.3s;
+  transition-delay: 0s;
+  fill: transparent;
+}
+.text {
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: black;
+  top: -48px;
+  position: relative;
+  text-align: center;
+  height: 60px;
+  width: 520px;
+  font-variant: small-caps;
+}
+.shape-border {
+  stroke-width: 4px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 480 100;
+}
+
+.shape.shape-border {
+  height: 100%;
+}
+
+.svg-wrapper > svg {
+  width: 520px;
+  height: 60px;
+}
+
+.about-subtitle.about-2.text {
+  letter-spacing: 5px;
+}
+
+.shape {
+  width: 520px;
+}
+/***********************************************/
 
 .about-subtitle-md {
-    font-size: medium;
-    text-align: center;
-    margin: 20px 0px;
-    color: #350909;
-    width: 59%;
-    margin: 20px auto;
+  font-size: medium;
+  text-align: center;
+  margin: 20px 0px;
+  color: #350909;
+  width: 59%;
+  margin: 20px auto;
 }
 
-.about-subtitle.about-1 {
-    animation: move-in-steps ease-in-out smooth 1s;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translateZ(0);
-    -webkit-font-smoothing: antialiased;
-}
+/* .about-subtitle.about-1 {
+  animation: move-in-steps ease-in-out smooth 5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+} */
 
 @keyframes move-in-steps {
-    0% {
-        background-color: transparent;
-    }
-    30% {
-        margin-left: 10%;
-        background-color: darkred;
-    }
-    100% {
-        margin-left: 0%;
-        background-color: darkred;
-    }
+  0% {
+    background-color: transparent;
+  }
+  30% {
+    margin-left: 10%;
+    background-color: darkred;
+  }
+  100% {
+    margin-left: 0%;
+    background-color: darkred;
+  }
 }
 
 .about-desc-img {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /***********************************************/
 
 /********  BORDER-LEFT with div before-after ********/
 
-/* .about-description:before {
-    display: none;
-    width: 2px;
-    height: 100%;
-    background-color: transparent;
-    margin-left: -5%;
-    position: absolute;
-    height: 0px;
-    content: "";
-    animation: linedown 1s forwards;
+.about-description:before {
+  /* display: none; */
+  width: 2px;
+  height: 100%;
+  background-color: transparent;
+  margin-left: -5%;
+  position: absolute;
+  height: 0px;
+  content: "";
+  /*  animation: linedown 1s forwards; */
 }
 
 @keyframes linedown {
-    0% {
-        background-color: transparent
-    }
-    50% {
-        height: 200px;
-        background-color: darkred;
-    }
-    100% {
-        height: 250px;
-        background-color: darkred;
-    }
-} */
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    height: 200px;
+    background-color: darkred;
+  }
+  100% {
+    height: 250px;
+    background-color: darkred;
+  }
+}
 
 /************************************************/
 
@@ -232,51 +291,81 @@ change background of .about div */
 /**  trying to implement border-left **/
 
 .about-description {
-    /* border-left: solid 1px green; */
-    animation: anim-border-left 1s ease-in-out;
-    /*  transform: scaleX(0);
+  /* border-left: solid 1px green; */
+  animation: anim-border-left 1s ease-in-out;
+  /*  transform: scaleX(0);
     transition: transform 250ms ease-in-out; */
 }
 
 .about-desc-img {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 @keyframes anim-border-left {
-    0% {
-        transform: scaleX(0);
-    }
-    50% {
-        transform: scaleX(1.05);
-    }
-    100% {
-        transform: scaleX(1);
-    }
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1.05);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .about-description:hover:before {
-    transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
 }
 
 @media screen and (max-width: 600px) {
-    .about-subtitle {
-        font-size: medium;
-        width: auto;
-    }
-    .about-div {
-        font-size: small;
-        padding: 1%;
-    }
-    .about-desc-inner {
-        text-align: left;
-    }
-    .aktualne-povezave-1, .aktualne-povezave-2 {
-        width: 100%;
-    }
-    .about-1-inner {
-        padding: unset;
-    }
-    .about-div.about-div-1 {
-        padding: 1% 5%;
-    }
+  .about-subtitle {
+    font-size: medium;
+    width: auto;
+  }
+  .about-div {
+    font-size: small;
+    padding: 1%;
+  }
+  .about-desc-inner {
+    text-align: left;
+  }
+  .aktualne-povezave-1,
+  .aktualne-povezave-2 {
+    width: 100%;
+  }
+  .about-1-inner {
+    padding: unset;
+  }
+  .about-div.about-div-1 {
+    padding: 1% 5%;
+  }
+
+  .shape.shape-border {
+    display: none;
+  }
+
+  .about-subtitle.text {
+    letter-spacing: 3px;
+    font-size: medium;
+    top: -120px;
+  }
+
+  .about-subtitle.about-2.text {
+    letter-spacing: 5px;
+    margin-top: -40px;
+  }
+
+  .svg-wrapper {
+    width: auto;
+    height: 80px;
+  }
+
+  .shape {
+    width: auto;
+  }
+
+  .svg-wrapper > svg {
+    width: auto;
+    height: auto;
+  }
 }

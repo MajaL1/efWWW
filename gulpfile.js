@@ -177,7 +177,7 @@ gulp.task('scripts', async function () {
 
     gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
 
-    return gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
+    return gulp.src(['src/scripts/angular.js', 'src/scripts/jquery-3.3.1.slim.min.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
         .pipe(concat('all.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
@@ -263,7 +263,7 @@ gulp.task('html-conc', function () {
 function updateRoot(paths) {
     for (var i = 0; i < paths.length; i++) {
         // console.log(paths);
-        console.log(paths[i]);
+        /*  console.log(paths[i]); */
         return paths[i];
     }
 }

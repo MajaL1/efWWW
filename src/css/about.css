@@ -173,8 +173,8 @@ change background of .about div */
   stroke-dashoffset: 580;
   stroke-width: 4px;
   fill: transparent;
-  stroke: black;
-  border-bottom: 5px solid black;
+  stroke: #350909;
+  border-bottom: 5px solid #350909;
   transition: stroke-width 2.7s, stroke-dashoffset 2.7s, stroke-dasharray 1.3s;
   transition-delay: 0s;
   fill: transparent;

@@ -66,6 +66,7 @@
 .controls {
   font-size: 0;
   border-top: none;
+  background-color: black;
 }
 .move-btn {
   display: inline-block;

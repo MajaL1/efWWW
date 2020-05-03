@@ -148,14 +148,14 @@
     //Start this baby up
     (function init() {
         var images = [
-            './assets/img/Elvis_3.jpg',
+            './assets/img/Elvis_2-md.jpg',
             './assets/img/Elvis4_md.jpg',
             './assets/img/modri-album_md.jpg',
             './assets/img/rdeci_album-md.jpg',
-            './assets/img/plakat-tisk1.jpg',
+            './assets/img/sejkspir_md.jpg',
             './assets/img/elvis2.jpg',
             './assets/img/skarabeji-naslovnica-md.png',
-            './assets/img/s2.jpg',
+            './assets/img/sejkspir_2_md.jpg',
 
 
         ];

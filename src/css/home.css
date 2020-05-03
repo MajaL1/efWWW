@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Sulphur+Point|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Sulphur+Point|Raleway|Open+Sans|Montserrat");
 
 body {
   margin: 0px auto;
@@ -26,8 +26,6 @@ body {
   font-style: italic;
   color: darkgoldenrod;
 }
-
-/*ToDo: tukaj bo prislo drugacno ozadje, background in link */
 
 .row.title-toolbar {
   background-color: black;

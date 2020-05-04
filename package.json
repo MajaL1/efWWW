@@ -71,7 +71,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start-test-popravi-me-nazaj": "browser-sync src/dist/",
-        "start": "browser-sync src/",
+        "start": "browser-sync src/dist",
         "heroku-postbuild": "gulp build"
     },
     "browserslist": [

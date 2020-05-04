@@ -5,51 +5,96 @@
         console.log('HomeCtrl1--');
 
         var height1 = $('.about-div-1').height();
+        var height2 = $('.about-div-2').height();
+
         var height3 = $('.about-div-3').height();
+        var height4 = $('.about-div-3').height();
+
         console.log(height1);
         console.log(height3);
         var position1 = $('.about-div-1').position().top;
         console.log(" a top: " + position1);
+        var position2 = $('.about-div-2').position().top;
+
 
         var position3 = $('.about-div-3').position().top;
+        var position4 = $('.about-div-4').position().top;
+
         console.log(" c top: " + position3);
         $(window).on('scroll', function () {
 
             // shape title border
-            $('.shape').addClass("shape-border");
-            $('.svg-wrapper').click(function () {
-                $('.shape').toggleClass('shape-border');
-            });
 
-            $('.about-div-1, .about-div-3, .about-div-4').removeClass('active');
+            $('.about-div-1, .about-div-3, .about-div-2').removeClass('active');
 
-            $('.about-description, .about-div-border-2, .about-div-border-3').removeClass('border-left');
 
             var st = $(document).scrollTop();
 
-            if (st < position1 + height1) {
+            if (st < position1 + height1 - 50) {
+                $('.shape.shape-1').addClass("shape-border");
+                $('.svg-wrapper.wrapper-1').click(function () {
+                    $('.shape.shape-1').toggleClass('shape-border');
+                });
+
                 /*    console.log(":::: st::: : " + st);
                    console.log(" position1: " + position1);
                    console.log(" positio3: " + position3);
    
                    console.log("position1, position3", position1 + position3);
     */
+                $('.about-div-2').removeClass('active');
+                $('.about-div-3').removeClass('active');
+                $('.about-div-4').removeClass('active');
                 $('.about-div-1').addClass('active');
-                $('.about-description').addClass('border-left');
+                $('.shape.shape-3, .shape.shape-4, .shape.shape-2').removeClass('shape-border');
+
 
             }
-            if (st > position1 + height1) {
-                /*   $(".about-2").addClass("border")
-        */
-                console.log("2 scrollTop: ", st)
+            else if (st < position2 + height2 - 50) {
+
+                $('.shape.shape-2').addClass("shape-border");
+                $('.svg-wrapper.wrapper-2').click(function () {
+                    $('.shape.shape-2').toggleClass('shape-border');
+                });
+                $('.about-div-2').addClass('active');
+                $('.about-div-1').removeClass('active');
+                $('.about-div-3').removeClass('active');
+                $('.about-div-4').removeClass('active');
+                $('.shape.shape-3, .shape.shape-4, .shape.shape-1').removeClass('shape-border');
+
+
+
+            }
+            else if (st < position3 + height3 - 50) {
+                $('.shape.shape-3').addClass("shape-border");
+                $('.svg-wrapper.wrapper-3').click(function () {
+                    $('.shape.shape-3').toggleClass('shape-border');
+                });
                 $('.about-div-3').addClass('active');
                 $('.about-div-1').removeClass('active');
-                $('.about-div-border-2').addClass('border-left');
+                $('.about-div-2').removeClass('active');
+                $('.about-div-4').removeClass('active');
+                $('.shape.shape-2, .shape.shape-4, .shape.shape-1').removeClass('shape-border');
+
+
+
+            }
+            else { // if (st > position1 + height1) {
+                debugger
+                $('.shape.shape-4').addClass("shape-border");
+                $('.svg-wrapper.wrapper-4').click(function () {
+                    $('.shape.shape-4').toggleClass('shape-border');
+                });
+                console.log("4 scrollTop: ", st)
+                $('.about-div-4').addClass('active');
+                $('.about-div-1').removeClass('active');
+                $('.about-div-3').removeClass('active');
+                $('.about-div-2').removeClass('active');
+                $('.shape.shape-3, .shape.shape-2, .shape.shape-1').removeClass('shape-border');
+
 
             }
         })
-
-
     });
 
     var gallery = document.querySelector('.gallery');

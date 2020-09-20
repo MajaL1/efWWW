@@ -48,7 +48,7 @@
         "jquerykeyframes": "^1.0.8",
         "lodash": "^4.17.11",
         "node": "^10.0.0",
-        "node-sass": "^4.11.0",
+        "node-sass": "^4.13.1",
         "notify-send": "^0.1.2",
         "npm-watch": "^0.6.0",
         "run-sequence": "^2.2.1"

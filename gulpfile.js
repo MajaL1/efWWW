@@ -25,6 +25,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 
+
 var paths = {
     javascripts: [
         'src/main.js',
@@ -73,7 +74,7 @@ gulp.task('purgecss', () => {
         .pipe(gulp.dest('src/dist/purgecss'))
 })
 
-gulp.task('move', async function () {
+gulp.task('move',async function () {
     gulp.src(['src/index.html'])
         .pipe(gulp.dest(paths.dist + '/'));
 
@@ -139,6 +140,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('compress', function () {
+    
     gulp.src(paths.dist + '/all.js')
         .pipe(gzip())
         .pipe(gulp.dest(paths.dist))
@@ -175,9 +177,11 @@ gulp.task('heroku:production', gulp.series('start'));
 
 gulp.task('scripts', async function () {
 
-    gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
+    //gulp.src(['src/scripts/angular.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
 
-    return gulp.src(['src/scripts/angular.js', 'src/scripts/jquery-3.3.1.slim.min.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'])
+    return gulp.src(['src/scripts/angular.js', 'src/scripts/jquery-3.3.1.slim.min.js', 'src/scripts/angular-route.js', 'src/main.js', 'src/js/controllers/*.js'], {allowEmpty: true})
+        .pipe(debug())
+
         .pipe(concat('all.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
@@ -196,10 +200,12 @@ gulp.task('fonts', function () {
 
 
 gulp.task('inject', async function () {
-    return gulp.src(['src/dist/index.html'])
-        .pipe(inject(gulp.src(paths.dist + '/all.js'), {
+    return gulp.src(['src/dist/index.html'],  { allowEmpty: true })
+        .pipe(debug("DEBUG src/dist/index.html")) 
+        .pipe(inject(gulp.src('src/dist' + '/all.js'), {
             addRootSlash: false, // ensures proper relative paths
-            ignorePath: paths.dist // ensures proper relative paths
+            ignorePath: paths.dist, // ensures proper relative paths,
+            allowEmpty: true
         }))
         .pipe(gulp.dest(paths.dist + '/'))
         .pipe(inject(gulp.src('src/dist/views/header.html'), {
@@ -233,19 +239,24 @@ gulp.task('inject-css', async function () {
         .pipe(gulp.dest(paths.dist + '/'));
 });
 
-gulp.task('build', gulp.series('move', 'scripts', 'fonts', 'assets', 'inject', 'sass'), function () {
+gulp.task('build', gulp.series('scripts', 'move', 'fonts', 'assets', 'inject',  'sass'), function () {
     return (print(function () { return 'Gulp build completed.'; }));
 });
+
 
 /****************************************************/
 // tole je potrebno pogledat, kako bi dali vse html v js. (in pri tem obdrzali routing)
 gulp.task('html-conc', function () {
+    console.log("DEBUG: ")
+    process.stdout.write("TEST");
     gulp.src(['/src/dist/index.html', '/src/views/*.html', '/src/views/common/*.html', '/src/main.js'])
         // .pipe(template()) // converts html to JS
         /*.pipe(angularTemplateCache('src/dist/all.js', {
                 module: 'myApp',
                 root: '/'
             }))*/
+    .pipe(debug()) 
+    
         .pipe(templateCache(paths.dist + '/all.js', {
             root: updateRoot(['/src/dist/index.html', '/src/views/*.html'])
         }, {

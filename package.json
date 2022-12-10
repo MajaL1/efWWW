@@ -19,7 +19,7 @@
         "cross-env": "^5.2.1",
         "del": "^4.1.1",
         "dotenv": "^7.0.0",
-        "express": "^4.16.4",
+        "express": "^4.17.3",
         "express-sslify": "^1.2.0",
         "gulp": "^4.0.0",
         "gulp-angular-templatecache": "^3.0.0",
